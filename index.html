@@ -1,323 +1,453 @@
-<!DOCTYPE html>
+html_content = """<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Komodo: The Island of Dragons & 單字大挑戰</title>
+    <title>國中英文閱讀與單字文法特訓 (升國二)</title>
     <style>
-        /* 基礎設定，針對 iPad 與平板優化閱讀體驗 */
+        :root {
+            --primary-color: #4CAF50;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background-color: #f4f7f6;
+            font-family: 'Helvetica Neue', Arial, 'LiHei Pro', '微軟正黑體', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
             margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        h1, h2 {
-            text-align: center;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        h2 { border-bottom-color: #e67e22; font-size: 24px; }
-        
-        /* 句子排版區塊 */
-        .sentence-block {
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #eee;
-        }
-        .english-sentence {
-            font-size: 20px;
-            color: #2c3e50;
-            margin-bottom: 8px;
-        }
-        .chinese-sentence {
-            font-size: 18px;
-            color: #7f8c8d;
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 8px;
-            border-left: 4px solid #2ecc71;
-            display: block;
-            transition: all 0.3s ease;
-        }
-        .hidden { display: none !important; }
-
-        /* 重點單字互動樣式 */
-        .vocab {
-            color: #e74c3c;
-            font-weight: bold;
-            cursor: pointer;
-            border-bottom: 2px dotted #e74c3c;
-            padding: 0 2px;
-            border-radius: 3px;
-        }
-        .vocab:active { background-color: #fadbd8; }
-
-        /* 測驗區塊樣式 */
-        .quiz-box {
-            background-color: #f8f9fa;
-            border-left: 5px solid #9b59b6;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-        .quiz-title {
-            font-weight: bold;
-            color: #8e44ad;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-        .question-line {
-            font-size: 18px;
-            margin-bottom: 15px;
+            padding: 0;
             line-height: 1.6;
         }
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .header p {
+            margin: 5px 0 0 0;
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        .nav-tabs {
+            display: flex;
+            overflow-x: auto;
+            background-color: #333;
+            -webkit-overflow-scrolling: touch;
+        }
+        .nav-tabs button {
+            flex: 1;
+            min-width: 120px;
+            background-color: inherit;
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 15px 10px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .nav-tabs button:hover {
+            background-color: #555;
+        }
+        .nav-tabs button.active {
+            background-color: var(--primary-color);
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        .unit-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
         
-        /* 互動挖空樣式 (點擊顯示答案) */
-        .blank {
-            display: inline-block;
-            min-width: 60px;
-            border-bottom: 2px solid #333;
-            color: transparent; /* 預設隱藏文字 */
+        /* 閱讀區塊 */
+        .controls {
+            margin-bottom: 15px;
+            text-align: right;
+        }
+        .btn-toggle {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .btn-toggle:active {
+            transform: scale(0.98);
+        }
+        .sentence-row {
+            background: var(--card-bg);
+            margin-bottom: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .en-text {
+            font-size: 1.15em;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .zh-text {
+            font-size: 1em;
+            color: #d35400;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #eee;
+            display: none;
+        }
+
+        /* 單字卡區塊 */
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+        }
+        .vocab-card {
+            background-color: #fff3cd;
+            border: 2px solid #ffeeba;
+            border-radius: 12px;
+            padding: 20px 10px;
             text-align: center;
             cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             user-select: none;
-            transition: all 0.3s ease;
-            padding: 0 5px;
-            background-color: #e9ecef;
-            border-radius: 4px 4px 0 0;
         }
-        .blank::after {
-            content: "👉 點我看答案";
-            font-size: 12px;
-            color: #666;
-            position: absolute;
-            margin-left: -55px;
-            margin-top: -15px;
-            pointer-events: none;
+        .vocab-card:active {
+            transform: scale(0.95);
         }
-        .blank.revealed {
-            color: #d35400;
+        .vocab-en {
+            font-size: 1.2em;
             font-weight: bold;
-            border-bottom-color: #d35400;
-            background-color: transparent;
+            color: #856404;
         }
-        .blank.revealed::after { display: none; }
+        .vocab-zh {
+            display: none;
+            margin-top: 10px;
+            font-size: 1em;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .vocab-card.flipped {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .vocab-card.flipped .vocab-en {
+            color: #155724;
+        }
 
-        /* 控制按鈕樣式 */
-        .controls { text-align: center; margin-bottom: 30px; position: sticky; top: 20px; z-index: 10; }
-        button {
-            background-color: #3498db; color: white; border: none; padding: 12px 24px;
-            font-size: 18px; border-radius: 30px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        /* 文法區塊 */
+        .grammar-card {
+            background-color: #e8f4f8;
+            border-left: 6px solid #17a2b8;
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 15px;
+        }
+        .grammar-card h3 {
+            margin-top: 0;
+            color: #0c5460;
+        }
+        .grammar-card p {
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #c0392b;
         }
         
-        /* 彈出視窗 (Modal) 樣式 */
-        #vocabModal {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.5); z-index: 100; justify-content: center; align-items: center;
+        /* 響應式 */
+        @media (max-width: 600px) {
+            .en-text { font-size: 1.1em; }
+            .vocab-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
         }
-        .modal-content {
-            background-color: #fff; padding: 25px; border-radius: 12px; width: 80%; max-width: 400px;
-            text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
-        .modal-word { font-size: 26px; color: #e74c3c; font-weight: bold; margin-bottom: 10px; }
-        .modal-meaning { font-size: 20px; margin-bottom: 15px; color: #333; }
-        .modal-note { font-size: 16px; color: #666; background-color: #f1f8ff; padding: 10px; border-radius: 8px; text-align: left; }
-        .close-btn { margin-top: 20px; background-color: #95a5a6; }
-        
-        ul.grammar-list li { margin-bottom: 10px; font-size: 18px; }
     </style>
 </head>
 <body>
 
-<!-- 第一部分：文章閱讀 -->
-<div class="container">
-    <h1>第一部分：Komodo: The Island of Dragons</h1>
-    <div class="controls">
-        <button id="toggleBtn" onclick="toggleTranslation()">👁️ 隱藏中文翻譯</button>
+    <div class="header">
+        <h1>國中英文閱讀特訓</h1>
+        <p>點擊單字卡可翻面，點擊按鈕可顯示/隱藏中文翻譯 (適合 iPad 閱讀)</p>
     </div>
 
-    <!-- 內文對照 -->
-    <div class="sentence-block">
-        <div class="english-sentence">
-            In <span class="vocab" data-word="between" data-meaning="在...之間" data-note="用於兩者之間。比較：among 用於三者以上。">between</span> the Flores Sea and the Indian <span class="vocab" data-word="Ocean" data-meaning="海洋" data-note="名詞。如 Indian Ocean 印度洋。">Ocean</span>, there is a <span class="vocab" data-word="tiny" data-meaning="微小的" data-note="形容詞。比 small 還要小。">tiny</span> island <span class="vocab" data-word="filled" data-meaning="充滿的" data-note="必考片語：be filled with... (充滿著...)">filled</span> with dragons.
-        </div>
-        <div class="chinese-sentence translation">在弗洛勒斯海和印度洋之間，有一個充滿著龍的微小島嶼。</div>
-    </div>
-    <div class="sentence-block">
-        <div class="english-sentence">
-            It is called Komodo Island, and people from all over the world visit it to see the <span class="vocab" data-word="ancient" data-meaning="古老的" data-note="形容詞。指歷史非常悠久的。">ancient</span> animal that <span class="vocab" data-word="exists" data-meaning="存在" data-note="動詞。名詞型態為 existence。">exists</span> there.
-        </div>
-        <div class="chinese-sentence translation">它被稱為科莫多島，來自世界各地的人們去拜訪它，為了觀看存在於那裡的古老動物。</div>
-    </div>
-    <div class="sentence-block">
-        <div class="english-sentence">
-            The Komodo dragon is in fact not a dragon at all; it is the world’s largest lizard.
-        </div>
-        <div class="chinese-sentence translation">科莫多龍其實根本不是龍；牠是世界上最大的蜥蜴。 (提示: not...at all 是一點也不)</div>
-    </div>
-    <div class="sentence-block">
-        <div class="english-sentence">
-            They can <span class="vocab" data-word="grow" data-meaning="生長；長大" data-note="動詞。片語 grow up (長大)。比較：raise 表「養育(人/動物)」。">grow</span> up to three yards long and weigh about 90 kilograms.
-        </div>
-        <div class="chinese-sentence translation">牠們可以生長到三碼長，並且重達約90公斤。</div>
-    </div>
-    <div class="sentence-block">
-        <div class="english-sentence">
-            They use their <span class="vocab" data-word="tails" data-meaning="尾巴" data-note="名詞 (tail 的複數)。">tails</span> and sharp teeth to <span class="vocab" data-word="hunt" data-meaning="打獵；獵食" data-note="動詞。名詞 hunter (獵人)。">hunt</span> deer and pigs.
-        </div>
-        <div class="chinese-sentence translation">牠們用牠們的尾巴和鋒利的牙齒來獵食鹿和豬。</div>
-    </div>
-    <div class="sentence-block">
-        <div class="english-sentence">
-            When Komodo dragons bite an animal, they put <span class="vocab" data-word="poison" data-meaning="毒藥；毒液" data-note="名詞。">poison</span> into its <span class="vocab" data-word="blood" data-meaning="血液" data-note="名詞。動詞 bleed (流血)。">blood</span>.
-        </div>
-        <div class="chinese-sentence translation">當科莫多龍咬一隻動物時，牠們會把毒液注入牠的血液中。</div>
-    </div>
-    <div class="sentence-block">
-        <div class="english-sentence">
-            This <span class="vocab" data-word="hurts" data-meaning="傷害；使...疼痛" data-note="動詞。三態同形：hurt-hurt-hurt。">hurts</span> the animal slowly <span class="vocab" data-word="until" data-meaning="直到...時" data-note="連接詞。常考句型：not... until... (直到...才...)。">until</span> it dies.
-        </div>
-        <div class="chinese-sentence translation">這會慢慢地傷害那隻動物，直到牠死亡。</div>
-    </div>
-    <div class="sentence-block">
-        <div class="english-sentence">
-            They <span class="vocab" data-word="seldom" data-meaning="不常；很少" data-note="頻率副詞，帶有否定意味。放句首需倒裝。">seldom</span> <span class="vocab" data-word="attack" data-meaning="攻擊" data-note="動詞。也可用作名詞。">attack</span> humans, but if you ever see a Komodo dragon, you should still be <span class="vocab" data-word="afraid" data-meaning="害怕的" data-note="形容詞。常接 be afraid of (害怕...)。">afraid</span> to get <span class="vocab" data-word="near" data-meaning="靠近；附近" data-note="介系詞/副詞/形容詞。">near</span> it!
-        </div>
-        <div class="chinese-sentence translation">牠們很少攻擊人類，但如果你真的看到一隻科莫多龍，你還是應該要對靠近牠感到害怕！</div>
-    </div>
-    <div class="sentence-block">
-        <div class="english-sentence">
-            Komodo Island has much more than dragons, <span class="vocab" data-word="though" data-meaning="然而；不過" data-note="副詞。放在句尾時作「然而」解釋，前面通常加逗號。">though</span>.
-        </div>
-        <div class="chinese-sentence translation">然而，科莫多島擁有的遠遠不只有龍。</div>
-    </div>
-    <div class="sentence-block">
-        <div class="english-sentence">
-            It is only about 2 million years old, which is young for an island.
-        </div>
-        <div class="chinese-sentence translation">它大約只有200萬年的歷史，這對一個島嶼來說算是年輕的。</div>
-    </div>
-    <div class="sentence-block">
-        <div class="english-sentence">
-            There are many <span class="vocab" data-word="kinds" data-meaning="種類" data-note="名詞。片語：all kinds of (各種的...)。">kinds</span> of <span class="vocab" data-word="unique" data-meaning="獨特的" data-note="形容詞。指與眾不同的、獨一無二的。">unique</span> animals on the island, such as monkeys, deer, pigs, birds, buffalo, and the Komodo dragon.
-        </div>
-        <div class="chinese-sentence translation">島上有許多種類的獨特動物，例如猴子、鹿、豬、鳥類、水牛，以及科莫多龍。</div>
-    </div>
-    <div class="sentence-block">
-        <div class="english-sentence">
-            Komodo Island also has a beach with pink <span class="vocab" data-word="sand" data-meaning="沙子" data-note="名詞。通常為不可數名詞。">sand</span>. This is only one of seven in the world.
-        </div>
-        <div class="chinese-sentence translation">科莫多島還有一個有著粉紅色沙子的海灘。這是世界上僅有的七個之一。</div>
-    </div>
-    <div class="sentence-block">
-        <div class="english-sentence">
-            <span class="vocab" data-word="Whether" data-meaning="無論；不管" data-note="連接詞。常考句型：whether A or B (無論是A還是B)。">Whether</span> you want to take a picture on a pink beach or see a giant lizard, Komodo Island has something for everyone!
-        </div>
-        <div class="chinese-sentence translation">無論你是想要在粉紅沙灘上拍照，還是看巨大的蜥蜴，科莫多島都有適合每個人的事物！</div>
-    </div>
-</div>
-
-<!-- 第二部分：實戰測驗與筆記 -->
-<div class="container">
-    <h2>第二部分：單字文法秘笈與牛刀小試</h2>
-    
-    <div class="quiz-box" style="border-left-color: #3498db; background-color: #ebf5fb;">
-        <div class="quiz-title">💡 必考文法筆記區</div>
-        <ul class="grammar-list">
-            <li><strong>between vs. among：</strong> <code>between</code> 用於「兩者之間」；<code>among</code> 用於「三者以上」。</li>
-            <li><strong>grow vs. raise：</strong> <code>grow</code> 表動植物自然生長，或人種植農作物；<code>raise</code> 多用於養育小孩或飼養動物。</li>
-            <li><strong>not ... until ...：</strong> 意思是「直到⋯⋯才⋯⋯」。(例：我要直到天氣變暖才出門。)</li>
-            <li><strong>though 放句尾：</strong> 作為副詞表示「然而、不過」，前面要加逗號。</li>
-        </ul>
+    <div class="nav-tabs">
+        <button class="tab-link active" onclick="openUnit(event, 'unit18')">Unit 18 巨龍之島</button>
+        <button class="tab-link" onclick="openUnit(event, 'unit19')">Unit 19 跳蚤市場</button>
+        <button class="tab-link" onclick="openUnit(event, 'unit20')">Unit 20 觀光巴士</button>
+        <button class="tab-link" onclick="openUnit(event, 'unit21')">Unit 21 老師的問候</button>
     </div>
 
-    <div class="quiz-box">
-        <div class="quiz-title">✍️ 單字填空 (動動手指，點擊底線看答案)</div>
-        <div class="question-line">1. Sandy bought a new bag and <span class="blank" onclick="revealAnswer(this, 'filled')">f______d</span> it up with books.</div>
-        <div class="question-line">2. Plants need sun and water to <span class="blank" onclick="revealAnswer(this, 'grow')">g______w</span>.</div>
-        <div class="question-line">3. Josh has a healthy diet, and he <span class="blank" onclick="revealAnswer(this, 'seldom')">s______m</span> eats fried food.</div>
-        <div class="question-line">4. The boy found some <span class="blank" onclick="revealAnswer(this, 'ancient')">a______t</span> coins when he was digging.</div>
-        <div class="question-line">5. Many types of animals used to live in this forest, but some of them don't <span class="blank" onclick="revealAnswer(this, 'exist')">e______t</span> anymore.</div>
+    <div class="container">
+        
+        <!-- ================= Unit 18 ================= -->
+        <div id="unit18" class="unit-content" style="display: block;">
+            <h2 class="section-title">📖 閱讀：Komodo: The Island of Dragons</h2>
+            <div class="controls">
+                <button class="btn-toggle" onclick="toggleTranslation('unit18')">顯示 / 隱藏全部中文</button>
+            </div>
+            <div class="reading-area">
+                <div class="sentence-row"><div class="en-text">In between the Flores Sea and the Indian Ocean, there is a tiny island filled with dragons.</div><div class="zh-text">在弗洛勒斯海和印度洋之間，有一個充滿巨龍的小島。</div></div>
+                <div class="sentence-row"><div class="en-text">It is called Komodo Island, and people from all over the world visit it to see the ancient animal that exists there.</div><div class="zh-text">它的名字叫科摩多島，來自世界各地的人們都會來這裡參觀存在於那裡的古老動物。</div></div>
+                <div class="sentence-row"><div class="en-text">The Komodo dragon is in fact not a dragon at all; it is the world’s largest lizard.</div><div class="zh-text">科摩多龍其實根本不是龍；牠是世界上最大的蜥蜴。</div></div>
+                <div class="sentence-row"><div class="en-text">They can grow up to three yards long and weigh about 90 kilograms.</div><div class="zh-text">牠們可以長到三碼長，重達約 90 公斤。</div></div>
+                <div class="sentence-row"><div class="en-text">They use their tails and sharp teeth to hunt deer and pigs.</div><div class="zh-text">牠們用尾巴和鋒利的牙齒來獵捕鹿和豬。</div></div>
+                <div class="sentence-row"><div class="en-text">When Komodo dragons bite an animal, they put poison into its blood.</div><div class="zh-text">當科摩多龍咬傷動物時，牠們會將毒液注入其血液中。</div></div>
+                <div class="sentence-row"><div class="en-text">This hurts the animal slowly until it dies.</div><div class="zh-text">這會慢慢地傷害動物直到牠死亡。</div></div>
+                <div class="sentence-row"><div class="en-text">They seldom attack humans, but if you ever see a Komodo dragon, you should still be afraid to get near it!</div><div class="zh-text">牠們很少攻擊人類，但如果你真的看到科摩多龍，你還是應該要害怕靠近牠！</div></div>
+                <div class="sentence-row"><div class="en-text">Komodo Island has much more than dragons, though.</div><div class="zh-text">不過，科摩多島擁有的遠不止巨龍。</div></div>
+                <div class="sentence-row"><div class="en-text">It is only about 2 million years old, which is young for an island.</div><div class="zh-text">它大約只有 200 萬年的歷史，對一個島嶼來說算是年輕的。</div></div>
+                <div class="sentence-row"><div class="en-text">There are many kinds of unique animals on the island, such as monkeys, deer, pigs, birds, buffalo, and the Komodo dragon.</div><div class="zh-text">島上有許多種類獨特的動物，例如猴子、鹿、豬、鳥類、水牛，以及科摩多龍。</div></div>
+                <div class="sentence-row"><div class="en-text">Komodo Island also has a beach with pink sand. This is only one of seven in the world.</div><div class="zh-text">科摩多島還有一個有著粉紅色沙子的海灘。這是世界上僅有的七個之一。</div></div>
+                <div class="sentence-row"><div class="en-text">Whether you want to take a picture on a pink beach or see a giant lizard, Komodo Island has something for everyone!</div><div class="zh-text">無論你是想在粉紅色的海灘上拍照，還是看巨大的蜥蜴，科摩多島都能滿足每個人的需求！</div></div>
+            </div>
+
+            <h2 class="section-title">🎯 互動單字卡 (點擊翻面)</h2>
+            <div class="vocab-grid">
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">between</div><div class="vocab-zh">在...之間</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">ocean</div><div class="vocab-zh">海洋</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">tiny</div><div class="vocab-zh">極小的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">ancient</div><div class="vocab-zh">古老的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">exist</div><div class="vocab-zh">存在</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">weigh</div><div class="vocab-zh">重量有...</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">hunt</div><div class="vocab-zh">獵捕</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">poison</div><div class="vocab-zh">毒液</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">blood</div><div class="vocab-zh">血液</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">seldom</div><div class="vocab-zh">很少 (頻率副詞)</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">attack</div><div class="vocab-zh">攻擊</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">afraid</div><div class="vocab-zh">害怕的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">unique</div><div class="vocab-zh">獨特的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">whether</div><div class="vocab-zh">無論；是否</div></div>
+            </div>
+
+            <h2 class="section-title">✍️ 關鍵文法</h2>
+            <div class="grammar-card">
+                <h3>1. 頻率副詞的位置</h3>
+                <p><b>句型：</b>放在 Be 動詞之後，一般動詞之前。</p>
+                <p><b>說明：</b>seldom 表示「很少」，是否定意味的頻率副詞。</p>
+                <p><b>例句：</b>They <span class="highlight">seldom attack</span> humans. (牠們很少攻擊人類。)</p>
+            </div>
+            <div class="grammar-card">
+                <h3>2. not ... at all (一點也不...)</h3>
+                <p><b>說明：</b>用來加強否定的語氣。</p>
+                <p><b>例句：</b>The Komodo dragon is in fact <span class="highlight">not</span> a dragon <span class="highlight">at all</span>. (科摩多龍其實根本不是龍。)</p>
+            </div>
+        </div>
+
+        <!-- ================= Unit 19 ================= -->
+        <div id="unit19" class="unit-content">
+            <h2 class="section-title">📖 閱讀：Bear River High School Flea Market</h2>
+            <div class="controls">
+                <button class="btn-toggle" onclick="toggleTranslation('unit19')">顯示 / 隱藏全部中文</button>
+            </div>
+            <div class="reading-area">
+                <div class="sentence-row"><div class="en-text">Do you want to create space in your closet?</div><div class="zh-text">你想要騰出衣櫥裡的空間嗎？</div></div>
+                <div class="sentence-row"><div class="en-text">Your old clothes could be somebody's new favorite!</div><div class="zh-text">你的舊衣服可能會成為別人的新歡！</div></div>
+                <div class="sentence-row"><div class="en-text">Give five things to our flea market & take one item home for free!</div><div class="zh-text">捐五件物品給我們的跳蚤市場，就能免費帶一件物品回家！</div></div>
+                <div class="sentence-row"><div class="en-text">Donations will be accepted in the school gym between April 5 - April 10.</div><div class="zh-text">4月5日至4月10日之間，學校體育館將接受捐贈。</div></div>
+                <div class="sentence-row"><div class="en-text">Receive a ticket for one free item on the day of the sale for every five pieces of clothing you bring.</div><div class="zh-text">每帶來五件衣服，就能獲得一張在特賣當天免費兌換一件物品的兌換券。</div></div>
+                <div class="sentence-row"><div class="en-text">All kinds of clothing and sizes welcome, except underwear, socks, and shoes.</div><div class="zh-text">歡迎各種款式和尺寸的衣物，但不包含內衣、襪子和鞋子。</div></div>
+                <div class="sentence-row"><div class="en-text">We also accept hats, bags, scarves, gloves, necklaces, and rings.</div><div class="zh-text">我們也接受帽子、包包、圍巾、手套、項鍊和戒指。</div></div>
+                <div class="sentence-row"><div class="en-text">Remember that all items must be clean.</div><div class="zh-text">請記住，所有物品必須是乾淨的。</div></div>
+                <div class="sentence-row"><div class="en-text">All money raised will be given to local animal charities.</div><div class="zh-text">所有籌集的資金將捐給當地的動物慈善機構。</div></div>
+                <div class="sentence-row"><div class="en-text">Don't take food or drink into the gym.</div><div class="zh-text">請勿攜帶食物或飲料進入體育館。</div></div>
+                <div class="sentence-row"><div class="en-text">Please bring cash to the sale, as we will not take credit cards.</div><div class="zh-text">特賣會請攜帶現金，因為我們不接受信用卡。</div></div>
+            </div>
+
+            <h2 class="section-title">🎯 互動單字卡 (點擊翻面)</h2>
+            <div class="vocab-grid">
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">flea market</div><div class="vocab-zh">跳蚤市場</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">closet</div><div class="vocab-zh">衣櫥</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">donation</div><div class="vocab-zh">捐獻</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">accept</div><div class="vocab-zh">接受</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">receive</div><div class="vocab-zh">獲得；收到</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">underwear</div><div class="vocab-zh">內衣</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">scarf</div><div class="vocab-zh">圍巾</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">raise</div><div class="vocab-zh">籌集(資金)</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">charity</div><div class="vocab-zh">慈善團體</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">cash</div><div class="vocab-zh">現金</div></div>
+            </div>
+
+            <h2 class="section-title">✍️ 關鍵文法</h2>
+            <div class="grammar-card">
+                <h3>1. 祈使句 (命令句) 的用法</h3>
+                <p><b>說明：</b>用來表示請求、命令或建議，省略主詞 You，直接用原形動詞開頭。</p>
+                <p><b>肯定例句：</b><span class="highlight">Give</span> five things to our flea market... (捐出五件物品...)</p>
+                <p><b>否定例句：</b><span class="highlight">Don't take</span> food or drink into the gym. (請勿攜帶食物...)</p>
+            </div>
+            <div class="grammar-card">
+                <h3>2. 連接詞 as 的用法 (表原因)</h3>
+                <p><b>說明：</b>這裡的 as 意思是「因為」，用法等同於 because。</p>
+                <p><b>例句：</b>Please bring cash, <span class="highlight">as</span> we will not take credit cards. (請帶現金，因為我們不收信用卡。)</p>
+            </div>
+        </div>
+
+        <!-- ================= Unit 20 ================= -->
+        <div id="unit20" class="unit-content">
+            <h2 class="section-title">📖 閱讀：Rosefield Tour Bus</h2>
+            <div class="controls">
+                <button class="btn-toggle" onclick="toggleTranslation('unit20')">顯示 / 隱藏全部中文</button>
+            </div>
+            <div class="reading-area">
+                <div class="sentence-row"><div class="en-text">Regular times may change on national holidays.</div><div class="zh-text">正常時間可能會在國定假日有所變動。</div></div>
+                <div class="sentence-row"><div class="en-text">CIRCLE LINE (Express Service) ---> $24.50 per adult and $14 for youth under 18.</div><div class="zh-text">環狀線（快速服務）---> 成人 24.50 美元，18歲以下青少年 14 美元。</div></div>
+                <div class="sentence-row"><div class="en-text">Tickets bought on the Internet are 10-15% cheaper.</div><div class="zh-text">在網路上購買的車票便宜 10-15%。</div></div>
+                <div class="sentence-row"><div class="en-text">Save an extra 10% on your ticket price for a “BOTH LINES TICKET”.</div><div class="zh-text">購買「雙線車票」可額外節省 10% 的票價。</div></div>
+                <div class="sentence-row"><div class="en-text">Buses leave every 45 minutes from King’s Station.</div><div class="zh-text">國王車站每 45 分鐘發一班車。</div></div>
+                <div class="sentence-row"><div class="en-text">Priority seats are marked in green.</div><div class="zh-text">博愛座標示為綠色。</div></div>
+                <div class="sentence-row"><div class="en-text">Due to traffic, buses will not stop at the Sports Ground on the day of a game.</div><div class="zh-text">由於交通因素，比賽當天巴士將不停靠運動場。</div></div>
+            </div>
+
+            <h2 class="section-title">🎯 互動單字卡 (點擊翻面)</h2>
+            <div class="vocab-grid">
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">regular</div><div class="vocab-zh">規律的；正常的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">national</div><div class="vocab-zh">國家的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">express</div><div class="vocab-zh">快速的；直達的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">youth</div><div class="vocab-zh">青少年</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">extra</div><div class="vocab-zh">額外的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">priority</div><div class="vocab-zh">優先</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">traffic</div><div class="vocab-zh">交通</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">due to</div><div class="vocab-zh">由於；因為</div></div>
+            </div>
+
+            <h2 class="section-title">✍️ 關鍵文法</h2>
+            <div class="grammar-card">
+                <h3>1. 時間介系詞 on 的用法</h3>
+                <p><b>說明：</b>表達「在特定的日子」或「節日當天」時，介系詞要用 on。</p>
+                <p><b>例句：</b>...may change <span class="highlight">on</span> national holidays. (在國定假日...)</p>
+            </div>
+            <div class="grammar-card">
+                <h3>2. Every + 時間段 (每隔...)</h3>
+                <p><b>說明：</b>表示頻率，說明每隔多少時間發生一次。</p>
+                <p><b>例句：</b>Buses leave <span class="highlight">every 45 minutes</span>. (每 45 分鐘發一班車。)</p>
+            </div>
+        </div>
+
+        <!-- ================= Unit 21 ================= -->
+        <div id="unit21" class="unit-content">
+            <h2 class="section-title">📖 閱讀：Mr. Johnson's Greetings from Spain</h2>
+            <div class="controls">
+                <button class="btn-toggle" onclick="toggleTranslation('unit21')">顯示 / 隱藏全部中文</button>
+            </div>
+            <div class="reading-area">
+                <div class="sentence-row"><div class="en-text">I’m sending you this quick e-mail from Barcelona, Spain.</div><div class="zh-text">我從西班牙巴塞隆納發這封簡短的電子郵件給你們。</div></div>
+                <div class="sentence-row"><div class="en-text">I can hear musicians playing their instruments on the sidewalk outside.</div><div class="zh-text">我能聽到音樂家們在外面的人行道上演奏樂器。</div></div>
+                <div class="sentence-row"><div class="en-text">One of my favorite places in Barcelona is a famous park where you can see lots of nice art.</div><div class="zh-text">在巴塞隆納，我最喜歡的地方之一是一個著名的公園，在那裡你可以看到許多精美的藝術品。</div></div>
+                <div class="sentence-row"><div class="en-text">There are also some really interesting buildings in Barcelona, especially the ones designed by the famous architect Gaudí.</div><div class="zh-text">巴塞隆納也有一些非常有趣的建築，特別是由著名建築師高第設計的那些。</div></div>
+                <div class="sentence-row"><div class="en-text">One of his buildings, the Sagrada Família, has taken 130 years to build—and it’s still not finished!</div><div class="zh-text">他的其中一棟建築，聖家堂，已經花費了 130 年建造——而且還沒完工！</div></div>
+                <div class="sentence-row"><div class="en-text">I spend my days wandering around the city and my nights eating at amazing restaurants.</div><div class="zh-text">我白天在城市裡漫步，晚上在很棒的餐廳裡吃飯。</div></div>
+                <div class="sentence-row"><div class="en-text">Tonight, I’m going to surprise my wife by taking her to a secret restaurant.</div><div class="zh-text">今晚，我要帶我妻子去一家秘密餐廳，給她一個驚喜。</div></div>
+                <div class="sentence-row"><div class="en-text">I’m not allowed to take photos inside. If I did, it would ruin the secret.</div><div class="zh-text">裡面不允許拍照。如果我拍了，就會破壞這個秘密。</div></div>
+            </div>
+
+            <h2 class="section-title">🎯 互動單字卡 (點擊翻面)</h2>
+            <div class="vocab-grid">
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">vacation</div><div class="vocab-zh">假期</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">fantastic</div><div class="vocab-zh">極好的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">instrument</div><div class="vocab-zh">樂器</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">sidewalk</div><div class="vocab-zh">人行道</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">especially</div><div class="vocab-zh">尤其；特別是</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">architect</div><div class="vocab-zh">建築師</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">wander</div><div class="vocab-zh">漫遊；閒逛</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">surprise</div><div class="vocab-zh">給...驚喜</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">ruin</div><div class="vocab-zh">破壞</div></div>
+            </div>
+
+            <h2 class="section-title">✍️ 關鍵文法</h2>
+            <div class="grammar-card">
+                <h3>1. 感官動詞 + 受詞 + V-ing</h3>
+                <p><b>說明：</b>表達「聽到/看到某人『正在』做某事」，強調動作正在進行。</p>
+                <p><b>例句：</b>I can <span class="highlight">hear</span> musicians <span class="highlight">playing</span> their instruments. (我能聽到音樂家們正在演奏...)</p>
+            </div>
+            <div class="grammar-card">
+                <h3>2. spend (花費) 的用法</h3>
+                <p><b>句型：</b>人 + spend + 時間/金錢 + V-ing</p>
+                <p><b>例句：</b>I <span class="highlight">spend</span> my days <span class="highlight">wandering</span> around the city. (我花白天時間在城裡漫步。)</p>
+            </div>
+            <div class="grammar-card">
+                <h3>3. 現在進行式 (表未來計畫)</h3>
+                <p><b>句型：</b>be + going to + 原形動詞</p>
+                <p><b>例句：</b>Tonight, I<span class="highlight">’m going to surprise</span> my wife. (今晚，我打算要給妻子驚喜。)</p>
+            </div>
+        </div>
+
     </div>
 
-    <div class="quiz-box" style="border-left-color: #2ecc71; background-color: #eafaf1;">
-        <div class="quiz-title">🎯 字彙測驗 (點擊底線看正確選項)</div>
-        <div class="question-line">1. Beverly eats lots of snacks <span class="blank" onclick="revealAnswer(this, '(B) between')">______</span> meals. That's why she is often too full to eat anything at mealtimes.</div>
-        <div class="question-line">2. The last five years have not been <span class="blank" onclick="revealAnswer(this, '(A) kind')">______</span> to Jennie. Her face is covered with lines and she looks much older than she is.</div>
-        <div class="question-line">3. Jane is going fishing tomorrow. She wants to know <span class="blank" onclick="revealAnswer(this, '(C) whether')">______</span> the weather will be fine.</div>
-        <div class="question-line">4. Dean was scared to death when he was <span class="blank" onclick="revealAnswer(this, '(C) attacked')">______</span> by the wild dogs.</div>
-        <div class="question-line">5. Caroline is not <span class="blank" onclick="revealAnswer(this, '(A) afraid')">______</span> of anything. She is a brave girl.</div>
-    </div>
-</div>
-
-<!-- 互動式單字卡彈出視窗 -->
-<div id="vocabModal">
-    <div class="modal-content">
-        <div class="modal-word" id="modalWord">Word</div>
-        <div class="modal-meaning" id="modalMeaning">意思</div>
-        <div class="modal-note" id="modalNote">筆記與文法提示</div>
-        <button class="close-btn" onclick="closeModal()">關閉 (Close)</button>
-    </div>
-</div>
-
-<script>
-    // 切換中文翻譯顯示/隱藏
-    let isTranslationHidden = false;
-    function toggleTranslation() {
-        const translations = document.querySelectorAll('.translation');
-        const btn = document.getElementById('toggleBtn');
-        isTranslationHidden = !isTranslationHidden;
-        translations.forEach(el => {
-            if (isTranslationHidden) el.classList.add('hidden');
-            else el.classList.remove('hidden');
-        });
-        if (isTranslationHidden) {
-            btn.innerHTML = '👁️ 顯示中文翻譯';
-            btn.style.backgroundColor = '#e67e22';
-        } else {
-            btn.innerHTML = '👁️ 隱藏中文翻譯';
-            btn.style.backgroundColor = '#3498db';
+    <script>
+        // 切換 Unit 頁籤
+        function openUnit(evt, unitId) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("unit-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(unitId).style.display = "block";
+            evt.currentTarget.className += " active";
         }
-    }
 
-    // 處理點擊單字顯示字卡
-    const modal = document.getElementById('vocabModal');
-    const modalWord = document.getElementById('modalWord');
-    const modalMeaning = document.getElementById('modalMeaning');
-    const modalNote = document.getElementById('modalNote');
-    const vocabs = document.querySelectorAll('.vocab');
+        // 顯示/隱藏 中文翻譯
+        function toggleTranslation(unitId) {
+            var unit = document.getElementById(unitId);
+            var zhTexts = unit.getElementsByClassName("zh-text");
+            var isHidden = true;
+            
+            // 檢查目前的狀態
+            if(zhTexts.length > 0 && zhTexts[0].style.display === "block") {
+                isHidden = false;
+            }
 
-    vocabs.forEach(vocab => {
-        vocab.addEventListener('click', function() {
-            modalWord.innerText = this.getAttribute('data-word');
-            modalMeaning.innerText = this.getAttribute('data-meaning');
-            modalNote.innerText = "💡 " + this.getAttribute('data-note');
-            modal.style.display = 'flex';
-        });
-    });
+            for (var i = 0; i < zhTexts.length; i++) {
+                if (isHidden) {
+                    zhTexts[i].style.display = "block";
+                } else {
+                    zhTexts[i].style.display = "none";
+                }
+            }
+        }
 
-    function closeModal() { modal.style.display = 'none'; }
-    window.onclick = function(event) { if (event.target == modal) closeModal(); }
-
-    // 測驗區點擊揭曉答案
-    function revealAnswer(element, answerText) {
-        element.innerHTML = answerText;
-        element.classList.add('revealed');
-    }
-</script>
-
+        // 單字卡翻面效果
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+            var zhText = card.querySelector('.vocab-zh');
+            if (card.classList.contains('flipped')) {
+                zhText.style.display = "block";
+            } else {
+                zhText.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
+"""
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("HTML file generated successfully.")
