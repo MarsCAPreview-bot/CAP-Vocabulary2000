@@ -1,4 +1,4 @@
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
@@ -36,11 +36,12 @@ html_content = """<!DOCTYPE html>
             font-size: 1em;
             opacity: 0.9;
         }
+        /* 頁籤導覽列 */
         .nav-tabs {
             display: flex;
             overflow-x: auto;
             background-color: #333;
-            -webkit-overflow-scrolling: touch;
+            -webkit-overflow-scrolling: touch; /* 讓 iPad 觸控滑動更順暢 */
         }
         .nav-tabs button {
             flex: 1;
@@ -117,7 +118,7 @@ html_content = """<!DOCTYPE html>
             margin-top: 8px;
             padding-top: 8px;
             border-top: 1px dashed #eee;
-            display: none;
+            display: none; /* 預設隱藏中文 */
         }
 
         /* 單字卡區塊 */
@@ -180,7 +181,7 @@ html_content = """<!DOCTYPE html>
             color: #c0392b;
         }
         
-        /* 響應式 */
+        /* 響應式 (手機/iPad 直式) */
         @media (max-width: 600px) {
             .en-text { font-size: 1.1em; }
             .vocab-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
@@ -190,10 +191,11 @@ html_content = """<!DOCTYPE html>
 <body>
 
     <div class="header">
-        <h1>國中英文閱讀特訓</h1>
-        <p>點擊單字卡可翻面，點擊按鈕可顯示/隱藏中文翻譯 (適合 iPad 閱讀)</p>
+        <h1>國中英文閱讀與單字文法特訓</h1>
+        <p>點擊上方頁籤切換文章 | 點擊單字卡可翻面測驗 | 點擊按鈕顯示/隱藏中文</p>
     </div>
 
+    <!-- 導覽頁籤 -->
     <div class="nav-tabs">
         <button class="tab-link active" onclick="openUnit(event, 'unit18')">Unit 18 巨龍之島</button>
         <button class="tab-link" onclick="openUnit(event, 'unit19')">Unit 19 跳蚤市場</button>
@@ -203,11 +205,11 @@ html_content = """<!DOCTYPE html>
 
     <div class="container">
         
-        <!-- ================= Unit 18 ================= -->
+        <!-- ================= Unit 18: Komodo ================= -->
         <div id="unit18" class="unit-content" style="display: block;">
             <h2 class="section-title">📖 閱讀：Komodo: The Island of Dragons</h2>
             <div class="controls">
-                <button class="btn-toggle" onclick="toggleTranslation('unit18')">顯示 / 隱藏全部中文</button>
+                <button class="btn-toggle" onclick="toggleTranslation('unit18')">👀 顯示 / 隱藏全部中文</button>
             </div>
             <div class="reading-area">
                 <div class="sentence-row"><div class="en-text">In between the Flores Sea and the Indian Ocean, there is a tiny island filled with dragons.</div><div class="zh-text">在弗洛勒斯海和印度洋之間，有一個充滿巨龍的小島。</div></div>
@@ -221,11 +223,11 @@ html_content = """<!DOCTYPE html>
                 <div class="sentence-row"><div class="en-text">Komodo Island has much more than dragons, though.</div><div class="zh-text">不過，科摩多島擁有的遠不止巨龍。</div></div>
                 <div class="sentence-row"><div class="en-text">It is only about 2 million years old, which is young for an island.</div><div class="zh-text">它大約只有 200 萬年的歷史，對一個島嶼來說算是年輕的。</div></div>
                 <div class="sentence-row"><div class="en-text">There are many kinds of unique animals on the island, such as monkeys, deer, pigs, birds, buffalo, and the Komodo dragon.</div><div class="zh-text">島上有許多種類獨特的動物，例如猴子、鹿、豬、鳥類、水牛，以及科摩多龍。</div></div>
-                <div class="sentence-row"><div class="en-text">Komodo Island also has a beach with pink sand. This is only one of seven in the world.</div><div class="zh-text">科摩多島還有一個有著粉紅色沙子的海灘。這是世界上僅有的七個之一。</div></div>
+                <div class="sentence-row"><div class="en-text">Komodo Island also has a beach with pink sand. This is only one of seven in the world.</div><div class="zh-text">科摩多島還有一個有著粉紅色沙子的海灘。這是世界上僅有的七個(粉紅沙灘)之一。</div></div>
                 <div class="sentence-row"><div class="en-text">Whether you want to take a picture on a pink beach or see a giant lizard, Komodo Island has something for everyone!</div><div class="zh-text">無論你是想在粉紅色的海灘上拍照，還是看巨大的蜥蜴，科摩多島都能滿足每個人的需求！</div></div>
             </div>
 
-            <h2 class="section-title">🎯 互動單字卡 (點擊翻面)</h2>
+            <h2 class="section-title">🎯 互動單字卡 (點擊卡片翻面)</h2>
             <div class="vocab-grid">
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">between</div><div class="vocab-zh">在...之間</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">ocean</div><div class="vocab-zh">海洋</div></div>
@@ -234,7 +236,7 @@ html_content = """<!DOCTYPE html>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">exist</div><div class="vocab-zh">存在</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">weigh</div><div class="vocab-zh">重量有...</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">hunt</div><div class="vocab-zh">獵捕</div></div>
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">poison</div><div class="vocab-zh">毒液</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">poison</div><div class="vocab-zh">毒物；毒液</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">blood</div><div class="vocab-zh">血液</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">seldom</div><div class="vocab-zh">很少 (頻率副詞)</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">attack</div><div class="vocab-zh">攻擊</div></div>
@@ -257,11 +259,11 @@ html_content = """<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- ================= Unit 19 ================= -->
+        <!-- ================= Unit 19: Flea Market ================= -->
         <div id="unit19" class="unit-content">
             <h2 class="section-title">📖 閱讀：Bear River High School Flea Market</h2>
             <div class="controls">
-                <button class="btn-toggle" onclick="toggleTranslation('unit19')">顯示 / 隱藏全部中文</button>
+                <button class="btn-toggle" onclick="toggleTranslation('unit19')">👀 顯示 / 隱藏全部中文</button>
             </div>
             <div class="reading-area">
                 <div class="sentence-row"><div class="en-text">Do you want to create space in your closet?</div><div class="zh-text">你想要騰出衣櫥裡的空間嗎？</div></div>
@@ -277,15 +279,15 @@ html_content = """<!DOCTYPE html>
                 <div class="sentence-row"><div class="en-text">Please bring cash to the sale, as we will not take credit cards.</div><div class="zh-text">特賣會請攜帶現金，因為我們不接受信用卡。</div></div>
             </div>
 
-            <h2 class="section-title">🎯 互動單字卡 (點擊翻面)</h2>
+            <h2 class="section-title">🎯 互動單字卡 (點擊卡片翻面)</h2>
             <div class="vocab-grid">
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">flea market</div><div class="vocab-zh">跳蚤市場</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">closet</div><div class="vocab-zh">衣櫥</div></div>
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">donation</div><div class="vocab-zh">捐獻</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">donation</div><div class="vocab-zh">捐款；捐獻</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">accept</div><div class="vocab-zh">接受</div></div>
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">receive</div><div class="vocab-zh">獲得；收到</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">receive</div><div class="vocab-zh">收到；獲得</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">underwear</div><div class="vocab-zh">內衣</div></div>
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">scarf</div><div class="vocab-zh">圍巾</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">scarf</div><div class="vocab-zh">圍巾 (單數)</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">raise</div><div class="vocab-zh">籌集(資金)</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">charity</div><div class="vocab-zh">慈善團體</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">cash</div><div class="vocab-zh">現金</div></div>
@@ -305,30 +307,32 @@ html_content = """<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- ================= Unit 20 ================= -->
+        <!-- ================= Unit 20: Tour Bus ================= -->
         <div id="unit20" class="unit-content">
             <h2 class="section-title">📖 閱讀：Rosefield Tour Bus</h2>
             <div class="controls">
-                <button class="btn-toggle" onclick="toggleTranslation('unit20')">顯示 / 隱藏全部中文</button>
+                <button class="btn-toggle" onclick="toggleTranslation('unit20')">👀 顯示 / 隱藏全部中文</button>
             </div>
             <div class="reading-area">
                 <div class="sentence-row"><div class="en-text">Regular times may change on national holidays.</div><div class="zh-text">正常時間可能會在國定假日有所變動。</div></div>
+                <div class="sentence-row"><div class="en-text">WEST LINE ---> $18.50 per person (Under 12s: $10)</div><div class="zh-text">西線 ---> 每人 18.50 美元（12歲以下：10 美元）</div></div>
                 <div class="sentence-row"><div class="en-text">CIRCLE LINE (Express Service) ---> $24.50 per adult and $14 for youth under 18.</div><div class="zh-text">環狀線（快速服務）---> 成人 24.50 美元，18歲以下青少年 14 美元。</div></div>
                 <div class="sentence-row"><div class="en-text">Tickets bought on the Internet are 10-15% cheaper.</div><div class="zh-text">在網路上購買的車票便宜 10-15%。</div></div>
                 <div class="sentence-row"><div class="en-text">Save an extra 10% on your ticket price for a “BOTH LINES TICKET”.</div><div class="zh-text">購買「雙線車票」可額外節省 10% 的票價。</div></div>
                 <div class="sentence-row"><div class="en-text">Buses leave every 45 minutes from King’s Station.</div><div class="zh-text">國王車站每 45 分鐘發一班車。</div></div>
-                <div class="sentence-row"><div class="en-text">Priority seats are marked in green.</div><div class="zh-text">博愛座標示為綠色。</div></div>
+                <div class="sentence-row"><div class="en-text">Priority seats are marked in green.</div><div class="zh-text">博愛座（優先座位）標示為綠色。</div></div>
                 <div class="sentence-row"><div class="en-text">Due to traffic, buses will not stop at the Sports Ground on the day of a game.</div><div class="zh-text">由於交通因素，比賽當天巴士將不停靠運動場。</div></div>
             </div>
 
-            <h2 class="section-title">🎯 互動單字卡 (點擊翻面)</h2>
+            <h2 class="section-title">🎯 互動單字卡 (點擊卡片翻面)</h2>
             <div class="vocab-grid">
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">tour</div><div class="vocab-zh">觀光；參觀</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">regular</div><div class="vocab-zh">規律的；正常的</div></div>
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">national</div><div class="vocab-zh">國家的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">national</div><div class="vocab-zh">國家的；全國性的</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">express</div><div class="vocab-zh">快速的；直達的</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">youth</div><div class="vocab-zh">青少年</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">extra</div><div class="vocab-zh">額外的</div></div>
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">priority</div><div class="vocab-zh">優先</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">priority</div><div class="vocab-zh">優先 (事項)</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">traffic</div><div class="vocab-zh">交通</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">due to</div><div class="vocab-zh">由於；因為</div></div>
             </div>
@@ -337,20 +341,20 @@ html_content = """<!DOCTYPE html>
             <div class="grammar-card">
                 <h3>1. 時間介系詞 on 的用法</h3>
                 <p><b>說明：</b>表達「在特定的日子」或「節日當天」時，介系詞要用 on。</p>
-                <p><b>例句：</b>...may change <span class="highlight">on</span> national holidays. (在國定假日...)</p>
+                <p><b>例句：</b>...may change <span class="highlight">on</span> national holidays. (在國定假日可能會變動。)</p>
             </div>
             <div class="grammar-card">
                 <h3>2. Every + 時間段 (每隔...)</h3>
                 <p><b>說明：</b>表示頻率，說明每隔多少時間發生一次。</p>
-                <p><b>例句：</b>Buses leave <span class="highlight">every 45 minutes</span>. (每 45 分鐘發一班車。)</p>
+                <p><b>例句：</b>Buses leave <span class="highlight">every 45 minutes</span>. (巴士每 45 分鐘發一班車。)</p>
             </div>
         </div>
 
-        <!-- ================= Unit 21 ================= -->
+        <!-- ================= Unit 21: Greetings from Spain ================= -->
         <div id="unit21" class="unit-content">
             <h2 class="section-title">📖 閱讀：Mr. Johnson's Greetings from Spain</h2>
             <div class="controls">
-                <button class="btn-toggle" onclick="toggleTranslation('unit21')">顯示 / 隱藏全部中文</button>
+                <button class="btn-toggle" onclick="toggleTranslation('unit21')">👀 顯示 / 隱藏全部中文</button>
             </div>
             <div class="reading-area">
                 <div class="sentence-row"><div class="en-text">I’m sending you this quick e-mail from Barcelona, Spain.</div><div class="zh-text">我從西班牙巴塞隆納發這封簡短的電子郵件給你們。</div></div>
@@ -363,24 +367,24 @@ html_content = """<!DOCTYPE html>
                 <div class="sentence-row"><div class="en-text">I’m not allowed to take photos inside. If I did, it would ruin the secret.</div><div class="zh-text">裡面不允許拍照。如果我拍了，就會破壞這個秘密。</div></div>
             </div>
 
-            <h2 class="section-title">🎯 互動單字卡 (點擊翻面)</h2>
+            <h2 class="section-title">🎯 互動單字卡 (點擊卡片翻面)</h2>
             <div class="vocab-grid">
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">vacation</div><div class="vocab-zh">假期</div></div>
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">fantastic</div><div class="vocab-zh">極好的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">fantastic</div><div class="vocab-zh">極好的；美妙的</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">instrument</div><div class="vocab-zh">樂器</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">sidewalk</div><div class="vocab-zh">人行道</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">especially</div><div class="vocab-zh">尤其；特別是</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">architect</div><div class="vocab-zh">建築師</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">wander</div><div class="vocab-zh">漫遊；閒逛</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">surprise</div><div class="vocab-zh">給...驚喜</div></div>
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">ruin</div><div class="vocab-zh">破壞</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">ruin</div><div class="vocab-zh">破壞；毀滅</div></div>
             </div>
 
             <h2 class="section-title">✍️ 關鍵文法</h2>
             <div class="grammar-card">
                 <h3>1. 感官動詞 + 受詞 + V-ing</h3>
                 <p><b>說明：</b>表達「聽到/看到某人『正在』做某事」，強調動作正在進行。</p>
-                <p><b>例句：</b>I can <span class="highlight">hear</span> musicians <span class="highlight">playing</span> their instruments. (我能聽到音樂家們正在演奏...)</p>
+                <p><b>例句：</b>I can <span class="highlight">hear</span> musicians <span class="highlight">playing</span> their instruments. (我能聽到音樂家們正在演奏樂器。)</p>
             </div>
             <div class="grammar-card">
                 <h3>2. spend (花費) 的用法</h3>
@@ -396,18 +400,25 @@ html_content = """<!DOCTYPE html>
 
     </div>
 
+    <!-- 互動功能程式碼 -->
     <script>
         // 切換 Unit 頁籤
         function openUnit(evt, unitId) {
             var i, tabcontent, tablinks;
+            
+            // 隱藏所有內容
             tabcontent = document.getElementsByClassName("unit-content");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
+            
+            // 移除所有頁籤的 active 狀態
             tablinks = document.getElementsByClassName("tab-link");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
+            
+            // 顯示當前點擊的內容，並設定按鈕為 active
             document.getElementById(unitId).style.display = "block";
             evt.currentTarget.className += " active";
         }
@@ -418,7 +429,7 @@ html_content = """<!DOCTYPE html>
             var zhTexts = unit.getElementsByClassName("zh-text");
             var isHidden = true;
             
-            // 檢查目前的狀態
+            // 檢查第一句的狀態來判斷目前是隱藏還是顯示
             if(zhTexts.length > 0 && zhTexts[0].style.display === "block") {
                 isHidden = false;
             }
@@ -445,9 +456,3 @@ html_content = """<!DOCTYPE html>
     </script>
 </body>
 </html>
-"""
-
-with open("index.html", "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-print("HTML file generated successfully.")
