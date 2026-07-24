@@ -41,7 +41,7 @@
             display: flex;
             overflow-x: auto;
             background-color: #333;
-            -webkit-overflow-scrolling: touch; /* 讓 iPad 觸控滑動更順暢 */
+            -webkit-overflow-scrolling: touch;
         }
         .nav-tabs button {
             flex: 1;
@@ -118,20 +118,28 @@
             margin-top: 8px;
             padding-top: 8px;
             border-top: 1px dashed #eee;
-            display: none; /* 預設隱藏中文 */
+            display: none;
+        }
+        .email-header {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin-bottom: 15px;
+            font-size: 0.9em;
         }
 
         /* 單字卡區塊 */
         .vocab-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
             gap: 15px;
         }
         .vocab-card {
             background-color: #fff3cd;
             border: 2px solid #ffeeba;
             border-radius: 12px;
-            padding: 20px 10px;
+            padding: 15px 10px;
             text-align: center;
             cursor: pointer;
             transition: transform 0.2s, background-color 0.2s;
@@ -142,14 +150,14 @@
             transform: scale(0.95);
         }
         .vocab-en {
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: bold;
             color: #856404;
         }
         .vocab-zh {
             display: none;
             margin-top: 10px;
-            font-size: 1em;
+            font-size: 0.95em;
             color: #2c3e50;
             font-weight: bold;
         }
@@ -181,10 +189,9 @@
             color: #c0392b;
         }
         
-        /* 響應式 (手機/iPad 直式) */
         @media (max-width: 600px) {
             .en-text { font-size: 1.1em; }
-            .vocab-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+            .vocab-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
         }
     </style>
 </head>
@@ -195,7 +202,6 @@
         <p>點擊上方頁籤切換文章 | 點擊單字卡可翻面測驗 | 點擊按鈕顯示/隱藏中文</p>
     </div>
 
-    <!-- 導覽頁籤 -->
     <div class="nav-tabs">
         <button class="tab-link active" onclick="openUnit(event, 'unit18')">Unit 18 巨龍之島</button>
         <button class="tab-link" onclick="openUnit(event, 'unit19')">Unit 19 跳蚤市場</button>
@@ -287,7 +293,7 @@
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">accept</div><div class="vocab-zh">接受</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">receive</div><div class="vocab-zh">收到；獲得</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">underwear</div><div class="vocab-zh">內衣</div></div>
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">scarf</div><div class="vocab-zh">圍巾 (單數)</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">scarf</div><div class="vocab-zh">圍巾</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">raise</div><div class="vocab-zh">籌集(資金)</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">charity</div><div class="vocab-zh">慈善團體</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">cash</div><div class="vocab-zh">現金</div></div>
@@ -350,34 +356,65 @@
             </div>
         </div>
 
-        <!-- ================= Unit 21: Greetings from Spain ================= -->
+        <!-- ================= Unit 21: Greetings from Spain (修正後完整版) ================= -->
         <div id="unit21" class="unit-content">
             <h2 class="section-title">📖 閱讀：Mr. Johnson's Greetings from Spain</h2>
             <div class="controls">
                 <button class="btn-toggle" onclick="toggleTranslation('unit21')">👀 顯示 / 隱藏全部中文</button>
             </div>
             <div class="reading-area">
-                <div class="sentence-row"><div class="en-text">I’m sending you this quick e-mail from Barcelona, Spain.</div><div class="zh-text">我從西班牙巴塞隆納發這封簡短的電子郵件給你們。</div></div>
+                <div class="sentence-row">
+                    <div class="email-header">
+                        To: 9thgradeclass@elite.edu<br>
+                        From: Johnson@elite.edu<br>
+                        Subject: Mr. Johnson's Greetings from Spain
+                    </div>
+                </div>
+                <div class="sentence-row"><div class="en-text">Dear Students,</div><div class="zh-text">親愛的學生們：</div></div>
+                <div class="sentence-row"><div class="en-text">It’s Mr. Johnson here.</div><div class="zh-text">我是強森老師。</div></div>
+                <div class="sentence-row"><div class="en-text">I’m sending you this quick e-mail from Barcelona, Spain.</div><div class="zh-text">我從西班牙巴塞隆納寄這封簡短的電子郵件給你們。</div></div>
+                <div class="sentence-row"><div class="en-text">I hope you’re all enjoying your vacation time.</div><div class="zh-text">我希望你們都很享受假期。</div></div>
+                <div class="sentence-row"><div class="en-text">Spain is fantastic!</div><div class="zh-text">西班牙太棒了！</div></div>
+                <div class="sentence-row"><div class="en-text">Right now I’m sitting in a coffee shop.</div><div class="zh-text">現在我正坐在一家咖啡店裡。</div></div>
                 <div class="sentence-row"><div class="en-text">I can hear musicians playing their instruments on the sidewalk outside.</div><div class="zh-text">我能聽到音樂家們在外面的人行道上演奏樂器。</div></div>
                 <div class="sentence-row"><div class="en-text">One of my favorite places in Barcelona is a famous park where you can see lots of nice art.</div><div class="zh-text">在巴塞隆納，我最喜歡的地方之一是一個著名的公園，在那裡你可以看到許多精美的藝術品。</div></div>
                 <div class="sentence-row"><div class="en-text">There are also some really interesting buildings in Barcelona, especially the ones designed by the famous architect Gaudí.</div><div class="zh-text">巴塞隆納也有一些非常有趣的建築，特別是由著名建築師高第設計的那些。</div></div>
                 <div class="sentence-row"><div class="en-text">One of his buildings, the Sagrada Família, has taken 130 years to build—and it’s still not finished!</div><div class="zh-text">他的其中一棟建築，聖家堂，已經花費了 130 年建造——而且還沒完工！</div></div>
                 <div class="sentence-row"><div class="en-text">I spend my days wandering around the city and my nights eating at amazing restaurants.</div><div class="zh-text">我白天在城市裡漫步，晚上在很棒的餐廳裡吃飯。</div></div>
                 <div class="sentence-row"><div class="en-text">Tonight, I’m going to surprise my wife by taking her to a secret restaurant.</div><div class="zh-text">今晚，我要帶我妻子去一家秘密餐廳，給她一個驚喜。</div></div>
-                <div class="sentence-row"><div class="en-text">I’m not allowed to take photos inside. If I did, it would ruin the secret.</div><div class="zh-text">裡面不允許拍照。如果我拍了，就會破壞這個秘密。</div></div>
+                <div class="sentence-row"><div class="en-text">I’m not allowed to take photos inside.</div><div class="zh-text">裡面不允許拍照。</div></div>
+                <div class="sentence-row"><div class="en-text">If I did, it would ruin the secret.</div><div class="zh-text">如果我拍了，就會破壞這個秘密。</div></div>
+                <div class="sentence-row"><div class="en-text">That’s it for now. I’ll see you all after winter break.</div><div class="zh-text">這次就先寫到這裡。寒假後見。</div></div>
+                <div class="sentence-row"><div class="en-text">Enjoy your time off!</div><div class="zh-text">好好享受你們的休假吧！</div></div>
+                <div class="sentence-row"><div class="en-text">All the best,<br>Mr. Johnson</div><div class="zh-text">祝好，<br>強森老師</div></div>
             </div>
 
             <h2 class="section-title">🎯 互動單字卡 (點擊卡片翻面)</h2>
             <div class="vocab-grid">
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">send</div><div class="vocab-zh">寄送</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">quick</div><div class="vocab-zh">快速的；簡短的</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">vacation</div><div class="vocab-zh">假期</div></div>
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">fantastic</div><div class="vocab-zh">極好的；美妙的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">fantastic</div><div class="vocab-zh">極好的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">musician</div><div class="vocab-zh">音樂家</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">instrument</div><div class="vocab-zh">樂器</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">sidewalk</div><div class="vocab-zh">人行道</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">outside</div><div class="vocab-zh">在外面</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">favorite</div><div class="vocab-zh">最喜愛的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">interesting</div><div class="vocab-zh">有趣的</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">especially</div><div class="vocab-zh">尤其；特別是</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">design</div><div class="vocab-zh">設計</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">architect</div><div class="vocab-zh">建築師</div></div>
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">wander</div><div class="vocab-zh">漫遊；閒逛</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">wander</div><div class="vocab-zh">閒逛；徘徊</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">amazing</div><div class="vocab-zh">驚人的</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">restaurant</div><div class="vocab-zh">餐廳</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">tonight</div><div class="vocab-zh">今晚</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">surprise</div><div class="vocab-zh">給...驚喜</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">secret</div><div class="vocab-zh">秘密</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">photo</div><div class="vocab-zh">照片</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">inside</div><div class="vocab-zh">在裡面</div></div>
                 <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">ruin</div><div class="vocab-zh">破壞；毀滅</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">break</div><div class="vocab-zh">休息；假期</div></div>
+                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">time off</div><div class="vocab-zh">休假</div></div>
             </div>
 
             <h2 class="section-title">✍️ 關鍵文法</h2>
