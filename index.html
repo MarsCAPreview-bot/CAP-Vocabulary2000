@@ -117,7 +117,7 @@
 
         /* 單字卡背面與拆字提示 */
         .vocab-zh-wrapper { display: none; margin-top: 10px; }
-        .vocab-zh { font-size: 1.05em; color: #2c3e50; font-weight: bold; }
+        .vocab-zh { font-size: 1.05em; color: #2c3e50; font-weight: bold; line-height: 1.4; }
         .vocab-tip {
             font-size: 0.85em; color: #d35400; margin-top: 8px;
             padding-top: 8px; border-top: 1px dashed #d6a54a; font-weight: normal;
@@ -183,6 +183,7 @@
 
             <h2 class="section-title">🎯 互動單字卡 (附音節拆字)</h2>
             <div class="vocab-grid">
+                <!-- 原有單字 -->
                 <div class="vocab-card" onclick="flipCard(this)">
                     <div class="vocab-en">between <button class="speak-btn" onclick="speakWord('between', event)">🔊</button></div>
                     <div class="vocab-zh-wrapper"><div class="vocab-zh">在...之間</div><div class="vocab-tip">拆字：be-tween</div></div>
@@ -239,6 +240,15 @@
                     <div class="vocab-en">whether <button class="speak-btn" onclick="speakWord('whether', event)">🔊</button></div>
                     <div class="vocab-zh-wrapper"><div class="vocab-zh">無論；是否</div><div class="vocab-tip">拆字：wheth-er</div></div>
                 </div>
+                <!-- 新增單字 -->
+                <div class="vocab-card" onclick="flipCard(this)">
+                    <div class="vocab-en">though <button class="speak-btn" onclick="speakWord('though', event)">🔊</button></div>
+                    <div class="vocab-zh-wrapper"><div class="vocab-zh">不過；然而</div><div class="vocab-tip">單音節<br>(ou發/o/, gh不發音)</div></div>
+                </div>
+                <div class="vocab-card" onclick="flipCard(this)">
+                    <div class="vocab-en">kind <button class="speak-btn" onclick="speakWord('kind', event)">🔊</button></div>
+                    <div class="vocab-zh-wrapper"><div class="vocab-zh">(n.) 種類<br>(adj.) 親切的</div><div class="vocab-tip">單音節<br>(i發長音 /aɪ/)</div></div>
+                </div>
             </div>
 
             <h2 class="section-title">✍️ 關鍵文法</h2>
@@ -256,25 +266,39 @@
                 <button class="btn-toggle" onclick="toggleTranslation('unit19')">👀 顯示 / 隱藏全部中文</button>
             </div>
             <div class="reading-area">
-                <!-- 略過重複的課文 HTML，請保留跟上一版一樣的課文 -->
                 <div class="sentence-row"><div class="en-text">Do you want to create space in your closet?</div><div class="zh-text">你想要騰出衣櫥裡的空間嗎？</div></div>
                 <div class="sentence-row"><div class="en-text">Give five things to our flea market & take one item home for free!</div><div class="zh-text">捐五件物品給我們的跳蚤市場，就能免費帶一件物品回家！</div></div>
                 <div class="sentence-row"><div class="en-text">Donations will be accepted in the school gym between April 5 - April 10.</div><div class="zh-text">4月5日至4月10日之間，學校體育館將接受捐贈。</div></div>
                 <div class="sentence-row"><div class="en-text">Receive a ticket for one free item on the day of the sale for every five pieces of clothing you bring.</div><div class="zh-text">每帶來五件衣服，就能獲得一張在特賣當天免費兌換一件物品的兌換券。</div></div>
                 <div class="sentence-row"><div class="en-text">All kinds of clothing and sizes welcome, except underwear, socks, and shoes.</div><div class="zh-text">歡迎各種款式和尺寸的衣物，但不包含內衣、襪子和鞋子。</div></div>
+                <div class="sentence-row"><div class="en-text">Remember that all items must be clean.</div><div class="zh-text">請記住，所有物品必須是乾淨的。</div></div>
                 <div class="sentence-row"><div class="en-text">All money raised will be given to local animal charities.</div><div class="zh-text">所有籌集的資金將捐給當地的動物慈善機構。</div></div>
                 <div class="sentence-row"><div class="en-text">Please bring cash to the sale, as we will not take credit cards.</div><div class="zh-text">特賣會請攜帶現金，因為我們不接受信用卡。</div></div>
             </div>
 
             <h2 class="section-title">🎯 互動單字卡 (附音節拆字)</h2>
             <div class="vocab-grid">
+                <!-- 新增/更新單字 -->
                 <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">flea market <button class="speak-btn" onclick="speakWord('flea market', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">跳蚤市場</div><div class="vocab-tip">拆字：flea / mar-ket</div></div>
+                    <div class="vocab-en">bear <button class="speak-btn" onclick="speakWord('bear', event)">🔊</button></div>
+                    <div class="vocab-zh-wrapper"><div class="vocab-zh">(n.) 熊<br>(v.) 忍受；承受</div><div class="vocab-tip">單音節<br>(ear 發 /ɛr/)</div></div>
                 </div>
                 <div class="vocab-card" onclick="flipCard(this)">
                     <div class="vocab-en">closet <button class="speak-btn" onclick="speakWord('closet', event)">🔊</button></div>
                     <div class="vocab-zh-wrapper"><div class="vocab-zh">衣櫥</div><div class="vocab-tip">拆字：clos-et</div></div>
+                </div>
+                <div class="vocab-card" onclick="flipCard(this)">
+                    <div class="vocab-en">remember <button class="speak-btn" onclick="speakWord('remember', event)">🔊</button></div>
+                    <div class="vocab-zh-wrapper"><div class="vocab-zh">記得</div><div class="vocab-tip">拆字：re-mem-ber</div></div>
+                </div>
+                <div class="vocab-card" onclick="flipCard(this)">
+                    <div class="vocab-en">raise <button class="speak-btn" onclick="speakWord('raise', event)">🔊</button></div>
+                    <div class="vocab-zh-wrapper"><div class="vocab-zh">籌集(資金)<br>舉起</div><div class="vocab-tip">單音節<br>(ai 發 /e/)</div></div>
+                </div>
+                <!-- 原有單字 -->
+                <div class="vocab-card" onclick="flipCard(this)">
+                    <div class="vocab-en">flea market <button class="speak-btn" onclick="speakWord('flea market', event)">🔊</button></div>
+                    <div class="vocab-zh-wrapper"><div class="vocab-zh">跳蚤市場</div><div class="vocab-tip">拆字：flea / mar-ket</div></div>
                 </div>
                 <div class="vocab-card" onclick="flipCard(this)">
                     <div class="vocab-en">donation <button class="speak-btn" onclick="speakWord('donation', event)">🔊</button></div>
@@ -324,6 +348,20 @@
 
             <h2 class="section-title">🎯 互動單字卡 (附音節拆字)</h2>
             <div class="vocab-grid">
+                <!-- 新增單字 -->
+                <div class="vocab-card" onclick="flipCard(this)">
+                    <div class="vocab-en">central <button class="speak-btn" onclick="speakWord('central', event)">🔊</button></div>
+                    <div class="vocab-zh-wrapper"><div class="vocab-zh">中心的；中央的</div><div class="vocab-tip">拆字：cen-tral<br>(c在e前發/s/)</div></div>
+                </div>
+                <div class="vocab-card" onclick="flipCard(this)">
+                    <div class="vocab-en">circle <button class="speak-btn" onclick="speakWord('circle', event)">🔊</button></div>
+                    <div class="vocab-zh-wrapper"><div class="vocab-zh">圓圈；環狀</div><div class="vocab-tip">拆字：cir-cle<br>(c在i前發/s/)</div></div>
+                </div>
+                <div class="vocab-card" onclick="flipCard(this)">
+                    <div class="vocab-en">service <button class="speak-btn" onclick="speakWord('service', event)">🔊</button></div>
+                    <div class="vocab-zh-wrapper"><div class="vocab-zh">服務</div><div class="vocab-tip">拆字：ser-vice</div></div>
+                </div>
+                <!-- 原有單字 -->
                 <div class="vocab-card" onclick="flipCard(this)">
                     <div class="vocab-en">tour <button class="speak-btn" onclick="speakWord('tour', event)">🔊</button></div>
                     <div class="vocab-zh-wrapper"><div class="vocab-zh">觀光；參觀</div><div class="vocab-tip">單音節 (聽發音)</div></div>
@@ -386,6 +424,24 @@
 
             <h2 class="section-title">🎯 互動單字卡 (附音節拆字)</h2>
             <div class="vocab-grid">
+                <!-- 新增單字 -->
+                <div class="vocab-card" onclick="flipCard(this)">
+                    <div class="vocab-en">musician <button class="speak-btn" onclick="speakWord('musician', event)">🔊</button></div>
+                    <div class="vocab-zh-wrapper"><div class="vocab-zh">音樂家</div><div class="vocab-tip">拆字：mu-si-cian<br>(cian發/ʃən/)</div></div>
+                </div>
+                <div class="vocab-card" onclick="flipCard(this)">
+                    <div class="vocab-en">interesting <button class="speak-btn" onclick="speakWord('interesting', event)">🔊</button></div>
+                    <div class="vocab-zh-wrapper"><div class="vocab-zh">有趣的</div><div class="vocab-tip">拆字：in-ter-est-ing</div></div>
+                </div>
+                <div class="vocab-card" onclick="flipCard(this)">
+                    <div class="vocab-en">design <button class="speak-btn" onclick="speakWord('design', event)">🔊</button></div>
+                    <div class="vocab-zh-wrapper"><div class="vocab-zh">設計</div><div class="vocab-tip">拆字：de-sign<br>(g 不發音)</div></div>
+                </div>
+                <div class="vocab-card" onclick="flipCard(this)">
+                    <div class="vocab-en">secret <button class="speak-btn" onclick="speakWord('secret', event)">🔊</button></div>
+                    <div class="vocab-zh-wrapper"><div class="vocab-zh">秘密</div><div class="vocab-tip">拆字：se-cret</div></div>
+                </div>
+                <!-- 原有單字 -->
                 <div class="vocab-card" onclick="flipCard(this)">
                     <div class="vocab-en">vacation <button class="speak-btn" onclick="speakWord('vacation', event)">🔊</button></div>
                     <div class="vocab-zh-wrapper"><div class="vocab-zh">假期</div><div class="vocab-tip">拆字：va-ca-tion</div></div>
