@@ -118,12 +118,14 @@
             width: 28px; height: 28px; font-size: 0.9em; cursor: pointer;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex;
             justify-content: center; align-items: center;
+            flex-shrink: 0;
         }
         .speak-btn:hover { background: #ffca2c; transform: scale(1.1); }
         .speak-btn:active { transform: scale(0.9); }
 
-        /* 單字卡背面與拆字提示 */
+        /* 單字卡背面與拆字提示、KK音標 */
         .vocab-zh-wrapper { display: none; margin-top: 10px; }
+        .vocab-kk { font-family: 'Segoe UI', Arial, sans-serif; color: #6c757d; font-size: 0.9em; margin-bottom: 5px; letter-spacing: 1px; }
         .vocab-zh { font-size: 1.05em; color: #2c3e50; font-weight: bold; line-height: 1.4; }
         .vocab-tip {
             font-size: 0.85em; color: #d35400; margin-top: 8px;
@@ -172,9 +174,10 @@
 
     <div class="header">
         <h1>國中英文閱讀與單字特訓</h1>
-        <p>點擊 🔊 聽發音 | 點擊卡片看「拆字提示」 | 點擊按鈕顯示/隱藏中文</p>
+        <p>點擊 🔊 聽發音 | 點擊卡片看「KK音標與拆字提示」 | 點擊按鈕切換中文</p>
     </div>
 
+    <!-- 頁籤選單 -->
     <div class="nav-tabs">
         <button class="tab-link active" onclick="openUnit(event, 'unit18')">U18</button>
         <button class="tab-link" onclick="openUnit(event, 'unit19')">U19</button>
@@ -186,7 +189,7 @@
 
     <div class="container">
         
-        <!-- ================= 測驗模式 (Unit 18-22 總複習) ================= -->
+        <!-- ================= 測驗模式 ================= -->
         <div id="quiz-mode" class="unit-content">
             <h2 class="section-title" style="color: #d35400; border-bottom-color: #d35400;">🎧 聽音辨字總測驗</h2>
             <div class="controls" style="text-align: center; margin-bottom: 25px;">
@@ -197,7 +200,7 @@
             </div>
             
             <div class="vocab-grid" id="quiz-grid">
-                <!-- 這裡由最下方的 JavaScript 自動生成測驗卡片 -->
+                <!-- JavaScript 將會把測驗卡片塞進這裡 -->
             </div>
 
             <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #eee;">
@@ -207,74 +210,141 @@
             </div>
         </div>
 
-        <!-- ================= Unit 18: Komodo ================= -->
+        <!-- ================= Unit 18 ================= -->
         <div id="unit18" class="unit-content" style="display: block;">
             <h2 class="section-title">📖 閱讀：Komodo: The Island of Dragons</h2>
-            <div class="controls">
-                <button class="btn-toggle" onclick="toggleTranslation('unit18')">👀 顯示 / 隱藏全部中文</button>
-            </div>
+            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit18')">👀 顯示 / 隱藏全部中文</button></div>
             <div class="reading-area">
-                <!-- Unit 18 課文與單字省略以節省空間，請保持前一版的原樣 -->
                 <div class="sentence-row"><div class="en-text">In between the Flores Sea and the Indian Ocean, there is a tiny island filled with dragons.</div><div class="zh-text">在弗洛勒斯海和印度洋之間，有一個充滿巨龍的小島。</div></div>
+                <div class="sentence-row"><div class="en-text">It is called Komodo Island, and people from all over the world visit it to see the ancient animal that exists there.</div><div class="zh-text">它的名字叫科摩多島，來自世界各地的人們都會來這裡參觀存在於那裡的古老動物。</div></div>
+                <div class="sentence-row"><div class="en-text">The Komodo dragon is in fact not a dragon at all; it is the world’s largest lizard.</div><div class="zh-text">科摩多龍其實根本不是龍；牠是世界上最大的蜥蜴。</div></div>
+                <div class="sentence-row"><div class="en-text">They can grow up to three yards long and weigh about 90 kilograms.</div><div class="zh-text">牠們可以長到三碼長，重達約 90 公斤。</div></div>
+                <div class="sentence-row"><div class="en-text">They use their tails and sharp teeth to hunt deer and pigs.</div><div class="zh-text">牠們用尾巴和鋒利的牙齒來獵捕鹿和豬。</div></div>
+                <div class="sentence-row"><div class="en-text">When Komodo dragons bite an animal, they put poison into its blood.</div><div class="zh-text">當科摩多龍咬傷動物時，牠們會將毒液注入其血液中。</div></div>
+                <div class="sentence-row"><div class="en-text">This hurts the animal slowly until it dies.</div><div class="zh-text">這會慢慢地傷害動物直到牠死亡。</div></div>
+                <div class="sentence-row"><div class="en-text">They seldom attack humans, but if you ever see a Komodo dragon, you should still be afraid to get near it!</div><div class="zh-text">牠們很少攻擊人類，但如果你真的看到科摩多龍，你還是應該要害怕靠近牠！</div></div>
+                <div class="sentence-row"><div class="en-text">Komodo Island has much more than dragons, though.</div><div class="zh-text">不過，科摩多島擁有的遠不止巨龍。</div></div>
+                <div class="sentence-row"><div class="en-text">It is only about 2 million years old, which is young for an island.</div><div class="zh-text">它大約只有 200 萬年的歷史，對一個島嶼來說算是年輕的。</div></div>
+                <div class="sentence-row"><div class="en-text">There are many kinds of unique animals on the island, such as monkeys, deer, pigs, birds, buffalo, and the Komodo dragon.</div><div class="zh-text">島上有許多種類獨特的動物，例如猴子、鹿、豬、鳥類、水牛，以及科摩多龍。</div></div>
+                <div class="sentence-row"><div class="en-text">Komodo Island also has a beach with pink sand. This is only one of seven in the world.</div><div class="zh-text">科摩多島還有一個有著粉紅色沙子的海灘。這是世界上僅有的七個之一。</div></div>
                 <div class="sentence-row"><div class="en-text">Whether you want to take a picture on a pink beach or see a giant lizard, Komodo Island has something for everyone!</div><div class="zh-text">無論你是想在粉紅色的海灘上拍照，還是看巨大的蜥蜴，科摩多島都能滿足每個人的需求！</div></div>
             </div>
+            
             <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid">
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">between <button class="speak-btn" onclick="speakWord('between', event)">🔊</button></div><div class="vocab-zh-wrapper"><div class="vocab-zh">在...之間</div><div class="vocab-tip">拆字：be-tween</div></div></div>
+            <div class="vocab-grid" id="vocab-grid-18"></div>
+
+            <h2 class="section-title">✍️ 關鍵文法</h2>
+            <div class="grammar-card">
+                <h3>1. 頻率副詞的位置</h3>
+                <p><b>句型：</b>放在 Be 動詞之後，一般動詞之前。</p>
+                <p><b>例句：</b>They <span class="highlight">seldom attack</span> humans. (牠們很少攻擊人類。)</p>
             </div>
         </div>
 
-        <!-- ================= Unit 19: Flea Market ================= -->
+        <!-- ================= Unit 19 ================= -->
         <div id="unit19" class="unit-content">
             <h2 class="section-title">📖 閱讀：Bear River High School Flea Market</h2>
-            <div class="controls">
-                <button class="btn-toggle" onclick="toggleTranslation('unit19')">👀 顯示 / 隱藏全部中文</button>
-            </div>
+            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit19')">👀 顯示 / 隱藏全部中文</button></div>
             <div class="reading-area">
                 <div class="sentence-row"><div class="en-text">Do you want to create space in your closet?</div><div class="zh-text">你想要騰出衣櫥裡的空間嗎？</div></div>
+                <div class="sentence-row"><div class="en-text">Your old clothes could be somebody's new favorite!</div><div class="zh-text">你的舊衣服可能會成為別人的新歡！</div></div>
+                <div class="sentence-row"><div class="en-text">Give five things to our flea market & take one item home for free!</div><div class="zh-text">捐五件物品給我們的跳蚤市場，就能免費帶一件物品回家！</div></div>
+                <div class="sentence-row"><div class="en-text">Donations will be accepted in the school gym between April 5 - April 10.</div><div class="zh-text">4月5日至4月10日之間，學校體育館將接受捐贈。</div></div>
+                <div class="sentence-row"><div class="en-text">Receive a ticket for one free item on the day of the sale for every five pieces of clothing you bring.</div><div class="zh-text">每帶來五件衣服，就能獲得一張在特賣當天免費兌換一件物品的兌換券。</div></div>
+                <div class="sentence-row"><div class="en-text">All kinds of clothing and sizes welcome, except underwear, socks, and shoes.</div><div class="zh-text">歡迎各種款式和尺寸的衣物，但不包含內衣、襪子和鞋子。</div></div>
+                <div class="sentence-row"><div class="en-text">We also accept hats, bags, scarves, gloves, necklaces, and rings.</div><div class="zh-text">我們也接受帽子、包包、圍巾、手套、項鍊和戒指。</div></div>
+                <div class="sentence-row"><div class="en-text">Remember that all items must be clean.</div><div class="zh-text">請記住，所有物品必須是乾淨的。</div></div>
+                <div class="sentence-row"><div class="en-text">All money raised will be given to local animal charities.</div><div class="zh-text">所有籌集的資金將捐給當地的動物慈善機構。</div></div>
+                <div class="sentence-row"><div class="en-text">Don't take food or drink into the gym.</div><div class="zh-text">請勿攜帶食物或飲料進入體育館。</div></div>
+                <div class="sentence-row"><div class="en-text">Please bring cash to the sale, as we will not take credit cards.</div><div class="zh-text">特賣會請攜帶現金，因為我們不接受信用卡。</div></div>
             </div>
+            
             <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid">
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">bear <button class="speak-btn" onclick="speakWord('bear', event)">🔊</button></div><div class="vocab-zh-wrapper"><div class="vocab-zh">(n.) 熊<br>(v.) 忍受</div><div class="vocab-tip">單音節</div></div></div>
+            <div class="vocab-grid" id="vocab-grid-19"></div>
+
+            <h2 class="section-title">✍️ 關鍵文法</h2>
+            <div class="grammar-card">
+                <h3>1. 祈使句 (命令句) 的用法</h3>
+                <p><b>說明：</b>表示請求、命令或建議，省略主詞 You，直接用原形動詞開頭。</p>
+                <p><b>例句：</b><span class="highlight">Give</span> five things to our flea market... (捐出五件物品...)</p>
+            </div>
+            <div class="grammar-card">
+                <h3>2. 連接詞 as 的用法 (表原因)</h3>
+                <p><b>說明：</b>這裡的 as 意思是「因為」，用法等同於 because。</p>
             </div>
         </div>
 
-        <!-- ================= Unit 20: Tour Bus ================= -->
+        <!-- ================= Unit 20 ================= -->
         <div id="unit20" class="unit-content">
             <h2 class="section-title">📖 閱讀：Rosefield Tour Bus</h2>
-            <div class="controls">
-                <button class="btn-toggle" onclick="toggleTranslation('unit20')">👀 顯示 / 隱藏全部中文</button>
-            </div>
+            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit20')">👀 顯示 / 隱藏全部中文</button></div>
             <div class="reading-area">
                 <div class="sentence-row"><div class="en-text">Regular times may change on national holidays.</div><div class="zh-text">正常時間可能會在國定假日有所變動。</div></div>
+                <div class="sentence-row"><div class="en-text">WEST LINE ---> $18.50 per person (Under 12s: $10)</div><div class="zh-text">西線 ---> 每人 18.50 美元（12歲以下：10 美元）</div></div>
+                <div class="sentence-row"><div class="en-text">CIRCLE LINE (Express Service) ---> $24.50 per adult and $14 for youth under 18.</div><div class="zh-text">環狀線（快速服務）---> 成人 24.50 美元，18歲以下青少年 14 美元。</div></div>
+                <div class="sentence-row"><div class="en-text">Tickets bought on the Internet are 10-15% cheaper.</div><div class="zh-text">在網路上購買的車票便宜 10-15%。</div></div>
+                <div class="sentence-row"><div class="en-text">Save an extra 10% on your ticket price for a “BOTH LINES TICKET”.</div><div class="zh-text">購買「雙線車票」可額外節省 10% 的票價。</div></div>
+                <div class="sentence-row"><div class="en-text">Buses leave every 45 minutes from King’s Station.</div><div class="zh-text">國王車站每 45 分鐘發一班車。</div></div>
+                <div class="sentence-row"><div class="en-text">Priority seats are marked in green.</div><div class="zh-text">博愛座（優先座位）標示為綠色。</div></div>
+                <div class="sentence-row"><div class="en-text">Due to traffic, buses will not stop at the Sports Ground on the day of a game.</div><div class="zh-text">由於交通因素，比賽當天巴士將不停靠運動場。</div></div>
             </div>
+            
             <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid">
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">central <button class="speak-btn" onclick="speakWord('central', event)">🔊</button></div><div class="vocab-zh-wrapper"><div class="vocab-zh">中心的</div><div class="vocab-tip">拆字：cen-tral</div></div></div>
+            <div class="vocab-grid" id="vocab-grid-20"></div>
+
+            <h2 class="section-title">✍️ 關鍵文法</h2>
+            <div class="grammar-card">
+                <h3>1. 時間介系詞 on 的用法</h3>
+                <p><b>說明：</b>表達「在特定的日子」或「節日當天」時，介系詞要用 on。</p>
+            </div>
+            <div class="grammar-card">
+                <h3>2. Every + 時間段 (每隔...)</h3>
+                <p><b>例句：</b>Buses leave <span class="highlight">every 45 minutes</span>. (巴士每 45 分鐘發一班車。)</p>
             </div>
         </div>
 
-        <!-- ================= Unit 21: Greetings from Spain ================= -->
+        <!-- ================= Unit 21 ================= -->
         <div id="unit21" class="unit-content">
             <h2 class="section-title">📖 閱讀：Mr. Johnson's Greetings from Spain</h2>
-            <div class="controls">
-                <button class="btn-toggle" onclick="toggleTranslation('unit21')">👀 顯示 / 隱藏全部中文</button>
-            </div>
+            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit21')">👀 顯示 / 隱藏全部中文</button></div>
             <div class="reading-area">
-                <div class="sentence-row"><div class="en-text">I can hear musicians playing their instruments on the sidewalk outside.</div><div class="zh-text">我能聽到音樂家們在外面的人行道上演奏樂器。</div></div>
+                <div class="sentence-row">
+                    <div class="email-header">
+                        To: 9thgradeclass@elite.edu<br>From: Johnson@elite.edu<br>Subject: Mr. Johnson's Greetings from Spain
+                    </div>
+                </div>
+                <div class="sentence-row"><div class="en-text">Dear Students,</div><div class="zh-text">親愛的學生們：</div></div>
+                <div class="sentence-row"><div class="en-text">It’s Mr. Johnson here. I’m sending you this quick e-mail from Barcelona, Spain.</div><div class="zh-text">我是強森老師。我從西班牙寄這封簡短的電子郵件給你們。</div></div>
+                <div class="sentence-row"><div class="en-text">I hope you’re all enjoying your vacation time. Spain is fantastic!</div><div class="zh-text">我希望你們都很享受假期。西班牙太棒了！</div></div>
+                <div class="sentence-row"><div class="en-text">Right now I’m sitting in a coffee shop. I can hear musicians playing their instruments on the sidewalk outside.</div><div class="zh-text">現在我正坐在咖啡店裡。我能聽到音樂家們在外頭的人行道上演奏樂器。</div></div>
+                <div class="sentence-row"><div class="en-text">One of my favorite places in Barcelona is a famous park where you can see lots of nice art.</div><div class="zh-text">在巴塞隆納，我最喜歡的地方之一是一個著名的公園，在那裡可以看到許多精美的藝術品。</div></div>
+                <div class="sentence-row"><div class="en-text">There are also some really interesting buildings in Barcelona, especially the ones designed by the famous architect Gaudí.</div><div class="zh-text">巴塞隆納也有一些非常有趣的建築，特別是由著名建築師高第設計的那些。</div></div>
+                <div class="sentence-row"><div class="en-text">One of his buildings, the Sagrada Família, has taken 130 years to build—and it’s still not finished!</div><div class="zh-text">他的其中一棟建築，聖家堂，已經花費了 130 年建造——而且還沒完工！</div></div>
+                <div class="sentence-row"><div class="en-text">I spend my days wandering around the city and my nights eating at amazing restaurants.</div><div class="zh-text">我白天在城市裡漫步，晚上在很棒的餐廳裡吃飯。</div></div>
+                <div class="sentence-row"><div class="en-text">Tonight, I’m going to surprise my wife by taking her to a secret restaurant.</div><div class="zh-text">今晚，我要帶我妻子去一家秘密餐廳，給她一個驚喜。</div></div>
+                <div class="sentence-row"><div class="en-text">I’m not allowed to take photos inside. If I did, it would ruin the secret.</div><div class="zh-text">裡面不允許拍照。如果我拍了，就會破壞這個秘密。</div></div>
+                <div class="sentence-row"><div class="en-text">That’s it for now. I’ll see you all after winter break. Enjoy your time off!</div><div class="zh-text">這次就先寫到這裡。寒假後見。好好享受休假吧！</div></div>
             </div>
+            
             <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid">
-                <div class="vocab-card" onclick="flipCard(this)"><div class="vocab-en">musician <button class="speak-btn" onclick="speakWord('musician', event)">🔊</button></div><div class="vocab-zh-wrapper"><div class="vocab-zh">音樂家</div><div class="vocab-tip">拆字：mu-si-cian</div></div></div>
+            <div class="vocab-grid" id="vocab-grid-21"></div>
+
+            <h2 class="section-title">✍️ 關鍵文法</h2>
+            <div class="grammar-card">
+                <h3>1. 感官動詞 + 受詞 + V-ing</h3>
+                <p><b>說明：</b>表達「聽到/看到某人『正在』做某事」，強調動作正在進行。</p>
+                <p><b>例句：</b>I can <span class="highlight">hear</span> musicians <span class="highlight">playing</span> their instruments.</p>
+            </div>
+            <div class="grammar-card">
+                <h3>2. spend (花費) 的用法</h3>
+                <p><b>句型：</b>人 + spend + 時間/金錢 + V-ing</p>
             </div>
         </div>
 
-        <!-- ================= Unit 22: Learning from Home or Anywhere (新增) ================= -->
+        <!-- ================= Unit 22 ================= -->
         <div id="unit22" class="unit-content">
             <h2 class="section-title">📖 閱讀：Learning from Home or Anywhere</h2>
-            <div class="controls">
-                <button class="btn-toggle" onclick="toggleTranslation('unit22')">👀 顯示 / 隱藏全部中文</button>
-            </div>
+            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit22')">👀 顯示 / 隱藏全部中文</button></div>
             <div class="reading-area">
                 <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Chip:</span> Hey, Dina. What are you typing?</div><div class="zh-text">嘿，Dina。你在打什麼？</div></div>
                 <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Dina:</span> It’s a paper for my biology course.</div><div class="zh-text">這是我生物課的報告。</div></div>
@@ -296,81 +366,8 @@
                 <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Chip:</span> You’ve changed my mind. Online learning sounds fantastic!</div><div class="zh-text">你改變了我的想法。線上學習聽起來棒極了！</div></div>
             </div>
 
-            <h2 class="section-title">🎯 互動單字卡 (附音節拆字)</h2>
-            <div class="vocab-grid">
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">paper <button class="speak-btn" onclick="speakWord('paper', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">報告；論文</div><div class="vocab-tip">拆字：pa-per</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">biology <button class="speak-btn" onclick="speakWord('biology', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">生物學</div><div class="vocab-tip">拆字：bi-ol-o-gy</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">course <button class="speak-btn" onclick="speakWord('course', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">課程</div><div class="vocab-tip">單音節<br>(our 發 /ɔr/)</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">actually <button class="speak-btn" onclick="speakWord('actually', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">事實上</div><div class="vocab-tip">拆字：ac-tu-al-ly</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">lonely <button class="speak-btn" onclick="speakWord('lonely', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">孤單的</div><div class="vocab-tip">拆字：lone-ly</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">classmate <button class="speak-btn" onclick="speakWord('classmate', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">同學</div><div class="vocab-tip">拆字：class-mate</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">abroad <button class="speak-btn" onclick="speakWord('abroad', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">在國外</div><div class="vocab-tip">拆字：a-broad</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">busy <button class="speak-btn" onclick="speakWord('busy', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">忙碌的</div><div class="vocab-tip">拆字：bu-sy<br>(u 發 /ɪ/ 的音)</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">pick <button class="speak-btn" onclick="speakWord('pick', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">選擇 (名詞)</div><div class="vocab-tip">單音節</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">foreign <button class="speak-btn" onclick="speakWord('foreign', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">外國的</div><div class="vocab-tip">拆字：for-eign<br>(g 不發音)</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">college <button class="speak-btn" onclick="speakWord('college', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">大學</div><div class="vocab-tip">拆字：col-lege</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">education <button class="speak-btn" onclick="speakWord('education', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">教育</div><div class="vocab-tip">拆字：ed-u-ca-tion<br>(tion 發 /ʃən/)</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">lesson <button class="speak-btn" onclick="speakWord('lesson', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">教學；課程</div><div class="vocab-tip">拆字：les-son</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">gain <button class="speak-btn" onclick="speakWord('gain', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">獲得；收穫</div><div class="vocab-tip">單音節<br>(ai 發 /e/)</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">matter <button class="speak-btn" onclick="speakWord('matter', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">要緊；有關係</div><div class="vocab-tip">拆字：mat-ter</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">tired <button class="speak-btn" onclick="speakWord('tired', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">疲倦的</div><div class="vocab-tip">拆字：ti-red</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">lazy <button class="speak-btn" onclick="speakWord('lazy', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">懶惰的</div><div class="vocab-tip">拆字：la-zy</div></div>
-                </div>
-                <div class="vocab-card" onclick="flipCard(this)">
-                    <div class="vocab-en">effort <button class="speak-btn" onclick="speakWord('effort', event)">🔊</button></div>
-                    <div class="vocab-zh-wrapper"><div class="vocab-zh">努力 (名詞)</div><div class="vocab-tip">拆字：ef-fort</div></div>
-                </div>
-            </div>
+            <h2 class="section-title">🎯 互動單字卡</h2>
+            <div class="vocab-grid" id="vocab-grid-22"></div>
 
             <h2 class="section-title">✍️ 關鍵文法</h2>
             <div class="grammar-card">
@@ -382,43 +379,132 @@
             <div class="grammar-card">
                 <h3>2. make the effort to + V</h3>
                 <p><b>說明：</b>表示「付出努力去(做某事)」。</p>
-                <p><b>例句：</b>You still have to <span class="highlight">make the effort to go</span> to class. (你還是得費力去上課。)</p>
+                <p><b>例句：</b>You still have to <span class="highlight">make the effort to go</span> to class.</p>
             </div>
         </div>
 
     </div>
 
-    <!-- 互動功能程式碼 -->
+    <!-- 🌟 JavaScript 資料庫與互動邏輯 🌟 -->
     <script>
-        // 所有單字總表 (包含 Unit 18 ~ 22)，供測驗區自動生成
+        // 將所有單字資料整理成一個大陣列，由程式自動生成畫面！
         const allVocabs = [
-            /* Unit 18 */ { en: "between", zh: "在...之間" }, { en: "ocean", zh: "海洋" }, { en: "tiny", zh: "極小的" }, { en: "ancient", zh: "古老的" }, { en: "exist", zh: "存在" }, { en: "weigh", zh: "重量有..." }, { en: "hunt", zh: "獵捕" }, { en: "poison", zh: "毒液" }, { en: "blood", zh: "血液" }, { en: "seldom", zh: "很少" }, { en: "attack", zh: "攻擊" }, { en: "afraid", zh: "害怕的" }, { en: "unique", zh: "獨特的" }, { en: "whether", zh: "無論；是否" }, { en: "though", zh: "不過；然而" }, { en: "kind", zh: "(n.) 種類 / (adj.) 親切的" },
-            /* Unit 19 */ { en: "bear", zh: "(n.) 熊 / (v.) 忍受" }, { en: "closet", zh: "衣櫥" }, { en: "remember", zh: "記得" }, { en: "raise", zh: "籌集 / 舉起" }, { en: "flea market", zh: "跳蚤市場" }, { en: "donation", zh: "捐獻" }, { en: "accept", zh: "接受" }, { en: "receive", zh: "收到；獲得" }, { en: "underwear", zh: "內衣" }, { en: "charity", zh: "慈善團體" }, { en: "cash", zh: "現金" },
-            /* Unit 20 */ { en: "central", zh: "中心的" }, { en: "circle", zh: "圓圈；環狀" }, { en: "service", zh: "服務" }, { en: "tour", zh: "觀光；參觀" }, { en: "regular", zh: "正常的；規律的" }, { en: "national", zh: "國家的" }, { en: "express", zh: "快速的" }, { en: "youth", zh: "青少年" }, { en: "extra", zh: "額外的" }, { en: "priority", zh: "優先 (事項)" }, { en: "traffic", zh: "交通" },
-            /* Unit 21 */ { en: "musician", zh: "音樂家" }, { en: "interesting", zh: "有趣的" }, { en: "design", zh: "設計" }, { en: "secret", zh: "秘密" }, { en: "vacation", zh: "假期" }, { en: "fantastic", zh: "極好的" }, { en: "instrument", zh: "樂器" }, { en: "sidewalk", zh: "人行道" }, { en: "especially", zh: "尤其" }, { en: "architect", zh: "建築師" }, { en: "wander", zh: "漫遊；閒逛" }, { en: "surprise", zh: "驚喜" }, { en: "ruin", zh: "破壞" }, { en: "restaurant", zh: "餐廳" },
-            /* Unit 22 */ { en: "paper", zh: "報告；論文" }, { en: "biology", zh: "生物學" }, { en: "course", zh: "課程" }, { en: "actually", zh: "事實上" }, { en: "lonely", zh: "孤單的" }, { en: "classmate", zh: "同學" }, { en: "abroad", zh: "在國外" }, { en: "busy", zh: "忙碌的" }, { en: "pick", zh: "選擇" }, { en: "foreign", zh: "外國的" }, { en: "college", zh: "大學" }, { en: "education", zh: "教育" }, { en: "lesson", zh: "教學；課程" }, { en: "gain", zh: "獲得；收穫" }, { en: "matter", zh: "要緊；有關係" }, { en: "tired", zh: "疲倦的" }, { en: "lazy", zh: "懶惰的" }, { en: "effort", zh: "努力" }
+            // ================= Unit 18 =================
+            { unit: 18, en: "between", kk: "[bɪˋtwin]", zh: "在...之間", tip: "拆字：be-tween" },
+            { unit: 18, en: "ocean", kk: "[ˋoʃən]", zh: "海洋", tip: "拆字：o-cean<br>(ea發/ʃ/的音)" },
+            { unit: 18, en: "tiny", kk: "[ˋtaɪnɪ]", zh: "極小的", tip: "拆字：ti-ny" },
+            { unit: 18, en: "ancient", kk: "[ˋenʃənt]", zh: "古老的", tip: "拆字：an-cient" },
+            { unit: 18, en: "exist", kk: "[ɪgˋzɪst]", zh: "存在", tip: "拆字：ex-ist" },
+            { unit: 18, en: "weigh", kk: "[we]", zh: "重量有...", tip: "提示：gh 不發音" },
+            { unit: 18, en: "hunt", kk: "[hʌnt]", zh: "獵捕", tip: "單音節，直接拼" },
+            { unit: 18, en: "poison", kk: "[ˋpɔɪzn]", zh: "毒液", tip: "拆字：poi-son" },
+            { unit: 18, en: "blood", kk: "[blʌd]", zh: "血液", tip: "提示：oo 發短音 /ʌ/" },
+            { unit: 18, en: "seldom", kk: "[ˋsɛldəm]", zh: "很少", tip: "拆字：sel-dom" },
+            { unit: 18, en: "attack", kk: "[əˋtæk]", zh: "攻擊", tip: "拆字：at-tack" },
+            { unit: 18, en: "afraid", kk: "[əˋfred]", zh: "害怕的", tip: "拆字：a-fraid" },
+            { unit: 18, en: "unique", kk: "[juˋnik]", zh: "獨特的", tip: "拆字：u-nique<br>(que發/k/)" },
+            { unit: 18, en: "whether", kk: "[ˋhwɛðɚ]", zh: "無論；是否", tip: "拆字：wheth-er" },
+            { unit: 18, en: "though", kk: "[ðo]", zh: "不過；然而", tip: "單音節<br>(ou發/o/, gh不發音)" },
+            { unit: 18, en: "kind", kk: "[kaɪnd]", zh: "(n.) 種類<br>(adj.) 親切的", tip: "單音節<br>(i發長音 /aɪ/)" },
+            // ================= Unit 19 =================
+            { unit: 19, en: "bear", kk: "[bɛr]", zh: "(n.) 熊<br>(v.) 忍受", tip: "單音節<br>(ear 發 /ɛr/)" },
+            { unit: 19, en: "closet", kk: "[ˋklɑzɪt]", zh: "衣櫥", tip: "拆字：clos-et" },
+            { unit: 19, en: "remember", kk: "[rɪˋmɛmbɚ]", zh: "記得", tip: "拆字：re-mem-ber" },
+            { unit: 19, en: "raise", kk: "[rez]", zh: "籌集 / 舉起", tip: "單音節<br>(ai 發 /e/)" },
+            { unit: 19, en: "flea market", kk: "[ˋfli ˌmɑrkɪt]", zh: "跳蚤市場", tip: "拆字：flea / mar-ket" },
+            { unit: 19, en: "donation", kk: "[doˋneʃən]", zh: "捐獻", tip: "拆字：do-na-tion<br>(tion 固定唸/ʃən/)" },
+            { unit: 19, en: "accept", kk: "[əkˋsɛpt]", zh: "接受", tip: "拆字：ac-cept" },
+            { unit: 19, en: "receive", kk: "[rɪˋsiv]", zh: "收到；獲得", tip: "拆字：re-ceive" },
+            { unit: 19, en: "underwear", kk: "[ˋʌndɚˌwɛr]", zh: "內衣", tip: "拆字：un-der-wear" },
+            { unit: 19, en: "charity", kk: "[ˋtʃærətɪ]", zh: "慈善團體", tip: "拆字：char-i-ty" },
+            { unit: 19, en: "cash", kk: "[kæʃ]", zh: "現金", tip: "單音節：ca-sh<br>(sh發/ʃ/)" },
+            // ================= Unit 20 =================
+            { unit: 20, en: "central", kk: "[ˋsɛntrəl]", zh: "中心的", tip: "拆字：cen-tral<br>(c在e前發/s/)" },
+            { unit: 20, en: "circle", kk: "[ˋsɝk!]", zh: "圓圈；環狀", tip: "拆字：cir-cle<br>(c在i前發/s/)" },
+            { unit: 20, en: "service", kk: "[ˋsɝvɪs]", zh: "服務", tip: "拆字：ser-vice" },
+            { unit: 20, en: "tour", kk: "[tʊr]", zh: "觀光；參觀", tip: "單音節 (聽發音)" },
+            { unit: 20, en: "regular", kk: "[ˋrɛgjəlɚ]", zh: "正常的；規律的", tip: "拆字：reg-u-lar" },
+            { unit: 20, en: "national", kk: "[ˋnæʃən!]", zh: "國家的", tip: "拆字：na-tion-al" },
+            { unit: 20, en: "express", kk: "[ɪkˋsprɛs]", zh: "快速的", tip: "拆字：ex-press" },
+            { unit: 20, en: "youth", kk: "[juθ]", zh: "青少年", tip: "提示：ou 發長音 u" },
+            { unit: 20, en: "extra", kk: "[ˋɛkstrə]", zh: "額外的", tip: "拆字：ex-tra" },
+            { unit: 20, en: "priority", kk: "[praɪˋɔrətɪ]", zh: "優先 (事項)", tip: "拆字：pri-or-i-ty" },
+            { unit: 20, en: "traffic", kk: "[ˋtræfɪk]", zh: "交通", tip: "拆字：traf-fic" },
+            // ================= Unit 21 =================
+            { unit: 21, en: "musician", kk: "[mjuˋzɪʃən]", zh: "音樂家", tip: "拆字：mu-si-cian<br>(cian發/ʃən/)" },
+            { unit: 21, en: "interesting", kk: "[ˋɪntrəstɪŋ]", zh: "有趣的", tip: "拆字：in-ter-est-ing" },
+            { unit: 21, en: "design", kk: "[dɪˋzaɪn]", zh: "設計", tip: "拆字：de-sign<br>(g 不發音)" },
+            { unit: 21, en: "secret", kk: "[ˋsikrɪt]", zh: "秘密", tip: "拆字：se-cret" },
+            { unit: 21, en: "vacation", kk: "[veˋkeʃən]", zh: "假期", tip: "拆字：va-ca-tion" },
+            { unit: 21, en: "fantastic", kk: "[fænˋtæstɪk]", zh: "極好的", tip: "拆字：fan-tas-tic" },
+            { unit: 21, en: "instrument", kk: "[ˋɪnstrəmənt]", zh: "樂器", tip: "拆字：in-stru-ment" },
+            { unit: 21, en: "sidewalk", kk: "[ˋsaɪdˌwɔk]", zh: "人行道", tip: "拆字：side-walk" },
+            { unit: 21, en: "especially", kk: "[əˋspɛʃəlɪ]", zh: "尤其", tip: "拆字：es-pe-cial-ly" },
+            { unit: 21, en: "architect", kk: "[ˋɑrkəˌtɛkt]", zh: "建築師", tip: "拆字：ar-chi-tect<br>(ch發/k/)" },
+            { unit: 21, en: "wander", kk: "[ˋwɑndɚ]", zh: "漫遊；閒逛", tip: "拆字：wan-der" },
+            { unit: 21, en: "surprise", kk: "[sɚˋpraɪz]", zh: "驚喜", tip: "拆字：sur-prise" },
+            { unit: 21, en: "ruin", kk: "[ˋrʊɪn]", zh: "破壞", tip: "拆字：ru-in" },
+            { unit: 21, en: "restaurant", kk: "[ˋrɛstərənt]", zh: "餐廳", tip: "拆字：res-tau-rant" },
+            // ================= Unit 22 =================
+            { unit: 22, en: "paper", kk: "[ˋpepɚ]", zh: "報告；論文", tip: "拆字：pa-per" },
+            { unit: 22, en: "biology", kk: "[baɪˋɑlədʒɪ]", zh: "生物學", tip: "拆字：bi-ol-o-gy" },
+            { unit: 22, en: "course", kk: "[kors]", zh: "課程", tip: "單音節<br>(our 發 /ɔr/)" },
+            { unit: 22, en: "actually", kk: "[ˋæktʃʊəlɪ]", zh: "事實上", tip: "拆字：ac-tu-al-ly" },
+            { unit: 22, en: "lonely", kk: "[ˋlonlɪ]", zh: "孤單的", tip: "拆字：lone-ly" },
+            { unit: 22, en: "classmate", kk: "[ˋklæsˌmet]", zh: "同學", tip: "拆字：class-mate" },
+            { unit: 22, en: "abroad", kk: "[əˋbrɔd]", zh: "在國外", tip: "拆字：a-broad" },
+            { unit: 22, en: "busy", kk: "[ˋbɪzɪ]", zh: "忙碌的", tip: "拆字：bu-sy<br>(u 發 /ɪ/ 的音)" },
+            { unit: 22, en: "pick", kk: "[pɪk]", zh: "選擇", tip: "單音節" },
+            { unit: 22, en: "foreign", kk: "[ˋfɔrɪn]", zh: "外國的", tip: "拆字：for-eign<br>(g 不發音)" },
+            { unit: 22, en: "college", kk: "[ˋkɑlɪdʒ]", zh: "大學", tip: "拆字：col-lege" },
+            { unit: 22, en: "education", kk: "[ˌɛdʒʊˋkeʃən]", zh: "教育", tip: "拆字：ed-u-ca-tion<br>(tion 發 /ʃən/)" },
+            { unit: 22, en: "lesson", kk: "[ˋlɛsn]", zh: "教學；課程", tip: "拆字：les-son" },
+            { unit: 22, en: "gain", kk: "[gen]", zh: "獲得；收穫", tip: "單音節<br>(ai 發 /e/)" },
+            { unit: 22, en: "matter", kk: "[ˋmætɚ]", zh: "要緊；有關係", tip: "拆字：mat-ter" },
+            { unit: 22, en: "tired", kk: "[taɪrd]", zh: "疲倦的", tip: "拆字：ti-red" },
+            { unit: 22, en: "lazy", kk: "[ˋlezɪ]", zh: "懶惰的", tip: "拆字：la-zy" },
+            { unit: 22, en: "effort", kk: "[ˋɛfɚt]", zh: "努力", tip: "拆字：ef-fort" }
         ];
 
-        // 網頁載入時，自動生成測驗區塊的卡片
+        // 網頁載入時，自動把單字卡發配到對應的 Unit 以及測驗區
         window.onload = function() {
             const quizGrid = document.getElementById('quiz-grid');
-            // 隨機打亂單字順序 (Fisher-Yates Shuffle)
+            
+            // 隨機打亂單字順序供測驗使用
             let shuffled = allVocabs.slice().sort(() => Math.random() - 0.5);
             
+            allVocabs.forEach(vocab => {
+                // 1. 生成一般 Unit 頁面的單字卡
+                const unitGrid = document.getElementById('vocab-grid-' + vocab.unit);
+                if(unitGrid) {
+                    unitGrid.innerHTML += `
+                        <div class="vocab-card" onclick="flipCard(this)">
+                            <div class="vocab-en">${vocab.en} <button class="speak-btn" onclick="speakWord('${vocab.en.replace(/'/g, "\\'")}', event)">🔊</button></div>
+                            <div class="vocab-zh-wrapper">
+                                <div class="vocab-kk">${vocab.kk}</div>
+                                <div class="vocab-zh">${vocab.zh}</div>
+                                <div class="vocab-tip">${vocab.tip}</div>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // 2. 生成測驗區的卡片 (使用洗牌後的陣列)
             shuffled.forEach(vocab => {
-                const cardHtml = `
+                quizGrid.innerHTML += `
                     <div class="vocab-card quiz-card">
                         <button class="speak-btn quiz-speak-btn" onclick="speakWord('${vocab.en.replace(/'/g, "\\'")}', event)">🔊</button>
                         <div class="quiz-answer">
                             <div class="quiz-en">${vocab.en}</div>
+                            <div class="vocab-kk">${vocab.kk}</div>
                             <div class="quiz-zh">${vocab.zh}</div>
                         </div>
                     </div>
                 `;
-                quizGrid.innerHTML += cardHtml;
             });
             
-            // 預設開啟第一頁 (改成預設先開啟最新的 Unit 22)
+            // 預設開啟最新的 Unit 22 頁籤
             document.querySelector(".nav-tabs button:nth-child(5)").click();
         };
 
