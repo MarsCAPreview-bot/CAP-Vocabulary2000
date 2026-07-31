@@ -38,7 +38,7 @@
         }
         .nav-tabs button {
             flex: 1;
-            min-width: 100px;
+            min-width: 80px;
             background-color: inherit;
             color: white;
             border: none;
@@ -184,6 +184,7 @@
         <button class="tab-link" onclick="openUnit(event, 'unit20')">U20</button>
         <button class="tab-link" onclick="openUnit(event, 'unit21')">U21</button>
         <button class="tab-link" onclick="openUnit(event, 'unit22')">U22</button>
+        <button class="tab-link" onclick="openUnit(event, 'unit23')">U23</button>
         <button class="tab-link tab-quiz" onclick="openUnit(event, 'quiz-mode')">🎧 總複習測驗</button>
     </div>
 
@@ -383,6 +384,43 @@
             </div>
         </div>
 
+        <!-- ================= Unit 23 (新增) ================= -->
+        <div id="unit23" class="unit-content">
+            <h2 class="section-title">📖 閱讀：You Become Like the Company You Keep</h2>
+            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit23')">👀 顯示 / 隱藏全部中文</button></div>
+            <div class="reading-area">
+                <div class="sentence-row"><div class="en-text">There was once a family of parrots.</div><div class="zh-text">從前有一個鸚鵡家庭。</div></div>
+                <div class="sentence-row"><div class="en-text">One day, the mother and father went out to look for food. They left their two babies alone.</div><div class="zh-text">有一天，鸚鵡媽媽和爸爸出去尋找食物。牠們把兩個寶寶單獨留下來。</div></div>
+                <div class="sentence-row"><div class="en-text">While the parents were gone, a cruel hunter appeared.</div><div class="zh-text">當父母不在的時候，一個殘忍的獵人出現了。</div></div>
+                <div class="sentence-row"><div class="en-text">The hunter caught the babies and dropped them in his bag.</div><div class="zh-text">獵人抓住了寶寶們，並把牠們扔進了他的袋子裡。</div></div>
+                <div class="sentence-row"><div class="en-text">One of them got away. He flew as far as he could, and finally, he came to a church.</div><div class="zh-text">其中一隻逃跑了。牠盡可能地飛遠，最後，牠來到了一座教堂。</div></div>
+                <div class="sentence-row"><div class="en-text">Many monks lived there. They let the parrot stay and they took care of him.</div><div class="zh-text">許多修道士住在那裡。他們讓鸚鵡留下來，並且照顧牠。</div></div>
+                <div class="sentence-row"><div class="en-text">The second parrot stayed with the hunter. Both parrots grew up in their new homes.</div><div class="zh-text">第二隻鸚鵡則和獵人留在一起。兩隻鸚鵡都在牠們的新家長大。</div></div>
+                <div class="sentence-row"><div class="en-text">The monks’ parrot learned many kind words from them. The cruel hunter’s parrot only learned bad ones.</div><div class="zh-text">修道士的鸚鵡從他們那裡學到了許多友善的話語。殘忍獵人的鸚鵡只學到了壞話。</div></div>
+                <div class="sentence-row"><div class="en-text">Then, one day, a traveler passed through.</div><div class="zh-text">然後，有一天，一位旅人經過。</div></div>
+                <div class="sentence-row"><div class="en-text">At the hunter’s house, the parrot yelled and said bad things. That scared the traveler away.</div><div class="zh-text">在獵人的房子裡，鸚鵡大叫並說著難聽的話。那把旅人嚇跑了。</div></div>
+                <div class="sentence-row"><div class="en-text">He hurried to the church. The parrot there greeted him politely.</div><div class="zh-text">他匆忙趕到教堂。那裡的鸚鵡有禮貌地迎接他。</div></div>
+                <div class="sentence-row"><div class="en-text">“I saw another parrot near here, but he was so mean,” said the traveler.</div><div class="zh-text">「我在這附近看到了另一隻鸚鵡，但牠好凶惡，」旅人說。</div></div>
+                <div class="sentence-row"><div class="en-text">The parrot said, “That was likely my brother. His owner is cruel, so he learned terrible language."</div><div class="zh-text">鸚鵡說：「那很可能是我的兄弟。牠的主人很殘忍，所以牠學了糟糕的語言。」</div></div>
+                <div class="sentence-row"><div class="en-text">"However, my owners treated me kindly. We become like the company we keep.”</div><div class="zh-text">「然而，我的主人對我很親切。我們會變得像我們所結交的同伴一樣 (近朱者赤，近墨者黑)。」</div></div>
+            </div>
+
+            <h2 class="section-title">🎯 互動單字卡</h2>
+            <div class="vocab-grid" id="vocab-grid-23"></div>
+
+            <h2 class="section-title">✍️ 關鍵文法</h2>
+            <div class="grammar-card">
+                <h3>1. 代名詞 "ones" 的用法</h3>
+                <p><b>說明：</b>為了避免重複，可以用代名詞 one (單數) 或 ones (複數) 來代替前面已經提過的名詞。</p>
+                <p><b>例句：</b>The monks' parrot learned many kind words... hunter's parrot only learned bad <span class="highlight">ones</span>. (此處的 ones 代替 words)</p>
+            </div>
+            <div class="grammar-card">
+                <h3>2. company 的一字多義</h3>
+                <p><b>說明：</b>company 大家最熟悉的意思是「公司」，但在此課的標題與結尾中，當作不可數名詞，表示「同伴；結交的朋友」。</p>
+                <p><b>例句：</b>You become like the <span class="highlight">company</span> you keep. (近朱者赤，近墨者黑。)</p>
+            </div>
+        </div>
+
     </div>
 
     <!-- 🌟 JavaScript 資料庫與互動邏輯 🌟 -->
@@ -463,7 +501,30 @@
             { unit: 22, en: "matter", kk: "[ˋmætɚ]", zh: "要緊；有關係", tip: "拆字：mat-ter" },
             { unit: 22, en: "tired", kk: "[taɪrd]", zh: "疲倦的", tip: "拆字：ti-red" },
             { unit: 22, en: "lazy", kk: "[ˋlezɪ]", zh: "懶惰的", tip: "拆字：la-zy" },
-            { unit: 22, en: "effort", kk: "[ˋɛfɚt]", zh: "努力", tip: "拆字：ef-fort" }
+            { unit: 22, en: "effort", kk: "[ˋɛfɚt]", zh: "努力", tip: "拆字：ef-fort" },
+            // ================= Unit 23 (新增) =================
+            { unit: 23, en: "become", kk: "[bɪˋkʌm]", zh: "變成", tip: "拆字：be-come" },
+            { unit: 23, en: "parrot", kk: "[ˋpærət]", zh: "鸚鵡", tip: "拆字：par-rot" },
+            { unit: 23, en: "alone", kk: "[əˋlon]", zh: "單獨地；孤單的", tip: "拆字：a-lone" },
+            { unit: 23, en: "cruel", kk: "[ˋkrʊəl]", zh: "殘忍的", tip: "拆字：cru-el" },
+            { unit: 23, en: "hunter", kk: "[ˋhʌntɚ]", zh: "獵人", tip: "拆字：hunt-er" },
+            { unit: 23, en: "caught", kk: "[kɔt]", zh: "抓 (catch過去式)", tip: "提示：augh發/ɔ/，gh不發音" },
+            { unit: 23, en: "drop", kk: "[drɑp]", zh: "掉落；丟下", tip: "單音節 (過去式重複p加ed)" },
+            { unit: 23, en: "finally", kk: "[ˋfaɪn!ɪ]", zh: "最後", tip: "拆字：fi-nal-ly" },
+            { unit: 23, en: "church", kk: "[tʃɝtʃ]", zh: "教堂", tip: "單音節<br>(ur發/ɝ/)" },
+            { unit: 23, en: "take care of", kk: "[tek kɛr ɑv]", zh: "照顧", tip: "片語 (過去式為took)" },
+            { unit: 23, en: "both", kk: "[boθ]", zh: "兩者(都)", tip: "單音節<br>(th發無聲/θ/)" },
+            { unit: 23, en: "monk", kk: "[mʌŋk]", zh: "修道士；和尚", tip: "單音節" },
+            { unit: 23, en: "through", kk: "[θru]", zh: "穿過；通過", tip: "單音節<br>(gh不發音)" },
+            { unit: 23, en: "traveler", kk: "[ˋtrævlɚ]", zh: "旅人；遊客", tip: "拆字：trav-el-er" },
+            { unit: 23, en: "yell", kk: "[jɛl]", zh: "大叫", tip: "單音節" },
+            { unit: 23, en: "scare", kk: "[skɛr]", zh: "使害怕", tip: "單音節" },
+            { unit: 23, en: "hurry", kk: "[ˋhɝɪ]", zh: "趕快；匆忙", tip: "拆字：hur-ry" },
+            { unit: 23, en: "greet", kk: "[grit]", zh: "打招呼；迎接", tip: "單音節<br>(ee發長音/i/)" },
+            { unit: 23, en: "likely", kk: "[ˋlaɪklɪ]", zh: "有可能地", tip: "拆字：like-ly" },
+            { unit: 23, en: "terrible", kk: "[ˋtɛrəb!]", zh: "糟糕的；可怕的", tip: "拆字：ter-ri-ble" },
+            { unit: 23, en: "language", kk: "[ˋlæŋgwɪdʒ]", zh: "語言", tip: "拆字：lan-guage" },
+            { unit: 23, en: "treat", kk: "[trit]", zh: "對待；請客", tip: "單音節<br>(ea發長音/i/)" }
         ];
 
         // 網頁載入時，自動把單字卡發配到對應的 Unit 以及測驗區
@@ -504,8 +565,8 @@
                 `;
             });
             
-            // 預設開啟最新的 Unit 22 頁籤
-            document.querySelector(".nav-tabs button:nth-child(5)").click();
+            // 預設開啟最新的 Unit 23 頁籤 (第6個按鈕)
+            document.querySelector(".nav-tabs button:nth-child(6)").click();
         };
 
         // 切換頁籤
