@@ -38,21 +38,21 @@
         }
         .nav-tabs button {
             flex: 1;
-            min-width: 80px;
+            min-width: 70px;
             background-color: inherit;
             color: white;
             border: none;
             outline: none;
             cursor: pointer;
-            padding: 15px 10px;
-            font-size: 16px;
+            padding: 15px 8px;
+            font-size: 15px;
             font-weight: bold;
             transition: 0.3s;
             white-space: nowrap;
         }
         .nav-tabs button:hover { background-color: #555; }
         .nav-tabs button.active { background-color: var(--primary-color); }
-        .tab-quiz { background-color: #d35400 !important; }
+        .tab-quiz { background-color: #d35400 !important; min-width: 110px; }
         .tab-quiz.active { background-color: #e67e22 !important; }
         
         .container { max-width: 900px; margin: 20px auto; padding: 0 15px; padding-bottom: 50px; }
@@ -92,6 +92,7 @@
             font-family: monospace; margin-bottom: 15px; font-size: 0.9em;
         }
         .dialogue-speaker { font-weight: bold; color: #17a2b8; }
+        .sub-header { font-weight: bold; color: #2c3e50; font-size: 1.1em; text-decoration: underline; margin-top: 10px; }
 
         /* 單字卡區塊 */
         .vocab-grid {
@@ -185,6 +186,7 @@
         <button class="tab-link" onclick="openUnit(event, 'unit21')">U21</button>
         <button class="tab-link" onclick="openUnit(event, 'unit22')">U22</button>
         <button class="tab-link" onclick="openUnit(event, 'unit23')">U23</button>
+        <button class="tab-link" onclick="openUnit(event, 'unit24')">U24</button>
         <button class="tab-link tab-quiz" onclick="openUnit(event, 'quiz-mode')">🎧 總複習測驗</button>
     </div>
 
@@ -384,7 +386,7 @@
             </div>
         </div>
 
-        <!-- ================= Unit 23 (新增) ================= -->
+        <!-- ================= Unit 23 ================= -->
         <div id="unit23" class="unit-content">
             <h2 class="section-title">📖 閱讀：You Become Like the Company You Keep</h2>
             <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit23')">👀 顯示 / 隱藏全部中文</button></div>
@@ -418,6 +420,85 @@
                 <h3>2. company 的一字多義</h3>
                 <p><b>說明：</b>company 大家最熟悉的意思是「公司」，但在此課的標題與結尾中，當作不可數名詞，表示「同伴；結交的朋友」。</p>
                 <p><b>例句：</b>You become like the <span class="highlight">company</span> you keep. (近朱者赤，近墨者黑。)</p>
+            </div>
+        </div>
+
+        <!-- ================= Unit 24 (新增) ================= -->
+        <div id="unit24" class="unit-content">
+            <h2 class="section-title">📖 閱讀：A Trip to Osaka</h2>
+            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit24')">👀 顯示 / 隱藏全部中文</button></div>
+            <div class="reading-area">
+                <div class="sentence-row">
+                    <div class="en-text">Dear Traveler,<br>You have signed up for a day trip to Osaka, Japan!</div>
+                    <div class="zh-text">親愛的旅客：<br>您已報名參加日本大阪的一日遊！</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Osaka is a major business center and has had a big influence on Japan’s history.</div>
+                    <div class="zh-text">大阪是一個主要的商業中心，對日本的歷史有著重大的影響。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">We are sorry to say that the JR line that travels in a circle around Osaka is experiencing some problems,</div>
+                    <div class="zh-text">我們很抱歉地告知，環繞大阪運行的 JR 列車線路目前遇到一些問題，</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">so you must use a different path to get to a couple of the places we have arranged for you.</div>
+                    <div class="zh-text">所以您必須改道前往我們為您安排的幾個景點。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Thank you, and have a nice trip!<br>Justin Harrison<br>TravelNow</div>
+                    <div class="zh-text">謝謝您，祝您旅途愉快！<br>賈斯汀·哈里森<br>現在旅行社</div>
+                </div>
+                
+                <div class="sub-header">Trip Plan (行程安排)</div>
+                <div class="sentence-row">
+                    <div class="en-text">On this trip, you will get the chance to see all of the important places in Osaka.</div>
+                    <div class="zh-text">在這趟旅程中，您將有機會參觀大阪所有重要的景點。</div>
+                </div>
+                
+                <div class="sub-header">Morning (上午)</div>
+                <div class="sentence-row">
+                    <div class="en-text">First, we will go to the center of the city to visit Osaka Castle.</div>
+                    <div class="zh-text">首先，我們將前往市中心參觀大阪城。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">This is a great place to learn about Japan’s past and buy some gifts for your family and friends.</div>
+                    <div class="zh-text">這是一個了解日本歷史，並且為家人朋友購買禮物的好地方。</div>
+                </div>
+                
+                <div class="sub-header">Noon (中午)</div>
+                <div class="sentence-row">
+                    <div class="en-text">After visiting the castle, we will take a short ride to Dotonbori.</div>
+                    <div class="zh-text">參觀完城堡後，我們將搭乘一小段車前往道頓堀。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">This place offers the best food in Osaka! Here you can order ramen from a machine and shop for some fashionable clothes.</div>
+                    <div class="zh-text">這地方提供大阪最美味的食物！您可以在這裡從自動點餐機點拉麵，也可以買些時髦的衣服。</div>
+                </div>
+                
+                <div class="sub-header">Night (晚上)</div>
+                <div class="sentence-row">
+                    <div class="en-text">To end the trip, we will go to Tsutenkaku—a very famous building in Osaka.</div>
+                    <div class="zh-text">為了為這趟行程畫下句點，我們將前往通天閣——一棟在大阪非常著名的建築。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">You can go to the fifth floor to get a view of the city. There are lights on the tower that shine brightly at night.</div>
+                    <div class="zh-text">您可以上到五樓眺望城市景色。夜晚時，塔上的燈光會明亮地閃耀。</div>
+                </div>
+            </div>
+
+            <h2 class="section-title">🎯 互動單字卡</h2>
+            <div class="vocab-grid" id="vocab-grid-24"></div>
+
+            <h2 class="section-title">✍️ 關鍵文法</h2>
+            <div class="grammar-card">
+                <h3>1. sign up for (報名/登記)</h3>
+                <p><b>說明：</b>表示「報名參加(某課程、活動或旅行)」時，常用的重要動詞片語。</p>
+                <p><b>例句：</b>You have <span class="highlight">signed up for</span> a day trip to Osaka! (您已經報名了大阪一日遊！)</p>
+            </div>
+            <div class="grammar-card">
+                <h3>2. a couple of (兩個；幾個)</h3>
+                <p><b>說明：</b>couple 原本有「一對；兩者」的意思，常搭配 of 用來表示「兩、三個；幾個」後接複數可數名詞。</p>
+                <p><b>例句：</b>...get to <span class="highlight">a couple of</span> the places... (到達我們安排的「幾個」地方)</p>
             </div>
         </div>
 
@@ -502,7 +583,7 @@
             { unit: 22, en: "tired", kk: "[taɪrd]", zh: "疲倦的", tip: "拆字：ti-red" },
             { unit: 22, en: "lazy", kk: "[ˋlezɪ]", zh: "懶惰的", tip: "拆字：la-zy" },
             { unit: 22, en: "effort", kk: "[ˋɛfɚt]", zh: "努力", tip: "拆字：ef-fort" },
-            // ================= Unit 23 (新增) =================
+            // ================= Unit 23 =================
             { unit: 23, en: "become", kk: "[bɪˋkʌm]", zh: "變成", tip: "拆字：be-come" },
             { unit: 23, en: "parrot", kk: "[ˋpærət]", zh: "鸚鵡", tip: "拆字：par-rot" },
             { unit: 23, en: "alone", kk: "[əˋlon]", zh: "單獨地；孤單的", tip: "拆字：a-lone" },
@@ -524,7 +605,31 @@
             { unit: 23, en: "likely", kk: "[ˋlaɪklɪ]", zh: "有可能地", tip: "拆字：like-ly" },
             { unit: 23, en: "terrible", kk: "[ˋtɛrəb!]", zh: "糟糕的；可怕的", tip: "拆字：ter-ri-ble" },
             { unit: 23, en: "language", kk: "[ˋlæŋgwɪdʒ]", zh: "語言", tip: "拆字：lan-guage" },
-            { unit: 23, en: "treat", kk: "[trit]", zh: "對待；請客", tip: "單音節<br>(ea發長音/i/)" }
+            { unit: 23, en: "treat", kk: "[trit]", zh: "對待；請客", tip: "單音節<br>(ea發長音/i/)" },
+            // ================= Unit 24 (新增) =================
+            { unit: 24, en: "trip", kk: "[trɪp]", zh: "旅行；旅遊", tip: "單音節" },
+            { unit: 24, en: "sign up", kk: "[saɪn ʌp]", zh: "報名；登記", tip: "片語<br>(sign的g不發音)" },
+            { unit: 24, en: "center", kk: "[ˋsɛntɚ]", zh: "中心", tip: "拆字：cen-ter<br>(c發/s/)" },
+            { unit: 24, en: "influence", kk: "[ˋɪnflʊəns]", zh: "影響", tip: "拆字：in-flu-ence" },
+            { unit: 24, en: "history", kk: "[ˋhɪstərɪ]", zh: "歷史", tip: "拆字：his-to-ry" },
+            { unit: 24, en: "experience", kk: "[ɪkˋspɪrɪəns]", zh: "經歷；經驗", tip: "拆字：ex-pe-ri-ence" },
+            { unit: 24, en: "path", kk: "[pæθ]", zh: "路徑；路線", tip: "單音節<br>(th發無聲/θ/)" },
+            { unit: 24, en: "a couple of", kk: "[ə ˋkʌp! ɑv]", zh: "兩個；幾個", tip: "常考片語" },
+            { unit: 24, en: "arrange", kk: "[əˋrendʒ]", zh: "安排", tip: "拆字：ar-range" },
+            { unit: 24, en: "chance", kk: "[tʃæns]", zh: "機會", tip: "單音節<br>(c發/s/)" },
+            { unit: 24, en: "great", kk: "[gret]", zh: "極好的；棒的", tip: "單音節<br>(ea發/e/)" },
+            { unit: 24, en: "short", kk: "[ʃɔrt]", zh: "短暫的；短的", tip: "單音節<br>(sh發/ʃ/)" },
+            { unit: 24, en: "ride", kk: "[raɪd]", zh: "搭乘；車程", tip: "單音節<br>(i發長音/aɪ/)" },
+            { unit: 24, en: "offer", kk: "[ˋɔfɚ]", zh: "提供", tip: "拆字：of-fer" },
+            { unit: 24, en: "order", kk: "[ˋɔrdɚ]", zh: "點餐；訂購", tip: "拆字：or-der" },
+            { unit: 24, en: "machine", kk: "[məˋʃin]", zh: "機器", tip: "拆字：ma-chine<br>(ch發/ʃ/)" },
+            { unit: 24, en: "shop", kk: "[ʃɑp]", zh: "購物；逛街", tip: "單音節" },
+            { unit: 24, en: "fashionable", kk: "[ˋfæʃənəb!]", zh: "時髦的；流行的", tip: "拆字：fash-ion-a-ble" },
+            { unit: 24, en: "clothes", kk: "[kloz]", zh: "衣服", tip: "單音節 (聽發音)" },
+            { unit: 24, en: "building", kk: "[ˋbɪldɪŋ]", zh: "建築物", tip: "拆字：build-ing<br>(u不發音)" },
+            { unit: 24, en: "tower", kk: "[ˋtauɚ]", zh: "塔；高樓", tip: "拆字：tow-er" },
+            { unit: 24, en: "ramen", kk: "[ˋrɑmɛn]", zh: "日式拉麵", tip: "拆字：ra-men" },
+            { unit: 24, en: "view", kk: "[vju]", zh: "景色；視野", tip: "單音節" }
         ];
 
         // 網頁載入時，自動把單字卡發配到對應的 Unit 以及測驗區
@@ -565,8 +670,8 @@
                 `;
             });
             
-            // 預設開啟最新的 Unit 23 頁籤 (第6個按鈕)
-            document.querySelector(".nav-tabs button:nth-child(6)").click();
+            // 預設開啟最新的 Unit 24 頁籤 (第7個按鈕)
+            document.querySelector(".nav-tabs button:nth-child(7)").click();
         };
 
         // 切換頁籤
