@@ -38,7 +38,7 @@
         }
         .nav-tabs button {
             flex: 1;
-            min-width: 70px;
+            min-width: 65px;
             background-color: inherit;
             color: white;
             border: none;
@@ -187,6 +187,7 @@
         <button class="tab-link" onclick="openUnit(event, 'unit22')">U22</button>
         <button class="tab-link" onclick="openUnit(event, 'unit23')">U23</button>
         <button class="tab-link" onclick="openUnit(event, 'unit24')">U24</button>
+        <button class="tab-link" onclick="openUnit(event, 'unit25')">U25</button>
         <button class="tab-link tab-quiz" onclick="openUnit(event, 'quiz-mode')">🎧 總複習測驗</button>
     </div>
 
@@ -214,7 +215,7 @@
         </div>
 
         <!-- ================= Unit 18 ================= -->
-        <div id="unit18" class="unit-content" style="display: block;">
+        <div id="unit18" class="unit-content">
             <h2 class="section-title">📖 閱讀：Komodo: The Island of Dragons</h2>
             <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit18')">👀 顯示 / 隱藏全部中文</button></div>
             <div class="reading-area">
@@ -232,10 +233,8 @@
                 <div class="sentence-row"><div class="en-text">Komodo Island also has a beach with pink sand. This is only one of seven in the world.</div><div class="zh-text">科摩多島還有一個有著粉紅色沙子的海灘。這是世界上僅有的七個之一。</div></div>
                 <div class="sentence-row"><div class="en-text">Whether you want to take a picture on a pink beach or see a giant lizard, Komodo Island has something for everyone!</div><div class="zh-text">無論你是想在粉紅色的海灘上拍照，還是看巨大的蜥蜴，科摩多島都能滿足每個人的需求！</div></div>
             </div>
-            
             <h2 class="section-title">🎯 互動單字卡</h2>
             <div class="vocab-grid" id="vocab-grid-18"></div>
-
             <h2 class="section-title">✍️ 關鍵文法</h2>
             <div class="grammar-card">
                 <h3>1. 頻率副詞的位置</h3>
@@ -261,10 +260,8 @@
                 <div class="sentence-row"><div class="en-text">Don't take food or drink into the gym.</div><div class="zh-text">請勿攜帶食物或飲料進入體育館。</div></div>
                 <div class="sentence-row"><div class="en-text">Please bring cash to the sale, as we will not take credit cards.</div><div class="zh-text">特賣會請攜帶現金，因為我們不接受信用卡。</div></div>
             </div>
-            
             <h2 class="section-title">🎯 互動單字卡</h2>
             <div class="vocab-grid" id="vocab-grid-19"></div>
-
             <h2 class="section-title">✍️ 關鍵文法</h2>
             <div class="grammar-card">
                 <h3>1. 祈使句 (命令句) 的用法</h3>
@@ -291,10 +288,8 @@
                 <div class="sentence-row"><div class="en-text">Priority seats are marked in green.</div><div class="zh-text">博愛座（優先座位）標示為綠色。</div></div>
                 <div class="sentence-row"><div class="en-text">Due to traffic, buses will not stop at the Sports Ground on the day of a game.</div><div class="zh-text">由於交通因素，比賽當天巴士將不停靠運動場。</div></div>
             </div>
-            
             <h2 class="section-title">🎯 互動單字卡</h2>
             <div class="vocab-grid" id="vocab-grid-20"></div>
-
             <h2 class="section-title">✍️ 關鍵文法</h2>
             <div class="grammar-card">
                 <h3>1. 時間介系詞 on 的用法</h3>
@@ -328,10 +323,8 @@
                 <div class="sentence-row"><div class="en-text">I’m not allowed to take photos inside. If I did, it would ruin the secret.</div><div class="zh-text">裡面不允許拍照。如果我拍了，就會破壞這個秘密。</div></div>
                 <div class="sentence-row"><div class="en-text">That’s it for now. I’ll see you all after winter break. Enjoy your time off!</div><div class="zh-text">這次就先寫到這裡。寒假後見。好好享受休假吧！</div></div>
             </div>
-            
             <h2 class="section-title">🎯 互動單字卡</h2>
             <div class="vocab-grid" id="vocab-grid-21"></div>
-
             <h2 class="section-title">✍️ 關鍵文法</h2>
             <div class="grammar-card">
                 <h3>1. 感官動詞 + 受詞 + V-ing</h3>
@@ -368,10 +361,8 @@
                 <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Dina:</span> Exactly.</div><div class="zh-text">沒錯。</div></div>
                 <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Chip:</span> You’ve changed my mind. Online learning sounds fantastic!</div><div class="zh-text">你改變了我的想法。線上學習聽起來棒極了！</div></div>
             </div>
-
             <h2 class="section-title">🎯 互動單字卡</h2>
             <div class="vocab-grid" id="vocab-grid-22"></div>
-
             <h2 class="section-title">✍️ 關鍵文法</h2>
             <div class="grammar-card">
                 <h3>1. 連綴動詞 sound 的用法</h3>
@@ -406,10 +397,8 @@
                 <div class="sentence-row"><div class="en-text">The parrot said, “That was likely my brother. His owner is cruel, so he learned terrible language."</div><div class="zh-text">鸚鵡說：「那很可能是我的兄弟。牠的主人很殘忍，所以牠學了糟糕的語言。」</div></div>
                 <div class="sentence-row"><div class="en-text">"However, my owners treated me kindly. We become like the company we keep.”</div><div class="zh-text">「然而，我的主人對我很親切。我們會變得像我們所結交的同伴一樣 (近朱者赤，近墨者黑)。」</div></div>
             </div>
-
             <h2 class="section-title">🎯 互動單字卡</h2>
             <div class="vocab-grid" id="vocab-grid-23"></div>
-
             <h2 class="section-title">✍️ 關鍵文法</h2>
             <div class="grammar-card">
                 <h3>1. 代名詞 "ones" 的用法</h3>
@@ -423,7 +412,7 @@
             </div>
         </div>
 
-        <!-- ================= Unit 24 (新增) ================= -->
+        <!-- ================= Unit 24 ================= -->
         <div id="unit24" class="unit-content">
             <h2 class="section-title">📖 閱讀：A Trip to Osaka</h2>
             <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit24')">👀 顯示 / 隱藏全部中文</button></div>
@@ -448,13 +437,11 @@
                     <div class="en-text">Thank you, and have a nice trip!<br>Justin Harrison<br>TravelNow</div>
                     <div class="zh-text">謝謝您，祝您旅途愉快！<br>賈斯汀·哈里森<br>現在旅行社</div>
                 </div>
-                
                 <div class="sub-header">Trip Plan (行程安排)</div>
                 <div class="sentence-row">
                     <div class="en-text">On this trip, you will get the chance to see all of the important places in Osaka.</div>
                     <div class="zh-text">在這趟旅程中，您將有機會參觀大阪所有重要的景點。</div>
                 </div>
-                
                 <div class="sub-header">Morning (上午)</div>
                 <div class="sentence-row">
                     <div class="en-text">First, we will go to the center of the city to visit Osaka Castle.</div>
@@ -464,7 +451,6 @@
                     <div class="en-text">This is a great place to learn about Japan’s past and buy some gifts for your family and friends.</div>
                     <div class="zh-text">這是一個了解日本歷史，並且為家人朋友購買禮物的好地方。</div>
                 </div>
-                
                 <div class="sub-header">Noon (中午)</div>
                 <div class="sentence-row">
                     <div class="en-text">After visiting the castle, we will take a short ride to Dotonbori.</div>
@@ -474,7 +460,6 @@
                     <div class="en-text">This place offers the best food in Osaka! Here you can order ramen from a machine and shop for some fashionable clothes.</div>
                     <div class="zh-text">這地方提供大阪最美味的食物！您可以在這裡從自動點餐機點拉麵，也可以買些時髦的衣服。</div>
                 </div>
-                
                 <div class="sub-header">Night (晚上)</div>
                 <div class="sentence-row">
                     <div class="en-text">To end the trip, we will go to Tsutenkaku—a very famous building in Osaka.</div>
@@ -485,10 +470,8 @@
                     <div class="zh-text">您可以上到五樓眺望城市景色。夜晚時，塔上的燈光會明亮地閃耀。</div>
                 </div>
             </div>
-
             <h2 class="section-title">🎯 互動單字卡</h2>
             <div class="vocab-grid" id="vocab-grid-24"></div>
-
             <h2 class="section-title">✍️ 關鍵文法</h2>
             <div class="grammar-card">
                 <h3>1. sign up for (報名/登記)</h3>
@@ -499,6 +482,84 @@
                 <h3>2. a couple of (兩個；幾個)</h3>
                 <p><b>說明：</b>couple 原本有「一對；兩者」的意思，常搭配 of 用來表示「兩、三個；幾個」後接複數可數名詞。</p>
                 <p><b>例句：</b>...get to <span class="highlight">a couple of</span> the places... (到達我們安排的「幾個」地方)</p>
+            </div>
+        </div>
+
+        <!-- ================= Unit 25 (新增：Vampires & Dracula) ================= -->
+        <div id="unit25" class="unit-content">
+            <h2 class="section-title">📖 閱讀：Vampires & Dracula</h2>
+            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit25')">👀 顯示 / 隱藏全部中文</button></div>
+            <div class="reading-area">
+                <div class="sentence-row">
+                    <div class="en-text">A man stands before you. He is well-dressed and polite.</div>
+                    <div class="zh-text">一個男人站在你面前。他衣著體面且有禮貌。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">However, there is something dark about him. When you try to look into a mirror, you cannot see his face.</div>
+                    <div class="zh-text">然而，他身上有一種陰暗神秘的氣息。當你試著照鏡子時，你看不到他的臉。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">His name is Dracula, and he is the most famous vampire in history.</div>
+                    <div class="zh-text">他的名字是德古拉，他是歷史上最著名的吸血鬼。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Stories of vampires as we know them date back to the early 18th century.</div>
+                    <div class="zh-text">我們所熟知的吸血鬼故事可以追溯到18世紀初。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">During this time, there were many sick people and deaths that people could not explain.</div>
+                    <div class="zh-text">在這個時期，有許多人無法解釋的病患與死亡事件。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">People would dig up the bodies to study what their deaths showed, and they found bodies that looked to be alive!</div>
+                    <div class="zh-text">人們會挖出屍體來研究死因，並且發現了看起來像活著的屍體！</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Their bodies’ hair and fingernails were longer, their stomachs looked full, and there was dried blood near the corners of their mouths.</div>
+                    <div class="zh-text">屍體的頭髮和指甲變長了，肚子看起來很飽，嘴角附近還有乾掉的血跡。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">People began hearing news of monsters coming out of the ground at night for a human buffet and then returning to their places at dawn.</div>
+                    <div class="zh-text">人們開始聽到有怪獸夜間從地下爬出來把人類當吃到飽、然後在破曉時分回到墓地的消息。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">In 1897, a man named Bram Stoker wrote Dracula.</div>
+                    <div class="zh-text">在1897年，一個名叫布拉姆·斯托克的人寫了《德古拉》。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">At the time, it did not get much attention, but in 1922, the movie Nosferatu was made.</div>
+                    <div class="zh-text">當時並沒有受到太多關注，但在1922年，電影《不死殭屍—恐慄交響曲》(Nosferatu) 拍成了。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">It was clear that they used Stoker’s story to make this movie without asking him.</div>
+                    <div class="zh-text">很顯然，他們在沒有經過斯托克同意的情況下，就用了他的故事來拍這部電影。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">This caused a giant fight between Stoker and the filmmakers.</div>
+                    <div class="zh-text">這引發了斯托克和電影製片人之間的一場大衝突／官司。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">After this, Dracula was known by everyone and became the vampire we think of today.</div>
+                    <div class="zh-text">在這之後，德古拉便家喻戶曉，成為我們今天所認為的吸血鬼形象。</div>
+                </div>
+            </div>
+            <h2 class="section-title">🎯 互動單字卡</h2>
+            <div class="vocab-grid" id="vocab-grid-25"></div>
+            <h2 class="section-title">✍️ 關鍵文法</h2>
+            <div class="grammar-card">
+                <h3>1. date back to (追溯到...)</h3>
+                <p><b>說明：</b>用來表達「歷史、傳說起始於某個年代／時間點」，為閱讀測驗常考的實用片語。</p>
+                <p><b>例句：</b>Stories of vampires as we know them <span class="highlight">date back to</span> the early 18th century. (我們所熟知的吸血鬼故事可以<span class="highlight">追溯到</span>18世紀初。)</p>
+            </div>
+            <div class="grammar-card">
+                <h3>2. 虛主詞 It is clear that... (顯然；很清楚的是...)</h3>
+                <p><b>說明：</b>It 是虛主詞，用來代替後面整個 that 子句（真正的主詞），避免句子頭重腳輕。</p>
+                <p><b>例句：</b><span class="highlight">It was clear that</span> they used Stoker's story to make this movie... (很顯然，他們用了斯托克的故事來拍這部電影...)</p>
+            </div>
+            <div class="grammar-card">
+                <h3>3. 複合形容詞 well-dressed (衣著體面的)</h3>
+                <p><b>說明：</b>由「副詞 + 過去分詞 (p.p.)」加上連字號 (-) 結合而成，用來修飾名詞。</p>
+                <p><b>例句：</b>He is <span class="highlight">well-dressed</span> and polite. (他衣著體面且有禮貌。)</p>
             </div>
         </div>
 
@@ -606,7 +667,7 @@
             { unit: 23, en: "terrible", kk: "[ˋtɛrəb!]", zh: "糟糕的；可怕的", tip: "拆字：ter-ri-ble" },
             { unit: 23, en: "language", kk: "[ˋlæŋgwɪdʒ]", zh: "語言", tip: "拆字：lan-guage" },
             { unit: 23, en: "treat", kk: "[trit]", zh: "對待；請客", tip: "單音節<br>(ea發長音/i/)" },
-            // ================= Unit 24 (新增) =================
+            // ================= Unit 24 =================
             { unit: 24, en: "trip", kk: "[trɪp]", zh: "旅行；旅遊", tip: "單音節" },
             { unit: 24, en: "sign up", kk: "[saɪn ʌp]", zh: "報名；登記", tip: "片語<br>(sign的g不發音)" },
             { unit: 24, en: "center", kk: "[ˋsɛntɚ]", zh: "中心", tip: "拆字：cen-ter<br>(c發/s/)" },
@@ -629,7 +690,33 @@
             { unit: 24, en: "building", kk: "[ˋbɪldɪŋ]", zh: "建築物", tip: "拆字：build-ing<br>(u不發音)" },
             { unit: 24, en: "tower", kk: "[ˋtauɚ]", zh: "塔；高樓", tip: "拆字：tow-er" },
             { unit: 24, en: "ramen", kk: "[ˋrɑmɛn]", zh: "日式拉麵", tip: "拆字：ra-men" },
-            { unit: 24, en: "view", kk: "[vju]", zh: "景色；視野", tip: "單音節" }
+            { unit: 24, en: "view", kk: "[vju]", zh: "景色；視野", tip: "單音節" },
+            // ================= Unit 25 (新增：Vampires & Dracula) =================
+            { unit: 25, en: "well-dressed", kk: "[wɛl ˋdrɛst]", zh: "衣著體面的", tip: "複合形容詞<br>(well + p.p.)" },
+            { unit: 25, en: "polite", kk: "[pəˋlaɪt]", zh: "有禮貌的", tip: "拆字：po-lite<br>(i發長音/aɪ/)" },
+            { unit: 25, en: "however", kk: "[haʊˋɛvɚ]", zh: "然而；不過", tip: "拆字：how-ev-er" },
+            { unit: 25, en: "dark", kk: "[dɑrk]", zh: "陰暗的；神秘的", tip: "單音節<br>(ar發/ɑr/)" },
+            { unit: 25, en: "mirror", kk: "[ˋmɪrɚ]", zh: "鏡子", tip: "拆字：mir-ror" },
+            { unit: 25, en: "century", kk: "[ˋsɛntʃʊrɪ]", zh: "世紀", tip: "拆字：cen-tu-ry<br>(t發/tʃ/)" },
+            { unit: 25, en: "death", kk: "[dɛθ]", zh: "死亡", tip: "單音節<br>(th發無聲/θ/)" },
+            { unit: 25, en: "explain", kk: "[ɪkˋsplen]", zh: "解釋", tip: "拆字：ex-plain<br>(ai發/e/)" },
+            { unit: 25, en: "dig up", kk: "[dɪg ʌp]", zh: "挖掘；挖出", tip: "短片語<br>(dig過去式重複g加ed)" },
+            { unit: 25, en: "body", kk: "[ˋbɑdɪ]", zh: "屍體；身體", tip: "拆字：bo-dy" },
+            { unit: 25, en: "found", kk: "[faʊnd]", zh: "發現", tip: "find 的過去式" },
+            { unit: 25, en: "alive", kk: "[əˋlaɪv]", zh: "活著的", tip: "拆字：a-live<br>(i發長音/aɪ/)" },
+            { unit: 25, en: "corner", kk: "[ˋkɔrnɚ]", zh: "角落；嘴角", tip: "拆字：cor-ner" },
+            { unit: 25, en: "hearing", kk: "[ˋhɪrɪŋ]", zh: "聽見 (hear的V-ing)", tip: "拆字：hear-ing" },
+            { unit: 25, en: "news", kk: "[njuz]", zh: "消息；新聞", tip: "單音節 (不可數名詞)" },
+            { unit: 25, en: "monster", kk: "[ˋmɑnstɚ]", zh: "怪獸；怪物", tip: "拆字：mon-ster" },
+            { unit: 25, en: "buffet", kk: "[bəˋfe]", zh: "自助餐；吃到飽", tip: "拆字：buf-fet<br>(t不發音)" },
+            { unit: 25, en: "dawn", kk: "[dɔn]", zh: "黎明；破曉", tip: "單音節<br>(aw發/ɔ/)" },
+            { unit: 25, en: "attention", kk: "[əˋtɛnʃən]", zh: "注意(力)；關注", tip: "拆字：at-ten-tion<br>(tion發/ʃən/)" },
+            { unit: 25, en: "clear", kk: "[klɪr]", zh: "清楚的；顯然的", tip: "單音節" },
+            { unit: 25, en: "cause", kk: "[kɔz]", zh: "造成；引起", tip: "單音節<br>(au發/ɔ/)" },
+            { unit: 25, en: "fight", kk: "[faɪt]", zh: "爭吵；打鬥", tip: "單音節<br>(igh發長音/aɪ/)" },
+            { unit: 25, en: "vampire", kk: "[ˋvæmpaɪr]", zh: "吸血鬼", tip: "拆字：vam-pire" },
+            { unit: 25, en: "fingernail", kk: "[ˋfɪŋgɚˌnel]", zh: "手指甲", tip: "拆字：fin-ger-nail" },
+            { unit: 25, en: "filmmaker", kk: "[ˋfɪlmˌmekɚ]", zh: "電影製作人", tip: "拆字：film-mak-er" }
         ];
 
         // 網頁載入時，自動把單字卡發配到對應的 Unit 以及測驗區
@@ -670,8 +757,8 @@
                 `;
             });
             
-            // 預設開啟最新的 Unit 24 頁籤 (第7個按鈕)
-            document.querySelector(".nav-tabs button:nth-child(7)").click();
+            // 預設開啟最新的 Unit 25 頁籤 (第8個按鈕)
+            document.querySelector(".nav-tabs button:nth-child(8)").click();
         };
 
         // 切換頁籤
