@@ -38,14 +38,14 @@
         }
         .nav-tabs button {
             flex: 1;
-            min-width: 65px;
+            min-width: 60px;
             background-color: inherit;
             color: white;
             border: none;
             outline: none;
             cursor: pointer;
-            padding: 15px 8px;
-            font-size: 15px;
+            padding: 15px 6px;
+            font-size: 14px;
             font-weight: bold;
             transition: 0.3s;
             white-space: nowrap;
@@ -188,6 +188,8 @@
         <button class="tab-link" onclick="openUnit(event, 'unit23')">U23</button>
         <button class="tab-link" onclick="openUnit(event, 'unit24')">U24</button>
         <button class="tab-link" onclick="openUnit(event, 'unit25')">U25</button>
+        <button class="tab-link" onclick="openUnit(event, 'unit26')">U26</button>
+        <button class="tab-link" onclick="openUnit(event, 'unit27')">U27</button>
         <button class="tab-link tab-quiz" onclick="openUnit(event, 'quiz-mode')">🎧 總複習測驗</button>
     </div>
 
@@ -214,352 +216,163 @@
             </div>
         </div>
 
-        <!-- ================= Unit 18 ================= -->
-        <div id="unit18" class="unit-content">
-            <h2 class="section-title">📖 閱讀：Komodo: The Island of Dragons</h2>
-            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit18')">👀 顯示 / 隱藏全部中文</button></div>
+        <!-- ================= Unit 18-25 ================= -->
+        <div id="unit18" class="unit-content"><h2 class="section-title">📖 Komodo: The Island of Dragons</h2><div class="vocab-grid" id="vocab-grid-18"></div></div>
+        <div id="unit19" class="unit-content"><h2 class="section-title">📖 Bear River High School Flea Market</h2><div class="vocab-grid" id="vocab-grid-19"></div></div>
+        <div id="unit20" class="unit-content"><h2 class="section-title">📖 Rosefield Tour Bus</h2><div class="vocab-grid" id="vocab-grid-20"></div></div>
+        <div id="unit21" class="unit-content"><h2 class="section-title">📖 Mr. Johnson's Greetings from Spain</h2><div class="vocab-grid" id="vocab-grid-21"></div></div>
+        <div id="unit22" class="unit-content"><h2 class="section-title">📖 Learning from Home or Anywhere</h2><div class="vocab-grid" id="vocab-grid-22"></div></div>
+        <div id="unit23" class="unit-content"><h2 class="section-title">📖 You Become Like the Company You Keep</h2><div class="vocab-grid" id="vocab-grid-23"></div></div>
+        <div id="unit24" class="unit-content"><h2 class="section-title">📖 A Trip to Osaka</h2><div class="vocab-grid" id="vocab-grid-24"></div></div>
+        <div id="unit25" class="unit-content"><h2 class="section-title">📖 Vampires & Dracula</h2><div class="vocab-grid" id="vocab-grid-25"></div></div>
+
+        <!-- ================= Unit 26 (新增：Protect Yourself from Blue Light) ================= -->
+        <div id="unit26" class="unit-content">
+            <h2 class="section-title">📖 閱讀：Protect Yourself from Blue Light</h2>
+            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit26')">👀 顯示 / 隱藏全部中文</button></div>
             <div class="reading-area">
-                <div class="sentence-row"><div class="en-text">In between the Flores Sea and the Indian Ocean, there is a tiny island filled with dragons.</div><div class="zh-text">在弗洛勒斯海和印度洋之間，有一個充滿巨龍的小島。</div></div>
-                <div class="sentence-row"><div class="en-text">It is called Komodo Island, and people from all over the world visit it to see the ancient animal that exists there.</div><div class="zh-text">它的名字叫科摩多島，來自世界各地的人們都會來這裡參觀存在於那裡的古老動物。</div></div>
-                <div class="sentence-row"><div class="en-text">The Komodo dragon is in fact not a dragon at all; it is the world’s largest lizard.</div><div class="zh-text">科摩多龍其實根本不是龍；牠是世界上最大的蜥蜴。</div></div>
-                <div class="sentence-row"><div class="en-text">They can grow up to three yards long and weigh about 90 kilograms.</div><div class="zh-text">牠們可以長到三碼長，重達約 90 公斤。</div></div>
-                <div class="sentence-row"><div class="en-text">They use their tails and sharp teeth to hunt deer and pigs.</div><div class="zh-text">牠們用尾巴和鋒利的牙齒來獵捕鹿和豬。</div></div>
-                <div class="sentence-row"><div class="en-text">When Komodo dragons bite an animal, they put poison into its blood.</div><div class="zh-text">當科摩多龍咬傷動物時，牠們會將毒液注入其血液中。</div></div>
-                <div class="sentence-row"><div class="en-text">This hurts the animal slowly until it dies.</div><div class="zh-text">這會慢慢地傷害動物直到牠死亡。</div></div>
-                <div class="sentence-row"><div class="en-text">They seldom attack humans, but if you ever see a Komodo dragon, you should still be afraid to get near it!</div><div class="zh-text">牠們很少攻擊人類，但如果你真的看到科摩多龍，你還是應該要害怕靠近牠！</div></div>
-                <div class="sentence-row"><div class="en-text">Komodo Island has much more than dragons, though.</div><div class="zh-text">不過，科摩多島擁有的遠不止巨龍。</div></div>
-                <div class="sentence-row"><div class="en-text">It is only about 2 million years old, which is young for an island.</div><div class="zh-text">它大約只有 200 萬年的歷史，對一個島嶼來說算是年輕的。</div></div>
-                <div class="sentence-row"><div class="en-text">There are many kinds of unique animals on the island, such as monkeys, deer, pigs, birds, buffalo, and the Komodo dragon.</div><div class="zh-text">島上有許多種類獨特的動物，例如猴子、鹿、豬、鳥類、水牛，以及科摩多龍。</div></div>
-                <div class="sentence-row"><div class="en-text">Komodo Island also has a beach with pink sand. This is only one of seven in the world.</div><div class="zh-text">科摩多島還有一個有著粉紅色沙子的海灘。這是世界上僅有的七個之一。</div></div>
-                <div class="sentence-row"><div class="en-text">Whether you want to take a picture on a pink beach or see a giant lizard, Komodo Island has something for everyone!</div><div class="zh-text">無論你是想在粉紅色的海灘上拍照，還是看巨大的蜥蜴，科摩多島都能滿足每個人的需求！</div></div>
+                <div class="sentence-row">
+                    <div class="en-text">Our eyes need light to see. Light we can see comes in several different colors.</div>
+                    <div class="zh-text">我們的眼睛需要光線才能看見。我們能看見的光有多種不同的顏色。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Each color has a different amount of energy.</div>
+                    <div class="zh-text">每種顏色都含有不同數量的能量。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Blue light has the most energy, and is very common in electric lights.</div>
+                    <div class="zh-text">藍光含有最多的能量，而且在電燈中非常常見。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">When we turn on a computer, TV, or phone, they all produce blue light.</div>
+                    <div class="zh-text">當我們打開電腦、電視或手機時，它們全都會產生藍光。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Our eyes are bad at blocking it because it’s very strong.</div>
+                    <div class="zh-text">我們的眼睛不擅長阻擋它，因為它強度很高。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">People worry about this because too much blue light causes damage.</div>
+                    <div class="zh-text">人們對此感到擔憂，因為過多藍光會造成傷害。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">The most dangerous blue light comes from screens. Looking at them too much can cause eye pain.</div>
+                    <div class="zh-text">最危險的藍光來自螢幕。看太久可能會引起眼睛疼痛。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Blue light also affects your sleep. Your body is fooled into thinking it’s a different time of day,</div>
+                    <div class="zh-text">藍光也會影響你的睡眠。你的身體會被誤導，以為現在是白天的不同時間，</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">so it stops producing the chemical that helps you fall asleep. Too much blue light can even make you blind.</div>
+                    <div class="zh-text">因此它會停止分泌能幫助你入睡的化學物質。過多藍光甚至可能使你失明。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">We shouldn’t avoid all blue light, as it improves our mood during the day.</div>
+                    <div class="zh-text">我們不應該避免所有藍光，因為它能在白間改善我們的心情。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">However, it is advised to protect our eyes from it. Some special glasses and apps block blue light.</div>
+                    <div class="zh-text">然而，建議要保護眼睛免受其害。有些特殊的眼鏡和應用程式能夠阻擋藍光。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Something that could make a difference is to follow the 20-20-20 method.</div>
+                    <div class="zh-text">能帶來改善／產生作用的方法是遵循「20-20-20 法則」。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Every 20 minutes, look at something 20 feet away, for 20 seconds. It gives your eyes the rest that they need.</div>
+                    <div class="zh-text">每隔 20 分鐘，看向 20 英尺外的地方，維持 20 秒。這能給予你眼睛所需要的休息。</div>
+                </div>
             </div>
             <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid" id="vocab-grid-18"></div>
+            <div class="vocab-grid" id="vocab-grid-26"></div>
             <h2 class="section-title">✍️ 關鍵文法</h2>
             <div class="grammar-card">
-                <h3>1. 頻率副詞的位置</h3>
-                <p><b>句型：</b>放在 Be 動詞之後，一般動詞之前。</p>
-                <p><b>例句：</b>They <span class="highlight">seldom attack</span> humans. (牠們很少攻擊人類。)</p>
+                <h3>1. make a difference (產生作用／差別；改善)</h3>
+                <p><b>說明：</b>表示「對事情有影響、有幫助」，為英文中極為高頻且實用的片語。</p>
+                <p><b>例句：</b>Something that could <span class="highlight">make a difference</span> is to follow the 20-20-20 method. (遵循 20-20-20 法則能帶來大差別/作用。)</p>
+            </div>
+            <div class="grammar-card">
+                <h3>2. fool sb. into V-ing (欺騙／誤導某人去做...)</h3>
+                <p><b>說明：</b>fool 當動詞時為「欺騙、愚弄」，搭配介系詞 into 後接動名詞 (V-ing)，表示騙人產生錯覺或做出行動。</p>
+                <p><b>例句：</b>Your body is <span class="highlight">fooled into thinking</span> it’s a different time of day... (身體會被騙，以為是不同的時間...)</p>
             </div>
         </div>
 
-        <!-- ================= Unit 19 ================= -->
-        <div id="unit19" class="unit-content">
-            <h2 class="section-title">📖 閱讀：Bear River High School Flea Market</h2>
-            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit19')">👀 顯示 / 隱藏全部中文</button></div>
-            <div class="reading-area">
-                <div class="sentence-row"><div class="en-text">Do you want to create space in your closet?</div><div class="zh-text">你想要騰出衣櫥裡的空間嗎？</div></div>
-                <div class="sentence-row"><div class="en-text">Your old clothes could be somebody's new favorite!</div><div class="zh-text">你的舊衣服可能會成為別人的新歡！</div></div>
-                <div class="sentence-row"><div class="en-text">Give five things to our flea market & take one item home for free!</div><div class="zh-text">捐五件物品給我們的跳蚤市場，就能免費帶一件物品回家！</div></div>
-                <div class="sentence-row"><div class="en-text">Donations will be accepted in the school gym between April 5 - April 10.</div><div class="zh-text">4月5日至4月10日之間，學校體育館將接受捐贈。</div></div>
-                <div class="sentence-row"><div class="en-text">Receive a ticket for one free item on the day of the sale for every five pieces of clothing you bring.</div><div class="zh-text">每帶來五件衣服，就能獲得一張在特賣當天免費兌換一件物品的兌換券。</div></div>
-                <div class="sentence-row"><div class="en-text">All kinds of clothing and sizes welcome, except underwear, socks, and shoes.</div><div class="zh-text">歡迎各種款式和尺寸的衣物，但不包含內衣、襪子和鞋子。</div></div>
-                <div class="sentence-row"><div class="en-text">We also accept hats, bags, scarves, gloves, necklaces, and rings.</div><div class="zh-text">我們也接受帽子、包包、圍巾、手套、項鍊和戒指。</div></div>
-                <div class="sentence-row"><div class="en-text">Remember that all items must be clean.</div><div class="zh-text">請記住，所有物品必須是乾淨的。</div></div>
-                <div class="sentence-row"><div class="en-text">All money raised will be given to local animal charities.</div><div class="zh-text">所有籌集的資金將捐給當地的動物慈善機構。</div></div>
-                <div class="sentence-row"><div class="en-text">Don't take food or drink into the gym.</div><div class="zh-text">請勿攜帶食物或飲料進入體育館。</div></div>
-                <div class="sentence-row"><div class="en-text">Please bring cash to the sale, as we will not take credit cards.</div><div class="zh-text">特賣會請攜帶現金，因為我們不接受信用卡。</div></div>
-            </div>
-            <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid" id="vocab-grid-19"></div>
-            <h2 class="section-title">✍️ 關鍵文法</h2>
-            <div class="grammar-card">
-                <h3>1. 祈使句 (命令句) 的用法</h3>
-                <p><b>說明：</b>表示請求、命令或建議，省略主詞 You，直接用原形動詞開頭。</p>
-                <p><b>例句：</b><span class="highlight">Give</span> five things to our flea market... (捐出五件物品...)</p>
-            </div>
-            <div class="grammar-card">
-                <h3>2. 連接詞 as 的用法 (表原因)</h3>
-                <p><b>說明：</b>這裡的 as 意思是「因為」，用法等同於 because。</p>
-            </div>
-        </div>
-
-        <!-- ================= Unit 20 ================= -->
-        <div id="unit20" class="unit-content">
-            <h2 class="section-title">📖 閱讀：Rosefield Tour Bus</h2>
-            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit20')">👀 顯示 / 隱藏全部中文</button></div>
-            <div class="reading-area">
-                <div class="sentence-row"><div class="en-text">Regular times may change on national holidays.</div><div class="zh-text">正常時間可能會在國定假日有所變動。</div></div>
-                <div class="sentence-row"><div class="en-text">WEST LINE ---> $18.50 per person (Under 12s: $10)</div><div class="zh-text">西線 ---> 每人 18.50 美元（12歲以下：10 美元）</div></div>
-                <div class="sentence-row"><div class="en-text">CIRCLE LINE (Express Service) ---> $24.50 per adult and $14 for youth under 18.</div><div class="zh-text">環狀線（快速服務）---> 成人 24.50 美元，18歲以下青少年 14 美元。</div></div>
-                <div class="sentence-row"><div class="en-text">Tickets bought on the Internet are 10-15% cheaper.</div><div class="zh-text">在網路上購買的車票便宜 10-15%。</div></div>
-                <div class="sentence-row"><div class="en-text">Save an extra 10% on your ticket price for a “BOTH LINES TICKET”.</div><div class="zh-text">購買「雙線車票」可額外節省 10% 的票價。</div></div>
-                <div class="sentence-row"><div class="en-text">Buses leave every 45 minutes from King’s Station.</div><div class="zh-text">國王車站每 45 分鐘發一班車。</div></div>
-                <div class="sentence-row"><div class="en-text">Priority seats are marked in green.</div><div class="zh-text">博愛座（優先座位）標示為綠色。</div></div>
-                <div class="sentence-row"><div class="en-text">Due to traffic, buses will not stop at the Sports Ground on the day of a game.</div><div class="zh-text">由於交通因素，比賽當天巴士將不停靠運動場。</div></div>
-            </div>
-            <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid" id="vocab-grid-20"></div>
-            <h2 class="section-title">✍️ 關鍵文法</h2>
-            <div class="grammar-card">
-                <h3>1. 時間介系詞 on 的用法</h3>
-                <p><b>說明：</b>表達「在特定的日子」或「節日當天」時，介系詞要用 on。</p>
-            </div>
-            <div class="grammar-card">
-                <h3>2. Every + 時間段 (每隔...)</h3>
-                <p><b>例句：</b>Buses leave <span class="highlight">every 45 minutes</span>. (巴士每 45 分鐘發一班車。)</p>
-            </div>
-        </div>
-
-        <!-- ================= Unit 21 ================= -->
-        <div id="unit21" class="unit-content">
-            <h2 class="section-title">📖 閱讀：Mr. Johnson's Greetings from Spain</h2>
-            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit21')">👀 顯示 / 隱藏全部中文</button></div>
+        <!-- ================= Unit 27 (新增：The True Value of Wealth) ================= -->
+        <div id="unit27" class="unit-content">
+            <h2 class="section-title">📖 閱讀：The True Value of Wealth</h2>
+            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit27')">👀 顯示 / 隱藏全部中文</button></div>
             <div class="reading-area">
                 <div class="sentence-row">
-                    <div class="email-header">
-                        To: 9thgradeclass@elite.edu<br>From: Johnson@elite.edu<br>Subject: Mr. Johnson's Greetings from Spain
-                    </div>
-                </div>
-                <div class="sentence-row"><div class="en-text">Dear Students,</div><div class="zh-text">親愛的學生們：</div></div>
-                <div class="sentence-row"><div class="en-text">It’s Mr. Johnson here. I’m sending you this quick e-mail from Barcelona, Spain.</div><div class="zh-text">我是強森老師。我從西班牙寄這封簡短的電子郵件給你們。</div></div>
-                <div class="sentence-row"><div class="en-text">I hope you’re all enjoying your vacation time. Spain is fantastic!</div><div class="zh-text">我希望你們都很享受假期。西班牙太棒了！</div></div>
-                <div class="sentence-row"><div class="en-text">Right now I’m sitting in a coffee shop. I can hear musicians playing their instruments on the sidewalk outside.</div><div class="zh-text">現在我正坐在咖啡店裡。我能聽到音樂家們在外頭的人行道上演奏樂器。</div></div>
-                <div class="sentence-row"><div class="en-text">One of my favorite places in Barcelona is a famous park where you can see lots of nice art.</div><div class="zh-text">在巴塞隆納，我最喜歡的地方之一是一個著名的公園，在那裡可以看到許多精美的藝術品。</div></div>
-                <div class="sentence-row"><div class="en-text">There are also some really interesting buildings in Barcelona, especially the ones designed by the famous architect Gaudí.</div><div class="zh-text">巴塞隆納也有一些非常有趣的建築，特別是由著名建築師高第設計的那些。</div></div>
-                <div class="sentence-row"><div class="en-text">One of his buildings, the Sagrada Família, has taken 130 years to build—and it’s still not finished!</div><div class="zh-text">他的其中一棟建築，聖家堂，已經花費了 130 年建造——而且還沒完工！</div></div>
-                <div class="sentence-row"><div class="en-text">I spend my days wandering around the city and my nights eating at amazing restaurants.</div><div class="zh-text">我白天在城市裡漫步，晚上在很棒的餐廳裡吃飯。</div></div>
-                <div class="sentence-row"><div class="en-text">Tonight, I’m going to surprise my wife by taking her to a secret restaurant.</div><div class="zh-text">今晚，我要帶我妻子去一家秘密餐廳，給她一個驚喜。</div></div>
-                <div class="sentence-row"><div class="en-text">I’m not allowed to take photos inside. If I did, it would ruin the secret.</div><div class="zh-text">裡面不允許拍照。如果我拍了，就會破壞這個秘密。</div></div>
-                <div class="sentence-row"><div class="en-text">That’s it for now. I’ll see you all after winter break. Enjoy your time off!</div><div class="zh-text">這次就先寫到這裡。寒假後見。好好享受休假吧！</div></div>
-            </div>
-            <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid" id="vocab-grid-21"></div>
-            <h2 class="section-title">✍️ 關鍵文法</h2>
-            <div class="grammar-card">
-                <h3>1. 感官動詞 + 受詞 + V-ing</h3>
-                <p><b>說明：</b>表達「聽到/看到某人『正在』做某事」，強調動作正在進行。</p>
-                <p><b>例句：</b>I can <span class="highlight">hear</span> musicians <span class="highlight">playing</span> their instruments.</p>
-            </div>
-            <div class="grammar-card">
-                <h3>2. spend (花費) 的用法</h3>
-                <p><b>句型：</b>人 + spend + 時間/金錢 + V-ing</p>
-            </div>
-        </div>
-
-        <!-- ================= Unit 22 ================= -->
-        <div id="unit22" class="unit-content">
-            <h2 class="section-title">📖 閱讀：Learning from Home or Anywhere</h2>
-            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit22')">👀 顯示 / 隱藏全部中文</button></div>
-            <div class="reading-area">
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Chip:</span> Hey, Dina. What are you typing?</div><div class="zh-text">嘿，Dina。你在打什麼？</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Dina:</span> It’s a paper for my biology course.</div><div class="zh-text">這是我生物課的報告。</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Chip:</span> You went back to school?</div><div class="zh-text">你回學校唸書了？</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Dina:</span> Actually, it’s an online course.</div><div class="zh-text">事實上，這是一門線上課程。</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Chip:</span> Online? Don’t you find it lonely not being able to meet classmates?</div><div class="zh-text">線上？不能和同學見面，你不覺得孤單嗎？</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Dina:</span> Yes, sometimes. But the school is abroad and I’m busy with my job, so it’s the best pick for me.</div><div class="zh-text">是的，有時候會。但學校在國外，而且我工作很忙，所以這對我來說是最好的選擇。</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Chip:</span> Oh, you’re a foreign student. Which school are you with?</div><div class="zh-text">喔，你是個外國學生。你就讀哪所學校？</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Dina:</span> MIT.</div><div class="zh-text">麻省理工學院。</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Chip:</span> Wow. That’s one of the best colleges in America! Tell me more about online education!</div><div class="zh-text">哇。那是美國最頂尖的大學之一！跟我多說說關於線上教育的事吧！</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Dina:</span> I can watch video lessons of other MIT courses for free.</div><div class="zh-text">我可以免費觀看其他麻省理工學院課程的教學影片。</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Chip:</span> That’s great! It sounds like you’re gaining a lot from this online course.</div><div class="zh-text">太棒了！聽起來你從這門線上課程獲益良多。</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Dina:</span> Yeah, I can study whenever I want. So it doesn’t matter if I’m feeling tired.</div><div class="zh-text">對啊，我想什麼時候讀就什麼時候讀。所以就算我感到疲倦也沒關係。</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Dina:</span> I can simply take a break to do something relaxing and continue later.</div><div class="zh-text">我大可休息一下做些放鬆的事，稍後再繼續。</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Dina:</span> I’ve already covered a lot of ground in biology and other subjects by taking online courses.</div><div class="zh-text">透過上線上課程，我已經在生物和其他科目上學到了很多。</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Chip:</span> I know what you mean. Often, you might be feeling lazy but you still have to make the effort to go to class.</div><div class="zh-text">我懂你的意思。通常，你可能會覺得懶惰，但你還是得費盡力氣去上課。</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Chip:</span> But with online learning, you can catch up anytime.</div><div class="zh-text">但是有了線上學習，你隨時都能補上進度。</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Dina:</span> Exactly.</div><div class="zh-text">沒錯。</div></div>
-                <div class="sentence-row"><div class="en-text"><span class="dialogue-speaker">Chip:</span> You’ve changed my mind. Online learning sounds fantastic!</div><div class="zh-text">你改變了我的想法。線上學習聽起來棒極了！</div></div>
-            </div>
-            <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid" id="vocab-grid-22"></div>
-            <h2 class="section-title">✍️ 關鍵文法</h2>
-            <div class="grammar-card">
-                <h3>1. 連綴動詞 sound 的用法</h3>
-                <p><b>說明：</b>sound 當作「聽起來」時是連綴動詞，後面可以直接接<b>形容詞</b>，或者用 <b>sound like + 名詞/子句</b>。</p>
-                <p><b>接形容詞：</b>Online learning <span class="highlight">sounds fantastic</span>! (聽起來棒極了！)</p>
-                <p><b>接 like + 子句：</b>It <span class="highlight">sounds like</span> you're gaining a lot. (聽起來你獲益良多。)</p>
-            </div>
-            <div class="grammar-card">
-                <h3>2. make the effort to + V</h3>
-                <p><b>說明：</b>表示「付出努力去(做某事)」。</p>
-                <p><b>例句：</b>You still have to <span class="highlight">make the effort to go</span> to class.</p>
-            </div>
-        </div>
-
-        <!-- ================= Unit 23 ================= -->
-        <div id="unit23" class="unit-content">
-            <h2 class="section-title">📖 閱讀：You Become Like the Company You Keep</h2>
-            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit23')">👀 顯示 / 隱藏全部中文</button></div>
-            <div class="reading-area">
-                <div class="sentence-row"><div class="en-text">There was once a family of parrots.</div><div class="zh-text">從前有一個鸚鵡家庭。</div></div>
-                <div class="sentence-row"><div class="en-text">One day, the mother and father went out to look for food. They left their two babies alone.</div><div class="zh-text">有一天，鸚鵡媽媽和爸爸出去尋找食物。牠們把兩個寶寶單獨留下來。</div></div>
-                <div class="sentence-row"><div class="en-text">While the parents were gone, a cruel hunter appeared.</div><div class="zh-text">當父母不在的時候，一個殘忍的獵人出現了。</div></div>
-                <div class="sentence-row"><div class="en-text">The hunter caught the babies and dropped them in his bag.</div><div class="zh-text">獵人抓住了寶寶們，並把牠們扔進了他的袋子裡。</div></div>
-                <div class="sentence-row"><div class="en-text">One of them got away. He flew as far as he could, and finally, he came to a church.</div><div class="zh-text">其中一隻逃跑了。牠盡可能地飛遠，最後，牠來到了一座教堂。</div></div>
-                <div class="sentence-row"><div class="en-text">Many monks lived there. They let the parrot stay and they took care of him.</div><div class="zh-text">許多修道士住在那裡。他們讓鸚鵡留下來，並且照顧牠。</div></div>
-                <div class="sentence-row"><div class="en-text">The second parrot stayed with the hunter. Both parrots grew up in their new homes.</div><div class="zh-text">第二隻鸚鵡則和獵人留在一起。兩隻鸚鵡都在牠們的新家長大。</div></div>
-                <div class="sentence-row"><div class="en-text">The monks’ parrot learned many kind words from them. The cruel hunter’s parrot only learned bad ones.</div><div class="zh-text">修道士的鸚鵡從他們那裡學到了許多友善的話語。殘忍獵人的鸚鵡只學到了壞話。</div></div>
-                <div class="sentence-row"><div class="en-text">Then, one day, a traveler passed through.</div><div class="zh-text">然後，有一天，一位旅人經過。</div></div>
-                <div class="sentence-row"><div class="en-text">At the hunter’s house, the parrot yelled and said bad things. That scared the traveler away.</div><div class="zh-text">在獵人的房子裡，鸚鵡大叫並說著難聽的話。那把旅人嚇跑了。</div></div>
-                <div class="sentence-row"><div class="en-text">He hurried to the church. The parrot there greeted him politely.</div><div class="zh-text">他匆忙趕到教堂。那裡的鸚鵡有禮貌地迎接他。</div></div>
-                <div class="sentence-row"><div class="en-text">“I saw another parrot near here, but he was so mean,” said the traveler.</div><div class="zh-text">「我在這附近看到了另一隻鸚鵡，但牠好凶惡，」旅人說。</div></div>
-                <div class="sentence-row"><div class="en-text">The parrot said, “That was likely my brother. His owner is cruel, so he learned terrible language."</div><div class="zh-text">鸚鵡說：「那很可能是我的兄弟。牠的主人很殘忍，所以牠學了糟糕的語言。」</div></div>
-                <div class="sentence-row"><div class="en-text">"However, my owners treated me kindly. We become like the company we keep.”</div><div class="zh-text">「然而，我的主人對我很親切。我們會變得像我們所結交的同伴一樣 (近朱者赤，近墨者黑)。」</div></div>
-            </div>
-            <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid" id="vocab-grid-23"></div>
-            <h2 class="section-title">✍️ 關鍵文法</h2>
-            <div class="grammar-card">
-                <h3>1. 代名詞 "ones" 的用法</h3>
-                <p><b>說明：</b>為了避免重複，可以用代名詞 one (單數) 或 ones (複數) 來代替前面已經提過的名詞。</p>
-                <p><b>例句：</b>The monks' parrot learned many kind words... hunter's parrot only learned bad <span class="highlight">ones</span>. (此處的 ones 代替 words)</p>
-            </div>
-            <div class="grammar-card">
-                <h3>2. company 的一字多義</h3>
-                <p><b>說明：</b>company 大家最熟悉的意思是「公司」，但在此課的標題與結尾中，當作不可數名詞，表示「同伴；結交的朋友」。</p>
-                <p><b>例句：</b>You become like the <span class="highlight">company</span> you keep. (近朱者赤，近墨者黑。)</p>
-            </div>
-        </div>
-
-        <!-- ================= Unit 24 ================= -->
-        <div id="unit24" class="unit-content">
-            <h2 class="section-title">📖 閱讀：A Trip to Osaka</h2>
-            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit24')">👀 顯示 / 隱藏全部中文</button></div>
-            <div class="reading-area">
-                <div class="sentence-row">
-                    <div class="en-text">Dear Traveler,<br>You have signed up for a day trip to Osaka, Japan!</div>
-                    <div class="zh-text">親愛的旅客：<br>您已報名參加日本大阪的一日遊！</div>
+                    <div class="en-text">There was an old woman. She was very rich, but she never spent any of her wealth.</div>
+                    <div class="zh-text">從前有一位老婦人。她非常富有，卻從不花用她任何的財富。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">Osaka is a major business center and has had a big influence on Japan’s history.</div>
-                    <div class="zh-text">大阪是一個主要的商業中心，對日本的歷史有著重大的影響。</div>
+                    <div class="en-text">Instead, she saved all of her gold in a case. She buried the case in a secret spot in her garden.</div>
+                    <div class="zh-text">相反地，她把所有的黃金都存放在一個箱子裡。她把箱子埋在花園裡的一個秘密地點。</div></div>
+                <div class="sentence-row">
+                    <div class="en-text">Each day, the woman went into her garden. She dug up the hidden case and opened it.</div>
+                    <div class="zh-text">老婦人每天都會走到她的花園。她把藏起來的箱子挖出來並打開。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">We are sorry to say that the JR line that travels in a circle around Osaka is experiencing some problems,</div>
-                    <div class="zh-text">我們很抱歉地告知，環繞大阪運行的 JR 列車線路目前遇到一些問題，</div>
+                    <div class="en-text">Then, she counted the coins one by one.</div>
+                    <div class="zh-text">然後，她一枚接著一枚地數著那些硬幣。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">so you must use a different path to get to a couple of the places we have arranged for you.</div>
-                    <div class="zh-text">所以您必須改道前往我們為您安排的幾個景點。</div>
+                    <div class="en-text">After the woman counted the last coin, she shut the case and buried it once more.</div>
+                    <div class="zh-text">在老婦人數完最後一枚硬幣後，她便闔上箱子，再次把它埋好。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">Thank you, and have a nice trip!<br>Justin Harrison<br>TravelNow</div>
-                    <div class="zh-text">謝謝您，祝您旅途愉快！<br>賈斯汀·哈里森<br>現在旅行社</div>
-                </div>
-                <div class="sub-header">Trip Plan (行程安排)</div>
-                <div class="sentence-row">
-                    <div class="en-text">On this trip, you will get the chance to see all of the important places in Osaka.</div>
-                    <div class="zh-text">在這趟旅程中，您將有機會參觀大阪所有重要的景點。</div>
-                </div>
-                <div class="sub-header">Morning (上午)</div>
-                <div class="sentence-row">
-                    <div class="en-text">First, we will go to the center of the city to visit Osaka Castle.</div>
-                    <div class="zh-text">首先，我們將前往市中心參觀大阪城。</div>
+                    <div class="en-text">The next day, she did this all over again.</div>
+                    <div class="zh-text">隔天，她又把全部動作重複做了一遍。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">This is a great place to learn about Japan’s past and buy some gifts for your family and friends.</div>
-                    <div class="zh-text">這是一個了解日本歷史，並且為家人朋友購買禮物的好地方。</div>
-                </div>
-                <div class="sub-header">Noon (中午)</div>
-                <div class="sentence-row">
-                    <div class="en-text">After visiting the castle, we will take a short ride to Dotonbori.</div>
-                    <div class="zh-text">參觀完城堡後，我們將搭乘一小段車前往道頓堀。</div>
+                    <div class="en-text">One night, someone took the coins. When the woman came and saw what had happened, she went wild with anger.</div>
+                    <div class="zh-text">某天夜裡，有人偷走了硬幣。當婦人來到花園看到發生的事，她氣得勃然大怒／發狂。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">This place offers the best food in Osaka! Here you can order ramen from a machine and shop for some fashionable clothes.</div>
-                    <div class="zh-text">這地方提供大阪最美味的食物！您可以在這裡從自動點餐機點拉麵，也可以買些時髦的衣服。</div>
-                </div>
-                <div class="sub-header">Night (晚上)</div>
-                <div class="sentence-row">
-                    <div class="en-text">To end the trip, we will go to Tsutenkaku—a very famous building in Osaka.</div>
-                    <div class="zh-text">為了為這趟行程畫下句點，我們將前往通天閣——一棟在大阪非常著名的建築。</div>
+                    <div class="en-text">A curious man heard her and asked what was wrong.</div>
+                    <div class="zh-text">一個好奇的男人聽到了她的聲音，問她發生了什麼問題。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">You can go to the fifth floor to get a view of the city. There are lights on the tower that shine brightly at night.</div>
-                    <div class="zh-text">您可以上到五樓眺望城市景色。夜晚時，塔上的燈光會明亮地閃耀。</div>
+                    <div class="en-text">“Someone robbed me and now my gold is gone. It’s money down the drain!” shouted the woman.</div>
+                    <div class="zh-text">婦人大喊：「有人搶了我，現在我的金子都沒了。這錢全打水漂／付諸流水了！」</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">“Why was your gold buried in the earth? If it’s there, you can’t spend it,” said the man.</div>
+                    <div class="zh-text">男人說：「為什麼妳的黃金要埋在土裡？如果放在那裡，妳根本不能花。」</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">The woman answered, “I would never spend my gold!”</div>
+                    <div class="zh-text">婦人回答：「我絕不可能花我的黃金！」</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">The man threw a stone into the deep hole. “Bury this, then,” he said.</div>
+                    <div class="zh-text">男人於是把一塊石頭扔進那個深洞裡。「那就把這個埋起來吧，」他說。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">“It’s worth just as much. Wealth has no value if it’s never used.”</div>
+                    <div class="zh-text">「這同樣有價值。財富如果從不使用，就毫無價值可言。」</div>
                 </div>
             </div>
             <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid" id="vocab-grid-24"></div>
+            <div class="vocab-grid" id="vocab-grid-27"></div>
             <h2 class="section-title">✍️ 關鍵文法</h2>
             <div class="grammar-card">
-                <h3>1. sign up for (報名/登記)</h3>
-                <p><b>說明：</b>表示「報名參加(某課程、活動或旅行)」時，常用的重要動詞片語。</p>
-                <p><b>例句：</b>You have <span class="highlight">signed up for</span> a day trip to Osaka! (您已經報名了大阪一日遊！)</p>
+                <h3>1. go wild with anger (勃然大怒；氣急敗壞)</h3>
+                <p><b>說明：</b>這裡的 go 為連綴動詞（變成...狀態），搭配形容詞 wild (瘋狂/失控) 與介系詞 with (因為...)，生動描述情緒失控。</p>
+                <p><b>例句：</b>When the woman saw what had happened, she <span class="highlight">went wild with anger</span>.</p>
             </div>
             <div class="grammar-card">
-                <h3>2. a couple of (兩個；幾個)</h3>
-                <p><b>說明：</b>couple 原本有「一對；兩者」的意思，常搭配 of 用來表示「兩、三個；幾個」後接複數可數名詞。</p>
-                <p><b>例句：</b>...get to <span class="highlight">a couple of</span> the places... (到達我們安排的「幾個」地方)</p>
-            </div>
-        </div>
-
-        <!-- ================= Unit 25 (新增：Vampires & Dracula) ================= -->
-        <div id="unit25" class="unit-content">
-            <h2 class="section-title">📖 閱讀：Vampires & Dracula</h2>
-            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit25')">👀 顯示 / 隱藏全部中文</button></div>
-            <div class="reading-area">
-                <div class="sentence-row">
-                    <div class="en-text">A man stands before you. He is well-dressed and polite.</div>
-                    <div class="zh-text">一個男人站在你面前。他衣著體面且有禮貌。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">However, there is something dark about him. When you try to look into a mirror, you cannot see his face.</div>
-                    <div class="zh-text">然而，他身上有一種陰暗神秘的氣息。當你試著照鏡子時，你看不到他的臉。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">His name is Dracula, and he is the most famous vampire in history.</div>
-                    <div class="zh-text">他的名字是德古拉，他是歷史上最著名的吸血鬼。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">Stories of vampires as we know them date back to the early 18th century.</div>
-                    <div class="zh-text">我們所熟知的吸血鬼故事可以追溯到18世紀初。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">During this time, there were many sick people and deaths that people could not explain.</div>
-                    <div class="zh-text">在這個時期，有許多人無法解釋的病患與死亡事件。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">People would dig up the bodies to study what their deaths showed, and they found bodies that looked to be alive!</div>
-                    <div class="zh-text">人們會挖出屍體來研究死因，並且發現了看起來像活著的屍體！</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">Their bodies’ hair and fingernails were longer, their stomachs looked full, and there was dried blood near the corners of their mouths.</div>
-                    <div class="zh-text">屍體的頭髮和指甲變長了，肚子看起來很飽，嘴角附近還有乾掉的血跡。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">People began hearing news of monsters coming out of the ground at night for a human buffet and then returning to their places at dawn.</div>
-                    <div class="zh-text">人們開始聽到有怪獸夜間從地下爬出來把人類當吃到飽、然後在破曉時分回到墓地的消息。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">In 1897, a man named Bram Stoker wrote Dracula.</div>
-                    <div class="zh-text">在1897年，一個名叫布拉姆·斯托克的人寫了《德古拉》。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">At the time, it did not get much attention, but in 1922, the movie Nosferatu was made.</div>
-                    <div class="zh-text">當時並沒有受到太多關注，但在1922年，電影《不死殭屍—恐慄交響曲》(Nosferatu) 拍成了。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">It was clear that they used Stoker’s story to make this movie without asking him.</div>
-                    <div class="zh-text">很顯然，他們在沒有經過斯托克同意的情況下，就用了他的故事來拍這部電影。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">This caused a giant fight between Stoker and the filmmakers.</div>
-                    <div class="zh-text">這引發了斯托克和電影製片人之間的一場大衝突／官司。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">After this, Dracula was known by everyone and became the vampire we think of today.</div>
-                    <div class="zh-text">在這之後，德古拉便家喻戶曉，成為我們今天所認為的吸血鬼形象。</div>
-                </div>
-            </div>
-            <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid" id="vocab-grid-25"></div>
-            <h2 class="section-title">✍️ 關鍵文法</h2>
-            <div class="grammar-card">
-                <h3>1. date back to (追溯到...)</h3>
-                <p><b>說明：</b>用來表達「歷史、傳說起始於某個年代／時間點」，為閱讀測驗常考的實用片語。</p>
-                <p><b>例句：</b>Stories of vampires as we know them <span class="highlight">date back to</span> the early 18th century. (我們所熟知的吸血鬼故事可以<span class="highlight">追溯到</span>18世紀初。)</p>
+                <h3>2. rob sb. (搶劫某人) vs. steal sth. (偷走某物)</h3>
+                <p><b>說明：</b>rob 後面直接接「被搶的人或地方」；steal 後面則是接「被偷走的財物」。</p>
+                <p><b>例句：</b>Someone <span class="highlight">robbed me</span>! (有人搶劫了我！) / Someone <span class="highlight">stole my coins</span>! (有人偷了我的硬幣！)</p>
             </div>
             <div class="grammar-card">
-                <h3>2. 虛主詞 It is clear that... (顯然；很清楚的是...)</h3>
-                <p><b>說明：</b>It 是虛主詞，用來代替後面整個 that 子句（真正的主詞），避免句子頭重腳輕。</p>
-                <p><b>例句：</b><span class="highlight">It was clear that</span> they used Stoker's story to make this movie... (很顯然，他們用了斯托克的故事來拍這部電影...)</p>
-            </div>
-            <div class="grammar-card">
-                <h3>3. 複合形容詞 well-dressed (衣著體面的)</h3>
-                <p><b>說明：</b>由「副詞 + 過去分詞 (p.p.)」加上連字號 (-) 結合而成，用來修飾名詞。</p>
-                <p><b>例句：</b>He is <span class="highlight">well-dressed</span> and polite. (他衣著體面且有禮貌。)</p>
+                <h3>3. money down the drain (付諸流水；白白浪費的錢)</h3>
+                <p><b>說明：</b>drain 是排水管，錢流進水管裡，比喻錢財徹底浪費、有去無回。</p>
+                <p><b>例句：</b>It's <span class="highlight">money down the drain</span>! (這錢真是付諸流水！)</p>
             </div>
         </div>
 
@@ -691,7 +504,7 @@
             { unit: 24, en: "tower", kk: "[ˋtauɚ]", zh: "塔；高樓", tip: "拆字：tow-er" },
             { unit: 24, en: "ramen", kk: "[ˋrɑmɛn]", zh: "日式拉麵", tip: "拆字：ra-men" },
             { unit: 24, en: "view", kk: "[vju]", zh: "景色；視野", tip: "單音節" },
-            // ================= Unit 25 (新增：Vampires & Dracula) =================
+            // ================= Unit 25 =================
             { unit: 25, en: "well-dressed", kk: "[wɛl ˋdrɛst]", zh: "衣著體面的", tip: "複合形容詞<br>(well + p.p.)" },
             { unit: 25, en: "polite", kk: "[pəˋlaɪt]", zh: "有禮貌的", tip: "拆字：po-lite<br>(i發長音/aɪ/)" },
             { unit: 25, en: "however", kk: "[haʊˋɛvɚ]", zh: "然而；不過", tip: "拆字：how-ev-er" },
@@ -716,7 +529,62 @@
             { unit: 25, en: "fight", kk: "[faɪt]", zh: "爭吵；打鬥", tip: "單音節<br>(igh發長音/aɪ/)" },
             { unit: 25, en: "vampire", kk: "[ˋvæmpaɪr]", zh: "吸血鬼", tip: "拆字：vam-pire" },
             { unit: 25, en: "fingernail", kk: "[ˋfɪŋgɚˌnel]", zh: "手指甲", tip: "拆字：fin-ger-nail" },
-            { unit: 25, en: "filmmaker", kk: "[ˋfɪlmˌmekɚ]", zh: "電影製作人", tip: "拆字：film-mak-er" }
+            { unit: 25, en: "filmmaker", kk: "[ˋfɪlmˌmekɚ]", zh: "電影製作人", tip: "拆字：film-mak-er" },
+            // ================= Unit 26 (新增：Protect Yourself from Blue Light) =================
+            { unit: 26, en: "protect", kk: "[prəˋtɛkt]", zh: "保護", tip: "拆字：pro-tect" },
+            { unit: 26, en: "several", kk: "[ˋsɛvərəl]", zh: "幾個；數個", tip: "拆字：sev-er-al" },
+            { unit: 26, en: "amount", kk: "[əˋmaʊnt]", zh: "數量；總數", tip: "拆字：a-mount" },
+            { unit: 26, en: "electric", kk: "[ɪˋlɛktrɪk]", zh: "電的；電動的", tip: "拆字：e-lec-tric" },
+            { unit: 26, en: "turn on", kk: "[tɝn ɑn]", zh: "打開（電源）", tip: "動詞片語" },
+            { unit: 26, en: "produce", kk: "[prəˋdjus]", zh: "產生；製造", tip: "拆字：pro-duce" },
+            { unit: 26, en: "block", kk: "[blɑk]", zh: "阻擋；封鎖", tip: "單音節" },
+            { unit: 26, en: "worry about", kk: "[ˋwɝɪ əˋbaʊt]", zh: "擔心", tip: "常見片語" },
+            { unit: 26, en: "damage", kk: "[ˋdæmɪdʒ]", zh: "傷害；損害", tip: "拆字：dam-age" },
+            { unit: 26, en: "dangerous", kk: "[ˋdendʒərəs]", zh: "危險的", tip: "拆字：dan-ger-ous" },
+            { unit: 26, en: "screen", kk: "[skrin]", zh: "螢幕", tip: "單音節" },
+            { unit: 26, en: "pain", kk: "[pen]", zh: "疼痛", tip: "單音節<br>(ai發/e/)" },
+            { unit: 26, en: "affect", kk: "[əˋfɛkt]", zh: "影響", tip: "拆字：af-fect" },
+            { unit: 26, en: "fool", kk: "[ful]", zh: "欺騙；愚弄", tip: "單音節<br>(oo發長音/u/)" },
+            { unit: 26, en: "fall asleep", kk: "[fɔl əˋslip]", zh: "入睡；睡著", tip: "常見動詞片語" },
+            { unit: 26, en: "blind", kk: "[blaɪnd]", zh: "瞎的；失明的", tip: "單音節<br>(i發長音/aɪ/)" },
+            { unit: 26, en: "improve", kk: "[ɪmˋpruv]", zh: "改善；增進", tip: "拆字：im-prove" },
+            { unit: 26, en: "during", kk: "[ˋdjʊrɪŋ]", zh: "在...期間", tip: "拆字：dur-ing" },
+            { unit: 26, en: "advise", kk: "[ədˋvaɪz]", zh: "建議；勸告", tip: "拆字：ad-vise" },
+            { unit: 26, en: "special", kk: "[ˋspɛʃəl]", zh: "特別的", tip: "拆字：spe-cial<br>(ci發/ʃ/)" },
+            { unit: 26, en: "make a difference", kk: "[mek ə ˋdɪfərəns]", zh: "產生差別／影響", tip: "重要實用片語" },
+            { unit: 26, en: "method", kk: "[ˋmɛθəd]", zh: "方法；方式", tip: "拆字：meth-od" },
+            { unit: 26, en: "minute", kk: "[ˋmɪnɪt]", zh: "分鐘", tip: "拆字：min-ute" },
+            { unit: 26, en: "second", kk: "[ˋsɛkənd]", zh: "秒", tip: "拆字：sec-ond" },
+            { unit: 26, en: "chemical", kk: "[ˋkɛmɪk!]", zh: "化學物質", tip: "拆字：chem-i-cal<br>(ch發/k/)" },
+            { unit: 26, en: "mood", kk: "[mud]", zh: "心情；情緒", tip: "單音節<br>(oo發/u/)" },
+            { unit: 26, en: "app", kk: "[æp]", zh: "(手機)應用程式", tip: "application 縮寫" },
+            // ================= Unit 27 (新增：The True Value of Wealth) =================
+            { unit: 27, en: "value", kk: "[ˋvælju]", zh: "價值", tip: "拆字：val-ue" },
+            { unit: 27, en: "save", kk: "[sev]", zh: "儲存；留下", tip: "單音節" },
+            { unit: 27, en: "gold", kk: "[gold]", zh: "黃金", tip: "單音節" },
+            { unit: 27, en: "spot", kk: "[spɑt]", zh: "地點；場所", tip: "單音節" },
+            { unit: 27, en: "hidden", kk: "[ˋhɪdn]", zh: "隱藏的", tip: "拆字：hid-den<br>(hide 過去分詞)" },
+            { unit: 27, en: "open", kk: "[ˋopən]", zh: "打開", tip: "拆字：o-pen" },
+            { unit: 27, en: "count", kk: "[kaʊnt]", zh: "數數；計算", tip: "單音節<br>(ou發/aʊ/)" },
+            { unit: 27, en: "coin", kk: "[kɔɪn]", zh: "硬幣", tip: "單音節<br>(oi發/ɔɪ/)" },
+            { unit: 27, en: "last", kk: "[læst]", zh: "最後的", tip: "單音節" },
+            { unit: 27, en: "shut", kk: "[ʃʌt]", zh: "關上；合上", tip: "單音節<br>(sh發/ʃ/)" },
+            { unit: 27, en: "next", kk: "[nɛkst]", zh: "接下來的；隔天的", tip: "單音節" },
+            { unit: 27, en: "again", kk: "[əˋgɛn]", zh: "再一次；又", tip: "拆字：a-gain" },
+            { unit: 27, en: "wild", kk: "[waɪld]", zh: "狂野的；失控的", tip: "單音節<br>(i發長音/aɪ/)" },
+            { unit: 27, en: "anger", kk: "[ˋæŋgɚ]", zh: "憤怒；生氣", tip: "拆字：an-ger" },
+            { unit: 27, en: "curious", kk: "[ˋkjʊrɪəs]", zh: "好奇的", tip: "拆字：cu-ri-ous" },
+            { unit: 27, en: "wrong", kk: "[rɔŋ]", zh: "錯誤的；有問題的", tip: "單音節<br>(w不發音)" },
+            { unit: 27, en: "rob", kk: "[rɑb]", zh: "搶劫", tip: "單音節<br>(過去式重複b加ed)" },
+            { unit: 27, en: "shout", kk: "[ʃaʊt]", zh: "大喊；吼叫", tip: "單音節<br>(ou發/aʊ/)" },
+            { unit: 27, en: "answer", kk: "[ˋænsɚ]", zh: "回答", tip: "拆字：an-swer<br>(w不發音)" },
+            { unit: 27, en: "throw", kk: "[θro]", zh: "丟；投擲", tip: "單音節<br>(過去式為threw)" },
+            { unit: 27, en: "stone", kk: "[ston]", zh: "石頭", tip: "單音節" },
+            { unit: 27, en: "deep", kk: "[dip]", zh: "深的", tip: "單音節<br>(ee發長音/i/)" },
+            { unit: 27, en: "hole", kk: "[hol]", zh: "洞", tip: "單音節" },
+            { unit: 27, en: "wealth", kk: "[wɛlθ]", zh: "財富；財產", tip: "單音節<br>(th發無聲/θ/)" },
+            { unit: 27, en: "bury", kk: "[ˋbɛrɪ]", zh: "埋藏；掩埋", tip: "拆字：bu-ry<br>(u發/ɛ/)" },
+            { unit: 27, en: "worth", kk: "[wɝθ]", zh: "有價值的；值得的", tip: "單音節" }
         ];
 
         // 網頁載入時，自動把單字卡發配到對應的 Unit 以及測驗區
@@ -757,8 +625,8 @@
                 `;
             });
             
-            // 預設開啟最新的 Unit 25 頁籤 (第8個按鈕)
-            document.querySelector(".nav-tabs button:nth-child(8)").click();
+            // 預設開啟最新的 Unit 27 頁籤 (第10個按鈕)
+            document.querySelector(".nav-tabs button:nth-child(10)").click();
         };
 
         // 切換頁籤
