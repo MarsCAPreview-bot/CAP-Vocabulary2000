@@ -81,12 +81,12 @@
         .sentence-row {
             background: var(--card-bg); margin-bottom: 12px;
             padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            cursor: pointer; /* 滑鼠移入變手指 */
+            cursor: pointer;
             border-left: 4px solid transparent;
             transition: all 0.2s ease;
         }
         .sentence-row:hover {
-            background-color: #f2f9f4; /* 懸停時淡淡的綠色底 */
+            background-color: #f2f9f4;
             border-left-color: var(--primary-color);
             transform: translateX(2px);
         }
@@ -95,6 +95,20 @@
             font-size: 1em; color: #d35400; margin-top: 8px;
             padding-top: 8px; border-top: 1px dashed #eee; display: none;
         }
+        
+        /* 💡 句子專屬文法解析方塊 (國中生程度) */
+        .grammar-note {
+            font-size: 0.92em;
+            color: #0c5460;
+            background-color: #e8f4f8;
+            border-left: 4px solid #17a2b8;
+            margin-top: 8px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: none;
+            line-height: 1.5;
+        }
+
         .email-header {
             background-color: #eee; padding: 10px; border-radius: 5px;
             font-family: monospace; margin-bottom: 15px; font-size: 0.9em;
@@ -183,7 +197,7 @@
 
     <div class="header">
         <h1>國中英文閱讀與單字特訓</h1>
-        <p>點擊 🔊 聽發音 | 點擊卡片看「KK音標與拆字」 | <b>點擊文章英文句子可「逐句翻譯」</b></p>
+        <p>點擊 🔊 聽發音 | 點擊卡片看「KK音標與拆字」 | <b>點擊文章句可「逐句翻譯 + 看文法」</b></p>
     </div>
 
     <!-- 頁籤選單 -->
@@ -238,75 +252,88 @@
         <div id="unit26" class="unit-content">
             <h2 class="section-title">📖 閱讀：Protect Yourself from Blue Light</h2>
             <div class="controls">
-                <span style="color: #666; font-size: 0.9em; margin-right: 10px;">💡 直接點擊下方任一句英文即可展開翻譯 ➔</span>
-                <button class="btn-toggle" onclick="toggleTranslation('unit26')">👀 一鍵顯示 / 隱藏全部中文</button>
+                <span style="color: #666; font-size: 0.9em; margin-right: 10px;">💡 點擊句子可展開「中文翻譯 ＋ 國中文法小提示」 ➔</span>
+                <button class="btn-toggle" onclick="toggleTranslation('unit26')">👀 一鍵顯示 / 隱藏全部中文與文法</button>
             </div>
             <div class="reading-area">
                 <div class="sentence-row">
                     <div class="en-text">Our eyes need light to see. Light we can see comes in several different colors.</div>
                     <div class="zh-text">我們的眼睛需要光線才能看見。我們能看見的光有多種不同的顏色。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>to see</b> 是「不定詞 (to + 原形動詞)」表示目的，意思是「為了看見」。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">Each color has a different amount of energy.</div>
                     <div class="zh-text">每種顏色都含有不同數量的能量。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>Each + 單數名詞</b>（每一個...），後面的動詞要搭配單數動詞（用 <b>has</b> 而非 have）。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">Blue light has the most energy, and is very common in electric lights.</div>
                     <div class="zh-text">藍光含有最多的能量，而且在電燈中非常常見。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>the most energy</b> 表示「最多的能量」，most 是 much/many 的最高級。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">When we turn on a computer, TV, or phone, they all produce blue light.</div>
                     <div class="zh-text">當我們打開電腦、電視或手機時，它們全都會產生藍光。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>turn on</b> 表示「打開電器電源」，反義詞「關掉」是 <b>turn off</b>。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">Our eyes are bad at blocking it because it’s very strong.</div>
                     <div class="zh-text">我們的眼睛不擅長阻擋它，因為它強度很高。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>be bad at + V-ing</b> 表示「不擅長...」，因為 at 是介系詞，後面的動詞 block 遇到它必須加上 -ing！</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">People worry about this because too much blue light causes damage.</div>
                     <div class="zh-text">人們對此感到擔憂，因為過多藍光會造成傷害。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>worry about + 名詞</b> 表示「擔心某事」；<b>too much + 不可數名詞</b>（太多...），blue light 不可數，所以動詞加上 -s 變成 <b>causes</b>。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">The most dangerous blue light comes from screens. Looking at them too much can cause eye pain.</div>
                     <div class="zh-text">最危險的藍光來自螢幕。看太久可能會引起眼睛疼痛。</div>
+                    <div class="grammar-note">💡 【國中重要句型】<b>Looking at them too much</b> 是把動名詞（V-ing）當作「句子的主詞」！整件事「看太久」是這句話的主詞。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">Blue light also affects your sleep. Your body is fooled into thinking it’s a different time of day,</div>
                     <div class="zh-text">藍光也會影響你的睡眠。你的身體會被誤導，以為現在是白天的不同時間，</div>
+                    <div class="grammar-note">💡 【國中文法】<b>is fooled into thinking</b>：① is fooled 是被動語態（被愚弄／被誤導）；② into 是介系詞，後面接 V-ing (thinking)。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">so it stops producing the chemical that helps you fall asleep. Too much blue light can even make you blind.</div>
                     <div class="zh-text">因此它會停止分泌能幫助你入睡的化學物質。過多藍光甚至可能使你失明。</div>
+                    <div class="grammar-note">💡 【國中常考文法】① <b>stop + V-ing</b> 表示「停止正在做的動作」(stops producing)；② <b>make + 人 + 形容詞</b> 表示「使某人變成...狀態」(make you blind)。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">We shouldn’t avoid all blue light, as it improves our mood during the day.</div>
                     <div class="zh-text">我們不應該避免所有藍光，因為它能在白間改善我們的心情。</div>
+                    <div class="grammar-note">💡 【國中文法】這裡的連接詞 <b>as</b> 意思是「因為」，用法等同於 because。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">However, it is advised to protect our eyes from it. Some special glasses and apps block blue light.</div>
                     <div class="zh-text">然而，建議要保護眼睛免受其害。有些特殊的眼鏡和應用程式能夠阻擋藍光。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>protect ... from ...</b> 是重要片語，意為「保護...免於受到...的傷害」。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">Something that could make a difference is to follow the 20-20-20 method.</div>
                     <div class="zh-text">能帶來改善／產生作用的方法是遵循「20-20-20 法則」。</div>
+                    <div class="grammar-note">💡 【重點片語】<b>make a difference</b> 是英文中超核心的片語，表示「產生差別、帶來改善或好的影響」。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">Every 20 minutes, look at something 20 feet away, for 20 seconds. It gives your eyes the rest that they need.</div>
                     <div class="zh-text">每隔 20 分鐘，看向 20 英尺外的地方，維持 20 秒。這能給予你眼睛所需要的休息。</div>
+                    <div class="grammar-note">💡 【國中文法】① <b>Every + 數字 + 複數名詞</b> 表示「每隔多少時間/距離」；② <b>look at...</b> 是原形動詞開頭的「祈使句」，表示建議或指示。</div>
                 </div>
             </div>
             <h2 class="section-title">🎯 互動單字卡</h2>
             <div class="vocab-grid" id="vocab-grid-26"></div>
-            <h2 class="section-title">✍️ 關鍵文法</h2>
+            <h2 class="section-title">✍️ 關鍵文法總結</h2>
             <div class="grammar-card">
                 <h3>1. make a difference (產生作用／差別；改善)</h3>
                 <p><b>說明：</b>表示「對事情有影響、有幫助」，為英文中極為高頻且實用的片語。</p>
-                <p><b>例句：</b>Something that could <span class="highlight">make a difference</span> is to follow the 20-20-20 method. (遵循 20-20-20 法則能帶來大差別/作用。)</p>
+                <p><b>例句：</b>Something that could <span class="highlight">make a difference</span> is to follow the 20-20-20 method.</p>
             </div>
             <div class="grammar-card">
                 <h3>2. fool sb. into V-ing (欺騙／誤導某人去做...)</h3>
                 <p><b>說明：</b>fool 當動詞時為「欺騙、愚弄」，搭配介系詞 into 後接動名詞 (V-ing)，表示騙人產生錯覺或做出行動。</p>
-                <p><b>例句：</b>Your body is <span class="highlight">fooled into thinking</span> it’s a different time of day... (身體會被騙，以為是不同的時間...)</p>
+                <p><b>例句：</b>Your body is <span class="highlight">fooled into thinking</span> it’s a different time of day...</p>
             </div>
         </div>
 
@@ -314,65 +341,79 @@
         <div id="unit27" class="unit-content">
             <h2 class="section-title">📖 閱讀：The True Value of Wealth</h2>
             <div class="controls">
-                <span style="color: #666; font-size: 0.9em; margin-right: 10px;">💡 直接點擊下方任一句英文即可展開翻譯 ➔</span>
-                <button class="btn-toggle" onclick="toggleTranslation('unit27')">👀 一鍵顯示 / 隱藏全部中文</button>
+                <span style="color: #666; font-size: 0.9em; margin-right: 10px;">💡 點擊句子可展開「中文翻譯 ＋ 國中文法小提示」 ➔</span>
+                <button class="btn-toggle" onclick="toggleTranslation('unit27')">👀 一鍵顯示 / 隱藏全部中文與文法</button>
             </div>
             <div class="reading-area">
                 <div class="sentence-row">
                     <div class="en-text">There was an old woman. She was very rich, but she never spent any of her wealth.</div>
                     <div class="zh-text">從前有一位老婦人。她非常富有，卻從不花用她任何的財富。</div>
+                    <div class="grammar-note">💡 【國中文法】① <b>never (從不)</b> 是頻率副詞；② <b>spent</b> 是動詞 spend (花錢/花時間) 的過去式不規則變化。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">Instead, she saved all of her gold in a case. She buried the case in a secret spot in her garden.</div>
-                    <div class="zh-text">相反地，她把所有的黃金都存放在一個箱子裡。她把箱子埋在花園裡的一個秘密地點。</div></div>
+                    <div class="zh-text">相反地，她把所有的黃金都存放在一個箱子裡。她把箱子埋在花園裡的一個秘密地點。</div>
+                    <div class="grammar-note">💡 【國中文法】① <b>Instead (相反地／改為...)</b> 常放句首作轉折；② <b>buried</b> 是 bury (埋藏) 的過去式（去 y 變成 i 再加 -ed）。</div>
+                </div>
                 <div class="sentence-row">
                     <div class="en-text">Each day, the woman went into her garden. She dug up the hidden case and opened it.</div>
                     <div class="zh-text">老婦人每天都會走到她的花園。她把藏起來的箱子挖出來並打開。</div>
+                    <div class="grammar-note">💡 【國中文法】① <b>dug up</b> (挖出)，dug 是 dig 的過去式；② <b>hidden (被隱藏的)</b> 是 hide 的過去分詞，這裡拿來當作形容詞修飾 case (箱子)。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">Then, she counted the coins one by one.</div>
                     <div class="zh-text">然後，她一枚接著一枚地數著那些硬幣。</div>
+                    <div class="grammar-note">💡 【國中片語】<b>one by one</b> 是常考副詞片語，意思是「一個接著一個地／依次地」。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">After the woman counted the last coin, she shut the case and buried it once more.</div>
                     <div class="zh-text">在老婦人數完最後一枚硬幣後，她便闔上箱子，再次把它埋好。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>shut (關閉)</b> 的動詞三態為不規則的「同形」：shut - shut - shut，所以過去式也沒有加 -ed 喔！</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">The next day, she did this all over again.</div>
                     <div class="zh-text">隔天，她又把全部動作重複做了一遍。</div>
+                    <div class="grammar-note">💡 【國中片語】<b>all over again</b> 表示「從頭到尾再做一次／重新再來過」。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">One night, someone took the coins. When the woman came and saw what had happened, she went wild with anger.</div>
                     <div class="zh-text">某天夜裡，有人偷走了硬幣。當婦人來到花園看到發生的事，她氣得勃然大怒／發狂。</div>
+                    <div class="grammar-note">💡 【國中重要句型】<b>go wild with anger</b> 表示「氣得勃然大怒／氣瘋了」，此處 go 翻譯為「變得...」，是連綴動詞，後接形容詞 wild。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">A curious man heard her and asked what was wrong.</div>
                     <div class="zh-text">一個好奇的男人聽到了她的聲音，問她發生了什麼問題。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>what was wrong</b> 表示「怎麼了 / 出了什麼問題」，在問句中常寫成 What's wrong (with you)?</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">“Someone robbed me and now my gold is gone. It’s money down the drain!” shouted the woman.</div>
                     <div class="zh-text">婦人大喊：「有人搶了我，現在我的金子都沒了。這錢全打水漂／付諸流水了！」</div>
+                    <div class="grammar-note">💡 【易混淆文法】① <b>rob + 人/場所</b> (搶劫某人)；<b>steal + 財物</b> (偷走某物)！② <b>money down the drain</b> 比喻「錢流進排水管」，即白白浪費、打水漂。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">“Why was your gold buried in the earth? If it’s there, you can’t spend it,” said the man.</div>
                     <div class="zh-text">男人說：「為什麼妳的黃金要埋在土裡？如果放在那裡，妳根本不能花。」</div>
+                    <div class="grammar-note">💡 【國中常考文法】<b>was buried</b> 是「被動語態 (be動詞 + 過去分詞 p.p.)」，意思是「被埋在土裡」。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">The woman answered, “I would never spend my gold!”</div>
                     <div class="zh-text">婦人回答：「我絕不可能花我的黃金！」</div>
+                    <div class="grammar-note">💡 【國中文法】助動詞 <b>would / will + 原形動詞</b>，所以後面的 spend 要保持原形喔！</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">The man threw a stone into the deep hole. “Bury this, then,” he said.</div>
                     <div class="zh-text">男人於是把一塊石頭扔進那個深洞裡。「那就把這個埋起來吧，」他說。</div>
+                    <div class="grammar-note">💡 【國中文法】① <b>threw</b> 是 throw (投擲) 的過去式；② <b>"Bury this..."</b> 是以原形動詞開頭的「祈使句」。</div>
                 </div>
                 <div class="sentence-row">
                     <div class="en-text">“It’s worth just as much. Wealth has no value if it’s never used.”</div>
                     <div class="zh-text">「這同樣有價值。財富如果從不使用，就毫無價值可言。」</div>
+                    <div class="grammar-note">💡 【重點文法】① <b>be worth + 價值</b> (值得... / 有...價值)；② <b>if it's never used</b> 也是被動語態，意為「如果它從未被使用過」。</div>
                 </div>
             </div>
             <h2 class="section-title">🎯 互動單字卡</h2>
             <div class="vocab-grid" id="vocab-grid-27"></div>
-            <h2 class="section-title">✍️ 關鍵文法</h2>
+            <h2 class="section-title">✍️ 關鍵文法總結</h2>
             <div class="grammar-card">
                 <h3>1. go wild with anger (勃然大怒；氣急敗壞)</h3>
                 <p><b>說明：</b>這裡的 go 為連綴動詞（變成...狀態），搭配形容詞 wild (瘋狂/失控) 與介系詞 with (因為...)，生動描述情緒失控。</p>
@@ -544,7 +585,7 @@
             { unit: 25, en: "vampire", kk: "[ˋvæmpaɪr]", zh: "吸血鬼", tip: "拆字：vam-pire" },
             { unit: 25, en: "fingernail", kk: "[ˋfɪŋgɚˌnel]", zh: "手指甲", tip: "拆字：fin-ger-nail" },
             { unit: 25, en: "filmmaker", kk: "[ˋfɪlmˌmekɚ]", zh: "電影製作人", tip: "拆字：film-mak-er" },
-            // ================= Unit 26 (Protect Yourself from Blue Light) =================
+            // ================= Unit 26 =================
             { unit: 26, en: "protect", kk: "[prəˋtɛkt]", zh: "保護", tip: "拆字：pro-tect" },
             { unit: 26, en: "several", kk: "[ˋsɛvərəl]", zh: "幾個；數個", tip: "拆字：sev-er-al" },
             { unit: 26, en: "amount", kk: "[əˋmaʊnt]", zh: "數量；總數", tip: "拆字：a-mount" },
@@ -572,7 +613,7 @@
             { unit: 26, en: "chemical", kk: "[ˋkɛmɪk!]", zh: "化學物質", tip: "拆字：chem-i-cal<br>(ch發/k/)" },
             { unit: 26, en: "mood", kk: "[mud]", zh: "心情；情緒", tip: "單音節<br>(oo發/u/)" },
             { unit: 26, en: "app", kk: "[æp]", zh: "(手機)應用程式", tip: "application 縮寫" },
-            // ================= Unit 27 (The True Value of Wealth) =================
+            // ================= Unit 27 =================
             { unit: 27, en: "value", kk: "[ˋvælju]", zh: "價值", tip: "拆字：val-ue" },
             { unit: 27, en: "save", kk: "[sev]", zh: "儲存；留下", tip: "單音節" },
             { unit: 27, en: "gold", kk: "[gold]", zh: "黃金", tip: "單音節" },
@@ -601,7 +642,7 @@
             { unit: 27, en: "worth", kk: "[wɝθ]", zh: "有價值的；值得的", tip: "單音節" }
         ];
 
-        // 網頁載入時，自動把單字卡發配到對應的 Unit 以及測驗區，並且替句子加上點擊功能
+        // 網頁載入時，自動把單字卡發配到對應的 Unit 以及測驗區，並綁定「逐句點擊顯示中文＋文法」！
         window.onload = function() {
             const quizGrid = document.getElementById('quiz-grid');
             
@@ -639,12 +680,16 @@
                 `;
             });
 
-            // 3. 自動替所有閱讀句子加上「點擊單句展開翻譯」的事件監聽！
+            // 3. 自動替所有閱讀句子加上「點擊單句展開翻譯＋文法提示」的事件監聽！
             document.querySelectorAll('.sentence-row').forEach(row => {
                 row.addEventListener('click', function() {
                     const zhText = this.querySelector('.zh-text');
+                    const grammarNote = this.querySelector('.grammar-note');
                     if (zhText) {
                         zhText.style.display = (zhText.style.display === 'block') ? 'none' : 'block';
+                    }
+                    if (grammarNote) {
+                        grammarNote.style.display = (grammarNote.style.display === 'block') ? 'none' : 'block';
                     }
                 });
             });
@@ -673,16 +718,20 @@
             }
         }
 
-        // 一般閱讀單元：一鍵顯示/隱藏課文全部中文
+        // 一般閱讀單元：一鍵顯示/隱藏課文全部中文與文法
         function toggleTranslation(unitId) {
             var unit = document.getElementById(unitId);
             var zhTexts = unit.getElementsByClassName("zh-text");
+            var grammarNotes = unit.getElementsByClassName("grammar-note");
             var isHidden = true;
             if(zhTexts.length > 0 && zhTexts[0].style.display === "block") {
                 isHidden = false;
             }
             for (var i = 0; i < zhTexts.length; i++) {
                 zhTexts[i].style.display = isHidden ? "block" : "none";
+            }
+            for (var j = 0; j < grammarNotes.length; j++) {
+                grammarNotes[j].style.display = isHidden ? "block" : "none";
             }
         }
 
