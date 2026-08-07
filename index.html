@@ -67,11 +67,11 @@
             padding-bottom: 5px; margin-top: 30px;
         }
         
-        /* 閱讀區塊 */
+        /* 閱讀區塊：逐句點擊互動優化 */
         .controls { margin-bottom: 15px; text-align: right; }
         .btn-toggle {
             background-color: #008CBA; color: white; border: none;
-            padding: 10px 20px; font-size: 16px; border-radius: 8px;
+            padding: 10px 18px; font-size: 15px; border-radius: 8px;
             cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             transition: background-color 0.2s;
         }
@@ -81,6 +81,14 @@
         .sentence-row {
             background: var(--card-bg); margin-bottom: 12px;
             padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            cursor: pointer; /* 滑鼠移入變手指 */
+            border-left: 4px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .sentence-row:hover {
+            background-color: #f2f9f4; /* 懸停時淡淡的綠色底 */
+            border-left-color: var(--primary-color);
+            transform: translateX(2px);
         }
         .en-text { font-size: 1.15em; font-weight: 600; color: var(--text-dark); }
         .zh-text {
@@ -175,7 +183,7 @@
 
     <div class="header">
         <h1>國中英文閱讀與單字特訓</h1>
-        <p>點擊 🔊 聽發音 | 點擊卡片看「KK音標與拆字提示」 | 點擊按鈕切換中文</p>
+        <p>點擊 🔊 聽發音 | 點擊卡片看「KK音標與拆字」 | <b>點擊文章英文句子可「逐句翻譯」</b></p>
     </div>
 
     <!-- 頁籤選單 -->
@@ -226,10 +234,13 @@
         <div id="unit24" class="unit-content"><h2 class="section-title">📖 A Trip to Osaka</h2><div class="vocab-grid" id="vocab-grid-24"></div></div>
         <div id="unit25" class="unit-content"><h2 class="section-title">📖 Vampires & Dracula</h2><div class="vocab-grid" id="vocab-grid-25"></div></div>
 
-        <!-- ================= Unit 26 (新增：Protect Yourself from Blue Light) ================= -->
+        <!-- ================= Unit 26 (Protect Yourself from Blue Light) ================= -->
         <div id="unit26" class="unit-content">
             <h2 class="section-title">📖 閱讀：Protect Yourself from Blue Light</h2>
-            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit26')">👀 顯示 / 隱藏全部中文</button></div>
+            <div class="controls">
+                <span style="color: #666; font-size: 0.9em; margin-right: 10px;">💡 直接點擊下方任一句英文即可展開翻譯 ➔</span>
+                <button class="btn-toggle" onclick="toggleTranslation('unit26')">👀 一鍵顯示 / 隱藏全部中文</button>
+            </div>
             <div class="reading-area">
                 <div class="sentence-row">
                     <div class="en-text">Our eyes need light to see. Light we can see comes in several different colors.</div>
@@ -299,10 +310,13 @@
             </div>
         </div>
 
-        <!-- ================= Unit 27 (新增：The True Value of Wealth) ================= -->
+        <!-- ================= Unit 27 (The True Value of Wealth) ================= -->
         <div id="unit27" class="unit-content">
             <h2 class="section-title">📖 閱讀：The True Value of Wealth</h2>
-            <div class="controls"><button class="btn-toggle" onclick="toggleTranslation('unit27')">👀 顯示 / 隱藏全部中文</button></div>
+            <div class="controls">
+                <span style="color: #666; font-size: 0.9em; margin-right: 10px;">💡 直接點擊下方任一句英文即可展開翻譯 ➔</span>
+                <button class="btn-toggle" onclick="toggleTranslation('unit27')">👀 一鍵顯示 / 隱藏全部中文</button>
+            </div>
             <div class="reading-area">
                 <div class="sentence-row">
                     <div class="en-text">There was an old woman. She was very rich, but she never spent any of her wealth.</div>
@@ -530,7 +544,7 @@
             { unit: 25, en: "vampire", kk: "[ˋvæmpaɪr]", zh: "吸血鬼", tip: "拆字：vam-pire" },
             { unit: 25, en: "fingernail", kk: "[ˋfɪŋgɚˌnel]", zh: "手指甲", tip: "拆字：fin-ger-nail" },
             { unit: 25, en: "filmmaker", kk: "[ˋfɪlmˌmekɚ]", zh: "電影製作人", tip: "拆字：film-mak-er" },
-            // ================= Unit 26 (新增：Protect Yourself from Blue Light) =================
+            // ================= Unit 26 (Protect Yourself from Blue Light) =================
             { unit: 26, en: "protect", kk: "[prəˋtɛkt]", zh: "保護", tip: "拆字：pro-tect" },
             { unit: 26, en: "several", kk: "[ˋsɛvərəl]", zh: "幾個；數個", tip: "拆字：sev-er-al" },
             { unit: 26, en: "amount", kk: "[əˋmaʊnt]", zh: "數量；總數", tip: "拆字：a-mount" },
@@ -558,7 +572,7 @@
             { unit: 26, en: "chemical", kk: "[ˋkɛmɪk!]", zh: "化學物質", tip: "拆字：chem-i-cal<br>(ch發/k/)" },
             { unit: 26, en: "mood", kk: "[mud]", zh: "心情；情緒", tip: "單音節<br>(oo發/u/)" },
             { unit: 26, en: "app", kk: "[æp]", zh: "(手機)應用程式", tip: "application 縮寫" },
-            // ================= Unit 27 (新增：The True Value of Wealth) =================
+            // ================= Unit 27 (The True Value of Wealth) =================
             { unit: 27, en: "value", kk: "[ˋvælju]", zh: "價值", tip: "拆字：val-ue" },
             { unit: 27, en: "save", kk: "[sev]", zh: "儲存；留下", tip: "單音節" },
             { unit: 27, en: "gold", kk: "[gold]", zh: "黃金", tip: "單音節" },
@@ -587,7 +601,7 @@
             { unit: 27, en: "worth", kk: "[wɝθ]", zh: "有價值的；值得的", tip: "單音節" }
         ];
 
-        // 網頁載入時，自動把單字卡發配到對應的 Unit 以及測驗區
+        // 網頁載入時，自動把單字卡發配到對應的 Unit 以及測驗區，並且替句子加上點擊功能
         window.onload = function() {
             const quizGrid = document.getElementById('quiz-grid');
             
@@ -624,6 +638,16 @@
                     </div>
                 `;
             });
+
+            // 3. 自動替所有閱讀句子加上「點擊單句展開翻譯」的事件監聽！
+            document.querySelectorAll('.sentence-row').forEach(row => {
+                row.addEventListener('click', function() {
+                    const zhText = this.querySelector('.zh-text');
+                    if (zhText) {
+                        zhText.style.display = (zhText.style.display === 'block') ? 'none' : 'block';
+                    }
+                });
+            });
             
             // 預設開啟最新的 Unit 27 頁籤 (第10個按鈕)
             document.querySelector(".nav-tabs button:nth-child(10)").click();
@@ -649,7 +673,7 @@
             }
         }
 
-        // 一般閱讀單元：顯示/隱藏課文中文
+        // 一般閱讀單元：一鍵顯示/隱藏課文全部中文
         function toggleTranslation(unitId) {
             var unit = document.getElementById(unitId);
             var zhTexts = unit.getElementsByClassName("zh-text");
