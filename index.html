@@ -38,7 +38,7 @@
         }
         .nav-tabs button {
             flex: 1;
-            min-width: 60px;
+            min-width: 55px;
             background-color: inherit;
             color: white;
             border: none;
@@ -202,7 +202,7 @@
 
     <!-- 頁籤選單 -->
     <div class="nav-tabs">
-        <button class="tab-link active" onclick="openUnit(event, 'unit18')">U18</button>
+        <button class="tab-link" onclick="openUnit(event, 'unit18')">U18</button>
         <button class="tab-link" onclick="openUnit(event, 'unit19')">U19</button>
         <button class="tab-link" onclick="openUnit(event, 'unit20')">U20</button>
         <button class="tab-link" onclick="openUnit(event, 'unit21')">U21</button>
@@ -212,6 +212,9 @@
         <button class="tab-link" onclick="openUnit(event, 'unit25')">U25</button>
         <button class="tab-link" onclick="openUnit(event, 'unit26')">U26</button>
         <button class="tab-link" onclick="openUnit(event, 'unit27')">U27</button>
+        <button class="tab-link" onclick="openUnit(event, 'unit28')">U28</button>
+        <button class="tab-link" onclick="openUnit(event, 'unit29')">U29</button>
+        <button class="tab-link active" onclick="openUnit(event, 'unit30')">U30</button>
         <button class="tab-link tab-quiz" onclick="openUnit(event, 'quiz-mode')">🎧 總複習測驗</button>
     </div>
 
@@ -238,7 +241,7 @@
             </div>
         </div>
 
-        <!-- ================= Unit 18-25 ================= -->
+        <!-- ================= Unit 18-27 ================= -->
         <div id="unit18" class="unit-content"><h2 class="section-title">📖 Komodo: The Island of Dragons</h2><div class="vocab-grid" id="vocab-grid-18"></div></div>
         <div id="unit19" class="unit-content"><h2 class="section-title">📖 Bear River High School Flea Market</h2><div class="vocab-grid" id="vocab-grid-19"></div></div>
         <div id="unit20" class="unit-content"><h2 class="section-title">📖 Rosefield Tour Bus</h2><div class="vocab-grid" id="vocab-grid-20"></div></div>
@@ -247,187 +250,243 @@
         <div id="unit23" class="unit-content"><h2 class="section-title">📖 You Become Like the Company You Keep</h2><div class="vocab-grid" id="vocab-grid-23"></div></div>
         <div id="unit24" class="unit-content"><h2 class="section-title">📖 A Trip to Osaka</h2><div class="vocab-grid" id="vocab-grid-24"></div></div>
         <div id="unit25" class="unit-content"><h2 class="section-title">📖 Vampires & Dracula</h2><div class="vocab-grid" id="vocab-grid-25"></div></div>
+        <div id="unit26" class="unit-content"><h2 class="section-title">📖 Protect Yourself from Blue Light</h2><div class="vocab-grid" id="vocab-grid-26"></div></div>
+        <div id="unit27" class="unit-content"><h2 class="section-title">📖 The True Value of Wealth</h2><div class="vocab-grid" id="vocab-grid-27"></div></div>
 
-        <!-- ================= Unit 26 (Protect Yourself from Blue Light) ================= -->
-        <div id="unit26" class="unit-content">
-            <h2 class="section-title">📖 閱讀：Protect Yourself from Blue Light</h2>
+        <!-- ================= Unit 28 (Deal with People Like Animals) ================= -->
+        <div id="unit28" class="unit-content">
+            <h2 class="section-title">📖 閱讀：Deal with People Like Animals</h2>
             <div class="controls">
                 <span style="color: #666; font-size: 0.9em; margin-right: 10px;">💡 點擊句子可展開「中文翻譯 ＋ 國中文法小提示」 ➔</span>
-                <button class="btn-toggle" onclick="toggleTranslation('unit26')">👀 一鍵顯示 / 隱藏全部中文與文法</button>
+                <button class="btn-toggle" onclick="toggleTranslation('unit28')">👀 一鍵顯示 / 隱藏全部中文與文法</button>
             </div>
             <div class="reading-area">
                 <div class="sentence-row">
-                    <div class="en-text">Our eyes need light to see. Light we can see comes in several different colors.</div>
-                    <div class="zh-text">我們的眼睛需要光線才能看見。我們能看見的光有多種不同的顏色。</div>
-                    <div class="grammar-note">💡 【國中文法】<b>to see</b> 是「不定詞 (to + 原形動詞)」表示目的，意思是「為了看見」。</div>
+                    <div class="en-text">Everyone has something in common. We all have to deal with difficult people. It’s never easy.</div>
+                    <div class="zh-text">每個人都有個共同點。我們全都需要應付難相處的人。這從來就不是件容易的事。</div>
+                    <div class="grammar-note">💡 【國中文法】① <b>have ... in common</b> 表示「有……共同點」；② <b>deal with</b> 是高頻動詞片語，指「處理、應付（人或問題）」。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">Each color has a different amount of energy.</div>
-                    <div class="zh-text">每種顏色都含有不同數量的能量。</div>
-                    <div class="grammar-note">💡 【國中文法】<b>Each + 單數名詞</b>（每一個...），後面的動詞要搭配單數動詞（用 <b>has</b> 而非 have）。</div>
+                    <div class="en-text">If you take a few tips from the animal kingdom, though, it can be a little bit easier.</div>
+                    <div class="zh-text">不過，如果你從動物王國學到幾招訣竅，事情能變得稍微容易一些。</div>
+                    <div class="grammar-note">💡 【國中文法】① <b>a few + 可數名詞複數 (tips)</b> 表示「一些 / 幾個」；② <b>though</b> 放於句中或句尾用逗號隔開，當副詞表示「然而、不過」。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">Blue light has the most energy, and is very common in electric lights.</div>
-                    <div class="zh-text">藍光含有最多的能量，而且在電燈中非常常見。</div>
-                    <div class="grammar-note">💡 【國中文法】<b>the most energy</b> 表示「最多的能量」，most 是 much/many 的最高級。</div>
+                    <div class="en-text">When you face a difficult person, think of a big angry elephant coming toward you.</div>
+                    <div class="zh-text">當你面對一個難搞的人時，想像一頭憤怒的大象正朝你衝過來。</div>
+                    <div class="grammar-note">💡 【國中句型】<b>coming toward you</b> 為現在分詞（V-ing）構成的片語，在此作後位修飾，用來形容「正朝你走來的」大象。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">When we turn on a computer, TV, or phone, they all produce blue light.</div>
-                    <div class="zh-text">當我們打開電腦、電視或手機時，它們全都會產生藍光。</div>
-                    <div class="grammar-note">💡 【國中文法】<b>turn on</b> 表示「打開電器電源」，反義詞「關掉」是 <b>turn off</b>。</div>
+                    <div class="en-text">What should you do? Move out of the way, of course! Just let the elephant pass by.</div>
+                    <div class="zh-text">你該怎麼做？當然是讓開呀！就讓那頭大象過去就好。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>let + 受詞 + 原形動詞</b>：let 為使役動詞，後面表示「通過 / 經過」的 pass 必須用原形動詞！</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">Our eyes are bad at blocking it because it’s very strong.</div>
-                    <div class="zh-text">我們的眼睛不擅長阻擋它，因為它強度很高。</div>
-                    <div class="grammar-note">💡 【國中文法】<b>be bad at + V-ing</b> 表示「不擅長...」，因為 at 是介系詞，後面的動詞 block 遇到它必須加上 -ing！</div>
+                    <div class="en-text">Similarly, when negative people are around you, don’t try to fight or argue with them.</div>
+                    <div class="zh-text">同樣地，當充滿負能量的人在你周圍時，別試圖去跟他們爭吵或辯論。</div>
+                    <div class="grammar-note">💡 【常考副詞】<b>Similarly</b>（同樣地、相似地）用來銜接前後兩段類比語氣，讓句意表達更順暢。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">People worry about this because too much blue light causes damage.</div>
-                    <div class="zh-text">人們對此感到擔憂，因為過多藍光會造成傷害。</div>
-                    <div class="grammar-note">💡 【國中文法】<b>worry about + 名詞</b> 表示「擔心某事」；<b>too much + 不可數名詞</b>（太多...），blue light 不可數，所以動詞加上 -s 變成 <b>causes</b>。</div>
+                    <div class="en-text">Difficult people behave like bees. They fly around because they want you to fight with them.</div>
+                    <div class="zh-text">難相處的人行為就像蜜蜂一樣。牠們四處飛舞，因為牠們想要你與之打鬥。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>like</b> 在此為介系詞，表示「像……一樣」，而非動詞「喜歡」。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">The most dangerous blue light comes from screens. Looking at them too much can cause eye pain.</div>
-                    <div class="zh-text">最危險的藍光來自螢幕。看太久可能會引起眼睛疼痛。</div>
-                    <div class="grammar-note">💡 【國中重要句型】<b>Looking at them too much</b> 是把動名詞（V-ing）當作「句子的主詞」！整件事「看太久」是這句話的主詞。</div>
+                    <div class="en-text">Stay calm around them. Be ready for anything they might do.</div>
+                    <div class="zh-text">在他們周圍要保持冷靜。對他們可能會做的任何舉動做好準備。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>Stay calm</b> 是「祈使句」，stay 為連綴動詞（保持……狀態），後面接形容詞 calm（冷靜的）。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">Blue light also affects your sleep. Your body is fooled into thinking it’s a different time of day,</div>
-                    <div class="zh-text">藍光也會影響你的睡眠。你的身體會被誤導，以為現在是白天的不同時間，</div>
-                    <div class="grammar-note">💡 【國中文法】<b>is fooled into thinking</b>：① is fooled 是被動語態（被愚弄／被誤導）；② into 是介系詞，後面接 V-ing (thinking)。</div>
+                    <div class="en-text">Sometimes, you can’t avoid a difficult person. So, be an eagle. Fly high above them.</div>
+                    <div class="zh-text">有時候，你無法避開難相處的人。那麼，就當隻老鷹吧。在他們之上高高飛翔。</div>
+                    <div class="grammar-note">💡 【動詞用法】<b>avoid + 名詞 / V-ing</b> 表示「避開、避免（做）某事」。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">so it stops producing the chemical that helps you fall asleep. Too much blue light can even make you blind.</div>
-                    <div class="zh-text">因此它會停止分泌能幫助你入睡的化學物質。過多藍光甚至可能使你失明。</div>
-                    <div class="grammar-note">💡 【國中常考文法】① <b>stop + V-ing</b> 表示「停止正在做的動作」(stops producing)；② <b>make + 人 + 形容詞</b> 表示「使某人變成...狀態」(make you blind)。</div>
+                    <div class="en-text">When you see them from far away, you’ll understand them better.</div>
+                    <div class="zh-text">當你從遠處看待他們時，你會更理解他們。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>from far away</b> 表示「從遠處 / 隔著一段距離」。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">We shouldn’t avoid all blue light, as it improves our mood during the day.</div>
-                    <div class="zh-text">我們不應該避免所有藍光，因為它能在白間改善我們的心情。</div>
-                    <div class="grammar-note">💡 【國中文法】這裡的連接詞 <b>as</b> 意思是「因為」，用法等同於 because。</div>
+                    <div class="en-text">Or, you can be a hyena. Hyenas laugh at everything.</div>
+                    <div class="zh-text">或者，你可以當隻鬣狗。鬣狗對所有事情都能一笑置之。</div>
+                    <div class="grammar-note">💡 【動詞搭配】<b>laugh at...</b> 表示「對……發笑」或「嘲笑……」。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">However, it is advised to protect our eyes from it. Some special glasses and apps block blue light.</div>
-                    <div class="zh-text">然而，建議要保護眼睛免受其害。有些特殊的眼鏡和應用程式能夠阻擋藍光。</div>
-                    <div class="grammar-note">💡 【國中文法】<b>protect ... from ...</b> 是重要片語，意為「保護...免於受到...的傷害」。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">Something that could make a difference is to follow the 20-20-20 method.</div>
-                    <div class="zh-text">能帶來改善／產生作用的方法是遵循「20-20-20 法則」。</div>
-                    <div class="grammar-note">💡 【重點片語】<b>make a difference</b> 是英文中超核心的片語，表示「產生差別、帶來改善或好的影響」。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">Every 20 minutes, look at something 20 feet away, for 20 seconds. It gives your eyes the rest that they need.</div>
-                    <div class="zh-text">每隔 20 分鐘，看向 20 英尺外的地方，維持 20 秒。這能給予你眼睛所需要的休息。</div>
-                    <div class="grammar-note">💡 【國中文法】① <b>Every + 數字 + 複數名詞</b> 表示「每隔多少時間/距離」；② <b>look at...</b> 是原形動詞開頭的「祈使句」，表示建議或指示。</div>
+                    <div class="en-text">Find the humor in a difficult situation and make a joke. People can’t be mad if they’re laughing.</div>
+                    <div class="zh-text">在艱難的處境中尋找幽默，並開個玩笑。當人們在笑的時候是生不起氣來的。</div>
+                    <div class="grammar-note">💡 【國中片語】<b>make a joke</b> 表示「開玩笑、說笑話」；<b>if + 現在進行式</b> 表示「如果在……的狀態下」。</div>
                 </div>
             </div>
             <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid" id="vocab-grid-26"></div>
+            <div class="vocab-grid" id="vocab-grid-28"></div>
             <h2 class="section-title">✍️ 關鍵文法總結</h2>
             <div class="grammar-card">
-                <h3>1. make a difference (產生作用／差別；改善)</h3>
-                <p><b>說明：</b>表示「對事情有影響、有幫助」，為英文中極為高頻且實用的片語。</p>
-                <p><b>例句：</b>Something that could <span class="highlight">make a difference</span> is to follow the 20-20-20 method.</p>
+                <h3>1. deal with (處理；應付)</h3>
+                <p><b>說明：</b>國二必背高頻動詞片語，後接待處理的「人」或「問題／事務」。</p>
+                <p><b>例句：</b>We all have to <span class="highlight">deal with</span> difficult people.</p>
             </div>
             <div class="grammar-card">
-                <h3>2. fool sb. into V-ing (欺騙／誤導某人去做...)</h3>
-                <p><b>說明：</b>fool 當動詞時為「欺騙、愚弄」，搭配介系詞 into 後接動名詞 (V-ing)，表示騙人產生錯覺或做出行動。</p>
-                <p><b>例句：</b>Your body is <span class="highlight">fooled into thinking</span> it’s a different time of day...</p>
+                <h3>2. let + 受詞 + 原形動詞 (使役動詞用法)</h3>
+                <p><b>說明：</b>let, make, have 作使役動詞（讓／叫某人去...）時，後面的第二個動詞一定要是「原形動詞」。</p>
+                <p><b>例句：</b>Just <span class="highlight">let</span> the elephant <span class="highlight">pass</span> by.</p>
             </div>
         </div>
 
-        <!-- ================= Unit 27 (The True Value of Wealth) ================= -->
-        <div id="unit27" class="unit-content">
-            <h2 class="section-title">📖 閱讀：The True Value of Wealth</h2>
+        <!-- ================= Unit 29 (Summer Plans 對話) ================= -->
+        <div id="unit29" class="unit-content">
+            <h2 class="section-title">📖 閱讀：Summer Plans (對話)</h2>
             <div class="controls">
                 <span style="color: #666; font-size: 0.9em; margin-right: 10px;">💡 點擊句子可展開「中文翻譯 ＋ 國中文法小提示」 ➔</span>
-                <button class="btn-toggle" onclick="toggleTranslation('unit27')">👀 一鍵顯示 / 隱藏全部中文與文法</button>
+                <button class="btn-toggle" onclick="toggleTranslation('unit29')">👀 一鍵顯示 / 隱藏全部中文與文法</button>
             </div>
             <div class="reading-area">
                 <div class="sentence-row">
-                    <div class="en-text">There was an old woman. She was very rich, but she never spent any of her wealth.</div>
-                    <div class="zh-text">從前有一位老婦人。她非常富有，卻從不花用她任何的財富。</div>
-                    <div class="grammar-note">💡 【國中文法】① <b>never (從不)</b> 是頻率副詞；② <b>spent</b> 是動詞 spend (花錢/花時間) 的過去式不規則變化。</div>
+                    <div class="en-text"><span class="dialogue-speaker">Eddie:</span> Do you have any plans for summer?</div>
+                    <div class="zh-text">你對今年夏天有任何計畫嗎？</div>
+                    <div class="grammar-note">💡 【國中文法】<b>have plans for...</b> 表示「對……有計畫／打算」。在疑問句與否定句中，一些/任何要搭配 <b>any</b>。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">Instead, she saved all of her gold in a case. She buried the case in a secret spot in her garden.</div>
-                    <div class="zh-text">相反地，她把所有的黃金都存放在一個箱子裡。她把箱子埋在花園裡的一個秘密地點。</div>
-                    <div class="grammar-note">💡 【國中文法】① <b>Instead (相反地／改為...)</b> 常放句首作轉折；② <b>buried</b> 是 bury (埋藏) 的過去式（去 y 變成 i 再加 -ed）。</div>
+                    <div class="en-text"><span class="dialogue-speaker">Cindy:</span> Not yet. How about you?</div>
+                    <div class="zh-text">還沒有耶。那你呢？</div>
+                    <div class="grammar-note">💡 【口語應答】<b>Not yet.</b> 意為「尚未／還沒有」，為英語對話極常見的簡答。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">Each day, the woman went into her garden. She dug up the hidden case and opened it.</div>
-                    <div class="zh-text">老婦人每天都會走到她的花園。她把藏起來的箱子挖出來並打開。</div>
-                    <div class="grammar-note">💡 【國中文法】① <b>dug up</b> (挖出)，dug 是 dig 的過去式；② <b>hidden (被隱藏的)</b> 是 hide 的過去分詞，這裡拿來當作形容詞修飾 case (箱子)。</div>
+                    <div class="en-text"><span class="dialogue-speaker">Eddie:</span> I’m signing up for a summer camp which does all-day trips to the beach.</div>
+                    <div class="zh-text">我準備要報名一個有舉辦海灘全日遊的夏令營。</div>
+                    <div class="grammar-note">💡 【國中重點】① <b>sign up for</b>（報名／登記）；② <b>which does...</b> 是關係代名詞開頭的「形容詞子句」，用來補充說明前面的 camp（營隊）。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">Then, she counted the coins one by one.</div>
-                    <div class="zh-text">然後，她一枚接著一枚地數著那些硬幣。</div>
-                    <div class="grammar-note">💡 【國中片語】<b>one by one</b> 是常考副詞片語，意思是「一個接著一個地／依次地」。</div>
+                    <div class="en-text"><span class="dialogue-speaker">Cindy:</span> Cool. But this summer holiday I need to be a babysitter for my nephews while the adults in my family are at work.</div>
+                    <div class="zh-text">酷喔。但我這個暑假必須在我家人上班時，當我外甥們的臨時保姆。</div>
+                    <div class="grammar-note">💡 【國中文法】連接詞 <b>while</b> 表示「當……的時候」，常連接一段「正在進行／發生」的時間狀態。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">After the woman counted the last coin, she shut the case and buried it once more.</div>
-                    <div class="zh-text">在老婦人數完最後一枚硬幣後，她便闔上箱子，再次把它埋好。</div>
-                    <div class="grammar-note">💡 【國中文法】<b>shut (關閉)</b> 的動詞三態為不規則的「同形」：shut - shut - shut，所以過去式也沒有加 -ed 喔！</div>
+                    <div class="en-text"><span class="dialogue-speaker">Eddie:</span> Oh, that’s a pity. Won’t you have any time at all over summer?</div>
+                    <div class="zh-text">噢，真可惜。你整個夏天都完全沒有時間嗎？</div>
+                    <div class="grammar-note">💡 【實用口語】① <b>That's a pity. / What a pity!</b> 表示「真遺憾／真可惜」；② <b>not ... at all</b> 為「一點也不／完全沒……」加強否定語氣。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">The next day, she did this all over again.</div>
-                    <div class="zh-text">隔天，她又把全部動作重複做了一遍。</div>
-                    <div class="grammar-note">💡 【國中片語】<b>all over again</b> 表示「從頭到尾再做一次／重新再來過」。</div>
+                    <div class="en-text"><span class="dialogue-speaker">Cindy:</span> I’m not sure, but I’ll tell my parents about the camp.</div>
+                    <div class="zh-text">我不確定，但我會跟我父母提提這個夏令營。</div>
+                    <div class="grammar-note">💡 【動詞搭配】<b>tell sb. about sth.</b> 表示「跟某人說關於某件事」。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">One night, someone took the coins. When the woman came and saw what had happened, she went wild with anger.</div>
-                    <div class="zh-text">某天夜裡，有人偷走了硬幣。當婦人來到花園看到發生的事，她氣得勃然大怒／發狂。</div>
-                    <div class="grammar-note">💡 【國中重要句型】<b>go wild with anger</b> 表示「氣得勃然大怒／氣瘋了」，此處 go 翻譯為「變得...」，是連綴動詞，後接形容詞 wild。</div>
+                    <div class="en-text"><span class="dialogue-speaker">Cindy:</span> It’s been a while since I’ve seen the ocean and had a bit of sea and sand.</div>
+                    <div class="zh-text">我已經有一陣子沒有看見大海，也有一段時間沒接觸到海浪與沙灘了。</div>
+                    <div class="grammar-note">💡 【重要句型】<b>It's been a while since + 現在完成式 / 過去式</b>：表示「自從（做）……至今已經好一陣子了」。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">A curious man heard her and asked what was wrong.</div>
-                    <div class="zh-text">一個好奇的男人聽到了她的聲音，問她發生了什麼問題。</div>
-                    <div class="grammar-note">💡 【國中文法】<b>what was wrong</b> 表示「怎麼了 / 出了什麼問題」，在問句中常寫成 What's wrong (with you)?</div>
+                    <div class="en-text"><span class="dialogue-speaker">Eddie:</span> Well, I’ve already got a nice-looking swimsuit ready. We’ve earned our freedom this semester!</div>
+                    <div class="zh-text">嗯，我已經把一件好看的泳衣準備好了。我們這學期掙得了我們的自由！</div>
+                    <div class="grammar-note">💡 【國中文法】① <b>get + 受詞 + ready</b> 表示「把……準備好」；② <b>have/has + p.p. (earned)</b> 是「現在完成式」，強調動作完成後獲得的結果。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">“Someone robbed me and now my gold is gone. It’s money down the drain!” shouted the woman.</div>
-                    <div class="zh-text">婦人大喊：「有人搶了我，現在我的金子都沒了。這錢全打水漂／付諸流水了！」</div>
-                    <div class="grammar-note">💡 【易混淆文法】① <b>rob + 人/場所</b> (搶劫某人)；<b>steal + 財物</b> (偷走某物)！② <b>money down the drain</b> 比喻「錢流進排水管」，即白白浪費、打水漂。</div>
+                    <div class="en-text"><span class="dialogue-speaker">Cindy:</span> Yeah, right? I can hardly wait until the exams are over, especially physics. So what other things do they do at this camp?</div>
+                    <div class="zh-text">對吧？我簡直等不及考試結束了，特別是物理考完。那這個營隊還有做些什麼其他活動？</div>
+                    <div class="grammar-note">💡 【重點副詞】<b>can hardly wait</b> 意為「簡直無法等待／迫不及待」，hardly 為否定副詞「幾乎不」。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">“Why was your gold buried in the earth? If it’s there, you can’t spend it,” said the man.</div>
-                    <div class="zh-text">男人說：「為什麼妳的黃金要埋在土裡？如果放在那裡，妳根本不能花。」</div>
-                    <div class="grammar-note">💡 【國中常考文法】<b>was buried</b> 是「被動語態 (be動詞 + 過去分詞 p.p.)」，意思是「被埋在土裡」。</div>
+                    <div class="en-text"><span class="dialogue-speaker">Eddie:</span> They also have a mix of evening activities, like table tennis, rock climbing, Earth Science . . .</div>
+                    <div class="zh-text">他們也有各種晚間活動的結合，像是桌球、攀岩、地球科學……</div>
+                    <div class="grammar-note">💡 【常見名詞片語】<b>a mix of...</b> 表示「……的混合／各種……的結合」。</div>
                 </div>
                 <div class="sentence-row">
-                    <div class="en-text">The woman answered, “I would never spend my gold!”</div>
-                    <div class="zh-text">婦人回答：「我絕不可能花我的黃金！」</div>
-                    <div class="grammar-note">💡 【國中文法】助動詞 <b>would / will + 原形動詞</b>，所以後面的 spend 要保持原形喔！</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">The man threw a stone into the deep hole. “Bury this, then,” he said.</div>
-                    <div class="zh-text">男人於是把一塊石頭扔進那個深洞裡。「那就把這個埋起來吧，」他說。</div>
-                    <div class="grammar-note">💡 【國中文法】① <b>threw</b> 是 throw (投擲) 的過去式；② <b>"Bury this..."</b> 是以原形動詞開頭的「祈使句」。</div>
-                </div>
-                <div class="sentence-row">
-                    <div class="en-text">“It’s worth just as much. Wealth has no value if it’s never used.”</div>
-                    <div class="zh-text">「這同樣有價值。財富如果從不使用，就毫無價值可言。」</div>
-                    <div class="grammar-note">💡 【重點文法】① <b>be worth + 價值</b> (值得... / 有...價值)；② <b>if it's never used</b> 也是被動語態，意為「如果它從未被使用過」。</div>
+                    <div class="en-text"><span class="dialogue-speaker">Cindy:</span> That does sound interesting! Maybe my parents will consider letting me join in the evenings.</div>
+                    <div class="zh-text">那聽起來真的很有趣耶！也許我父母會考慮讓我晚上參加。</div>
+                    <div class="grammar-note">💡 【國中核心句型】① 助動詞 <b>does</b> 加在動詞前，用來「強調語氣」（確實、真的...）；② <b>consider + V-ing (letting)</b> 表示「考慮做...」，動詞要加 -ing；③ <b>let me join</b> 是使役動詞接原形動詞！</div>
                 </div>
             </div>
             <h2 class="section-title">🎯 互動單字卡</h2>
-            <div class="vocab-grid" id="vocab-grid-27"></div>
+            <div class="vocab-grid" id="vocab-grid-29"></div>
             <h2 class="section-title">✍️ 關鍵文法總結</h2>
             <div class="grammar-card">
-                <h3>1. go wild with anger (勃然大怒；氣急敗壞)</h3>
-                <p><b>說明：</b>這裡的 go 為連綴動詞（變成...狀態），搭配形容詞 wild (瘋狂/失控) 與介系詞 with (因為...)，生動描述情緒失控。</p>
-                <p><b>例句：</b>When the woman saw what had happened, she <span class="highlight">went wild with anger</span>.</p>
+                <h3>1. It's been a while since + 子句 (自從...已經有一陣子了)</h3>
+                <p><b>說明：</b>現在完成式與 since 的經典考題句型，表示某事距離現在已經過了好長一段時間。</p>
+                <p><b>例句：</b><span class="highlight">It’s been a while since</span> I’ve seen the ocean.</p>
             </div>
             <div class="grammar-card">
-                <h3>2. rob sb. (搶劫某人) vs. steal sth. (偷走某物)</h3>
-                <p><b>說明：</b>rob 後面直接接「被搶的人或地方」；steal 後面則是接「被偷走的財物」。</p>
-                <p><b>例句：</b>Someone <span class="highlight">robbed me</span>! (有人搶劫了我！) / Someone <span class="highlight">stole my coins</span>! (有人偷了我的硬幣！)</p>
+                <h3>2. consider + V-ing (考慮做...)</h3>
+                <p><b>說明：</b>動詞 consider 後面如果遇到動詞，一定要變成動名詞（V-ing）。</p>
+                <p><b>例句：</b>Maybe my parents will <span class="highlight">consider letting</span> me join...</p>
+            </div>
+        </div>
+
+        <!-- ================= Unit 30 (Vincent van Gogh: A Great Dutch Painter) ================= -->
+        <div id="unit30" class="unit-content">
+            <h2 class="section-title">📖 閱讀：Vincent van Gogh: A Great Dutch Painter</h2>
+            <div class="controls">
+                <span style="color: #666; font-size: 0.9em; margin-right: 10px;">💡 點擊句子可展開「中文翻譯 ＋ 國中文法小提示」 ➔</span>
+                <button class="btn-toggle" onclick="toggleTranslation('unit30')">👀 一鍵顯示 / 隱藏全部中文與文法</button>
+            </div>
+            <div class="reading-area">
+                <div class="sentence-row">
+                    <div class="en-text">Vincent van Gogh was a great Dutch painter and these days, everybody wants to be an owner of one of his pieces of art.</div>
+                    <div class="zh-text">文森·梵谷是一位偉大的荷蘭畫家，而在現今，每個人都希望能成為他其中一件藝術品的所有者。</div>
+                    <div class="grammar-note">💡 【國中文法】① <b>these days</b> 意為「如今、現代」；② <b>one of + 複數名詞 (pieces)</b> 表示「……其中的一個／一件」。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">When any of them come up for sale, they often go for millions of dollars. That wasn’t always the case, though.</div>
+                    <div class="zh-text">每當它們任何一件被拿出來拍賣，往往都能賣出數百萬美元。不過，情況並非總是如此。</div>
+                    <div class="grammar-note">💡 【重點片語】① <b>come up for sale</b> 表示「上市／供出售」；② <b>millions of + 名詞</b> 表示「數百萬的……」；③ <b>That wasn't always the case.</b> 是道地句型，意為「情況並非始終如此」。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">When Van Gogh was still alive, very few people knew his name, nor was his art appreciated.</div>
+                    <div class="zh-text">當梵谷在世時，極少人知道他的名字，他的藝術也沒有受到賞識／重視。</div>
+                    <div class="grammar-note">💡 【國二超級重點倒裝句】<b>nor was his art appreciated</b>：連接詞 <b>nor</b> 表示「也不」，放於句首時，後面的主詞與 be 動詞必須「倒裝」（原本是 his art was not appreciated）。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">He and his precious works only became famous after his death at the age of 37.</div>
+                    <div class="zh-text">他和他的珍貴作品，直到他 37 歲逝世後才變得成名。</div>
+                    <div class="grammar-note">💡 【常考介系詞】<b>at the age of + 歲數</b> 表示「在……歲的時候」。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Vincent van Gogh was one of the greatest Dutch painters. He used strong colors in his work.</div>
+                    <div class="zh-text">文森·梵谷是史上最偉大的荷蘭畫家之一。他在畫作中使用了濃烈的色彩。</div>
+                    <div class="grammar-note">💡 【國中文法】<b>one of the + 最高級形容詞 + 複數名詞 (painters)</b> 表示「最……的其中之一」。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Two of his most well-known works are Sunflowers and The Starry Night.</div>
+                    <div class="zh-text">他最聞名的兩幅作品是《向日葵》與《星夜》。</div>
+                    <div class="grammar-note">💡 【複合形容詞】<b>well-known</b> 意為「著名的、眾所周知的」，為 well + 過去分詞 (known) 組成。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">The latter even inspired a singer to write a song about the artist.</div>
+                    <div class="zh-text">後者（即《星夜》）甚至啟發了一位歌手寫下一首關於這位藝術家的歌曲。</div>
+                    <div class="grammar-note">💡 【重點單字與文法】① <b>latter</b> 指兩者中「後者」；② <b>inspire sb. to + V</b> 表示「啟發／激勵某人做某事」。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Besides his art, people often bring up other things when having a conversation about Van Gogh.</div>
+                    <div class="zh-text">除了他的藝術，人們在談論梵谷時，常會提起其他事情。</div>
+                    <div class="grammar-note">💡 【易混淆文法】① <b>Besides</b> 字尾有 s，在此作介系詞表示「除……之外（還……）」；② <b>bring up</b> 是常考動詞片語，指「談及／提出（話題）」。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">They usually talk about his mental state. He wasn’t in his right mind, and he spent some time in mental hospitals.</div>
+                    <div class="zh-text">他們通常會談論他的精神狀態。他當時神智不清，並且在精神病院待過一段時間。</div>
+                    <div class="grammar-note">💡 【重要慣用語】<b>not in one's right mind</b> 表示「神智不清／精神失常」；<b>spend + 時間 + 介系詞片語</b> 表示「把時間花在...地方/狀態」。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Van Gogh cut off his left ear after he argued with another artist. He even created works about it after.</div>
+                    <div class="zh-text">梵谷在與另一位藝術家爭吵後，割下了他的左耳。他日後甚至創作出與此事件相關的作品。</div>
+                    <div class="grammar-note">💡 【國中文法】① <b>cut off</b> 表示「切下、割掉」（cut 動詞三態同形：cut-cut-cut）；② <b>argue with + 人</b> 表示「與某人爭論／吵架」。</div>
+                </div>
+                <div class="sentence-row">
+                    <div class="en-text">Though he was considered crazy, Van Gogh produced wonderful art that we still enjoy today.</div>
+                    <div class="zh-text">雖然他曾被視為瘋子，但梵谷創作出我們今天依舊喜愛的絕妙藝術。</div>
+                    <div class="grammar-note">💡 【國中文法】① <b>was considered + 形容詞</b> 為被動語態，意為「被視為／被看作……」；② <b>that we still enjoy today</b> 是「形容詞子句」，修飾前面的 art。</div>
+                </div>
+            </div>
+            <h2 class="section-title">🎯 互動單字卡</h2>
+            <div class="vocab-grid" id="vocab-grid-30"></div>
+            <h2 class="section-title">✍️ 關鍵文法總結</h2>
+            <div class="grammar-card">
+                <h3>1. nor 放於句首的「倒裝句」</h3>
+                <p><b>說明：</b>連接詞 nor (也不) 放句首時，為了加強語氣，主詞與動詞／助動詞必須<b>前後位置互換</b>（倒裝）。</p>
+                <p><b>例句：</b>...very few people knew his name, <span class="highlight">nor was his art</span> appreciated. (原本為: his art was not appreciated either)</p>
             </div>
             <div class="grammar-card">
-                <h3>3. money down the drain (付諸流水；白白浪費的錢)</h3>
-                <p><b>說明：</b>drain 是排水管，錢流進水管裡，比喻錢財徹底浪費、有去無回。</p>
-                <p><b>例句：</b>It's <span class="highlight">money down the drain</span>! (這錢真是付諸流水！)</p>
+                <h3>2. bring up (提起／談到某話題)</h3>
+                <p><b>說明：</b>極高頻動詞片語，除了「扶養長大」，在會話及閱讀中常當作「提起、提出（討論事務）」。</p>
+                <p><b>例句：</b>People often <span class="highlight">bring up</span> other things when having a conversation about Van Gogh.</p>
             </div>
         </div>
 
@@ -639,7 +698,82 @@
             { unit: 27, en: "hole", kk: "[hol]", zh: "洞", tip: "單音節" },
             { unit: 27, en: "wealth", kk: "[wɛlθ]", zh: "財富；財產", tip: "單音節<br>(th發無聲/θ/)" },
             { unit: 27, en: "bury", kk: "[ˋbɛrɪ]", zh: "埋藏；掩埋", tip: "拆字：bu-ry<br>(u發/ɛ/)" },
-            { unit: 27, en: "worth", kk: "[wɝθ]", zh: "有價值的；值得的", tip: "單音節" }
+            { unit: 27, en: "worth", kk: "[wɝθ]", zh: "有價值的；值得的", tip: "單音節" },
+            // ================= Unit 28 =================
+            { unit: 28, en: "deal with", kk: "[dil wɪð]", zh: "處理；應付", tip: "常考動詞片語" },
+            { unit: 28, en: "common", kk: "[ˋkɑmən]", zh: "共同的；常見的", tip: "拆字：com-mon" },
+            { unit: 28, en: "difficult", kk: "[ˋdɪfəˌkəlt]", zh: "難搞的；困難的", tip: "拆字：dif-fi-cult" },
+            { unit: 28, en: "easy", kk: "[ˋizɪ]", zh: "容易的", tip: "拆字：ea-sy<br>(ea發長音/i/)" },
+            { unit: 28, en: "tip", kk: "[tɪp]", zh: "秘訣；提示", tip: "單音節" },
+            { unit: 28, en: "kingdom", kk: "[ˋkɪŋdəm]", zh: "王國", tip: "拆字：king-dom" },
+            { unit: 28, en: "angry", kk: "[ˋæŋgrɪ]", zh: "生氣的", tip: "拆字：an-gry" },
+            { unit: 28, en: "toward", kk: "[təˋwɔrd]", zh: "朝向", tip: "拆字：to-ward" },
+            { unit: 28, en: "negative", kk: "[ˋnɛgətɪv]", zh: "負面的", tip: "拆字：neg-a-tive" },
+            { unit: 28, en: "argue", kk: "[ˋɑrgjʊ]", zh: "爭論；吵架", tip: "拆字：ar-gue" },
+            { unit: 28, en: "behave", kk: "[bɪˋhev]", zh: "表現；行為", tip: "拆字：be-have" },
+            { unit: 28, en: "fly", kk: "[flaɪ]", zh: "飛", tip: "單音節" },
+            { unit: 28, en: "calm", kk: "[kɑm]", zh: "冷靜的", tip: "單音節<br>(l不發音)" },
+            { unit: 28, en: "avoid", kk: "[əˋvɔɪd]", zh: "避免；避開", tip: "拆字：a-void<br>(oi發/ɔɪ/)" },
+            { unit: 28, en: "eagle", kk: "[ˋig!]", zh: "老鷹", tip: "拆字：ea-gle" },
+            { unit: 28, en: "above", kk: "[əˋbʌv]", zh: "在...上方", tip: "拆字：a-bove" },
+            { unit: 28, en: "far", kk: "[fɑr]", zh: "遠的", tip: "單音節" },
+            { unit: 28, en: "understand", kk: "[ˌʌndɚˋstænd]", zh: "理解；懂得", tip: "拆字：un-der-stand" },
+            { unit: 28, en: "humor", kk: "[ˋhjumɚ]", zh: "幽默", tip: "拆字：hu-mor" },
+            { unit: 28, en: "joke", kk: "[dʒok]", zh: "笑話", tip: "單音節" },
+            { unit: 28, en: "similarly", kk: "[ˋsɪməlɚlɪ]", zh: "同樣地", tip: "拆字：sim-i-lar-ly" },
+            { unit: 28, en: "hyena", kk: "[haɪˋinə]", zh: "鬣狗", tip: "拆字：hy-e-na" },
+            { unit: 28, en: "situation", kk: "[ˌsɪtʃʊˋeʃən]", zh: "情況；處境", tip: "拆字：sit-u-a-tion" },
+            // ================= Unit 29 =================
+            { unit: 29, en: "summer", kk: "[ˋsʌmɚ]", zh: "夏天", tip: "拆字：sum-mer" },
+            { unit: 29, en: "yet", kk: "[jɛt]", zh: "還沒有；尚未", tip: "單音節" },
+            { unit: 29, en: "camp", kk: "[kæmp]", zh: "營隊", tip: "單音節" },
+            { unit: 29, en: "beach", kk: "[bitʃ]", zh: "海灘", tip: "單音節<br>(ea發/i/)" },
+            { unit: 29, en: "cool", kk: "[kul]", zh: "酷的；涼爽的", tip: "單音節<br>(oo發/u/)" },
+            { unit: 29, en: "holiday", kk: "[ˋhɑləˌde]", zh: "假期", tip: "拆字：hol-i-day" },
+            { unit: 29, en: "adult", kk: "[əˋdʌlt]", zh: "成人", tip: "拆字：a-dult" },
+            { unit: 29, en: "nice-looking", kk: "[ˋnaɪsˌlʊkɪŋ]", zh: "好看的", tip: "複合形容詞" },
+            { unit: 29, en: "swimsuit", kk: "[ˋswɪmˌsut]", zh: "泳衣", tip: "拆字：swim-suit" },
+            { unit: 29, en: "earn", kk: "[ɝn]", zh: "賺得；贏得", tip: "單音節<br>(ear發/ɝ/)" },
+            { unit: 29, en: "freedom", kk: "[ˋfridəm]", zh: "自由", tip: "拆字：free-dom" },
+            { unit: 29, en: "semester", kk: "[səˋmɛstɚ]", zh: "學期", tip: "拆字：se-mes-ter" },
+            { unit: 29, en: "hardly", kk: "[ˋhɑrdlɪ]", zh: "幾乎不", tip: "拆字：hard-ly" },
+            { unit: 29, en: "exam", kk: "[ɪgˋzæm]", zh: "考試", tip: "拆字：ex-am" },
+            { unit: 29, en: "physics", kk: "[ˋfɪzɪks]", zh: "物理學", tip: "拆字：phys-ics<br>(ph發/f/)" },
+            { unit: 29, en: "mix", kk: "[mɪks]", zh: "混合；結合", tip: "單音節" },
+            { unit: 29, en: "evening", kk: "[ˋivnɪŋ]", zh: "傍晚；晚上", tip: "拆字：eve-ning" },
+            { unit: 29, en: "table tennis", kk: "[ˋteb! ˌtɛnɪs]", zh: "桌球", tip: "常見運動名稱" },
+            { unit: 29, en: "rock", kk: "[rɑk]", zh: "岩石", tip: "單音節" },
+            { unit: 29, en: "consider", kk: "[kənˋsɪdɚ]", zh: "考慮", tip: "拆字：con-sid-er" },
+            { unit: 29, en: "join", kk: "[dʒɔɪn]", zh: "參加", tip: "單音節<br>(oi發/ɔɪ/)" },
+            { unit: 29, en: "babysitter", kk: "[ˋbebɪˌsɪtɚ]", zh: "臨時保姆", tip: "拆字：ba-by-sit-ter" },
+            { unit: 29, en: "pity", kk: "[ˋpɪtɪ]", zh: "可惜的事", tip: "拆字：pi-ty" },
+            { unit: 29, en: "bit", kk: "[bɪt]", zh: "一點點", tip: "單音節" },
+            // ================= Unit 30 =================
+            { unit: 30, en: "painter", kk: "[ˋpentɚ]", zh: "畫家", tip: "拆字：paint-er" },
+            { unit: 30, en: "owner", kk: "[ˋonɚ]", zh: "擁有者", tip: "拆字：own-er" },
+            { unit: 30, en: "sale", kk: "[sel]", zh: "販賣；特賣", tip: "單音節" },
+            { unit: 30, en: "case", kk: "[kes]", zh: "情況；箱子", tip: "單音節" },
+            { unit: 30, en: "knew", kk: "[nju]", zh: "知道 (know過去式)", tip: "單音節<br>(k不發音)" },
+            { unit: 30, en: "nor", kk: "[nɔr]", zh: "也不", tip: "連接詞 (倒裝句)" },
+            { unit: 30, en: "appreciate", kk: "[əˋpriʃɪˌet]", zh: "欣賞；重視", tip: "拆字：ap-pre-ci-ate" },
+            { unit: 30, en: "precious", kk: "[ˋprɛʃəs]", zh: "珍貴的", tip: "拆字：pre-cious" },
+            { unit: 30, en: "latter", kk: "[ˋlætɚ]", zh: "後者", tip: "拆字：lat-ter" },
+            { unit: 30, en: "inspire", kk: "[ɪnˋspaɪr]", zh: "啟發；激勵", tip: "拆字：in-spire" },
+            { unit: 30, en: "artist", kk: "[ˋɑrtɪst]", zh: "藝術家", tip: "拆字：ar-tist" },
+            { unit: 30, en: "besides", kk: "[bɪˋsaɪdz]", zh: "除...之外", tip: "拆字：be-sides" },
+            { unit: 30, en: "bring up", kk: "[brɪŋ ʌp]", zh: "提起；談到", tip: "常考動詞片語" },
+            { unit: 30, en: "conversation", kk: "[ˌkɑnvɚˋseʃən]", zh: "對話", tip: "拆字：con-ver-sa-tion" },
+            { unit: 30, en: "usually", kk: "[ˋjuʒʊəlɪ]", zh: "通常", tip: "拆字：u-su-al-ly" },
+            { unit: 30, en: "state", kk: "[stet]", zh: "狀態", tip: "單音節" },
+            { unit: 30, en: "mind", kk: "[maɪnd]", zh: "心智；頭腦", tip: "單音節<br>(i發長音/aɪ/)" },
+            { unit: 30, en: "spent", kk: "[spɛnt]", zh: "花費 (spend過去式)", tip: "單音節" },
+            { unit: 30, en: "hospital", kk: "[ˋhɑspɪt!]", zh: "醫院", tip: "拆字：hos-pi-tal" },
+            { unit: 30, en: "another", kk: "[əˋnʌðɚ]", zh: "另一個", tip: "拆字：an-oth-er" },
+            { unit: 30, en: "crazy", kk: "[ˋkrezɪ]", zh: "瘋狂的", tip: "拆字：cra-zy" },
+            { unit: 30, en: "wonderful", kk: "[ˋwʌndɚfəl]", zh: "極好的；絕妙的", tip: "拆字：won-der-ful" },
+            { unit: 30, en: "Dutch", kk: "[dʌtʃ]", zh: "荷蘭的；荷蘭人", tip: "單音節" },
+            { unit: 30, en: "starry", kk: "[ˋstɑrɪ]", zh: "布滿星星的", tip: "拆字：star-ry" },
+            { unit: 30, en: "mental", kk: "[ˋmɛnt!]", zh: "心理的；精神的", tip: "拆字：men-tal" }
         ];
 
         // 網頁載入時，自動把單字卡發配到對應的 Unit 以及測驗區，並綁定「逐句點擊顯示中文＋文法」！
@@ -694,8 +828,8 @@
                 });
             });
             
-            // 預設開啟最新的 Unit 27 頁籤 (第10個按鈕)
-            document.querySelector(".nav-tabs button:nth-child(10)").click();
+            // 預設開啟最新的 Unit 30 頁籤 (第13個按鈕)
+            document.querySelector(".nav-tabs button:nth-child(13)").click();
         };
 
         // 切換頁籤
